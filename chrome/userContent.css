@@ -35,6 +35,15 @@
   }
 }
 
+@-moz-document domain(x.com) {
+
+  body,
+  html,
+  .r-kemksi {
+      background: transparent !important;
+  }
+}
+
 @-moz-document domain(chatgpt.com) {
   body, html,
     .bg-token-main-surface-primary, /* Navbar */
@@ -81,9 +90,15 @@
   header,
   #repository-container-header,
   .bgColor-muted,
-  section {
+  section,
+  .feed-background,
+  .color-bg-default {
     background-color: transparent !important;
   }
+
+  .feed-item-content {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
 }
 
 @-moz-document domain(duckduckgo.com) {
