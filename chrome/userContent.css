@@ -1,0 +1,134 @@
+@-moz-document domain(monkeytype.com) {
+  body {
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain(zen-browser.app) {
+  body,
+  html {
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain(reddit.com) {
+  body,
+  html {
+    background: transparent !important;
+  }
+  #comment-tree {
+    background: transparent !important;
+  }
+  .bg-neutral-background,
+  .bg-neutral-background-weak {
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+  .bg-\[color\:var\(--shreddit-content-background\)\] {
+    background-color: transparent !important;
+  }
+  .threadline,
+  .shreddit-post,
+  aside,
+  comment-body-header,
+  shreddit-comment-tree {
+    background-color: transparent !important;
+  }
+}
+
+@-moz-document domain(chatgpt.com) {
+  body, html,
+    .bg-token-main-surface-primary, /* Navbar */
+    .bg-token-sidebar-surface-primary, /* Sidebar */
+    .bg-token-sidebar-surface-primary * /* All sidebar elements */ {
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain(monica.im) {
+  body,
+  html {
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain(google.com) {
+  .sfbg {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(20px);
+  }
+  body,
+  html,
+  .f6F9Be,
+  div#search > * {
+    background-color: transparent !important;
+  }
+  .g,
+  .appbar {
+    background-color: transparent !important;
+  }
+  div#rso {
+    * {
+      background-color: transparent !important;
+    }
+  }
+  div#cnt > div {
+  }
+}
+
+@-moz-document domain(github.com) {
+  body,
+  html,
+  header,
+  #repository-container-header,
+  .bgColor-muted,
+  section {
+    background-color: transparent !important;
+  }
+}
+
+@-moz-document domain(duckduckgo.com) {
+  body,
+  html,
+  .site-wrapper,
+  .zci-wrap,
+  .zci,
+  .header-wrap,
+  .metabar,
+  .footer,
+  *::before,
+  .module--translations-translatedtext {
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain(discord.com) {
+  :root {
+    .layer_cd0de5 :is([role="dialog"], .streamPreview_adbea6) {
+      background: hsl(var(--primary-700-hsl)) !important;
+    }
+
+    --primary-560: rgba(0, 0, 0, 0.05) !important;
+    --primary-600: rgba(0, 0, 0, 0.05) !important;
+    --primary-630: rgba(0, 0, 0, 0.05) !important;
+    --primary-645: rgba(0, 0, 0, 0.05) !important;
+    --primary-660: rgba(0, 0, 0, 0.05) !important;
+    --primary-700: rgba(0, 0, 0, 0.05) !important;
+    --primary-730: rgba(0, 0, 0, 0.05) !important;
+    --primary-760: rgba(0, 0, 0, 0.05) !important;
+    --primary-830: rgba(0, 0, 0, 0.05) !important;
+    --primary-860: rgba(0, 0, 0, 0.05) !important;
+    --primary-900: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  [class^="focusLock_"] {
+    --saturation-factor: 1;
+    --primary-600: hsl(var(--primary-600-hsl) / 1) !important;
+    --primary-600-hsl: 222.857 calc(var(--saturation-factor, 1) * 6.667%)
+      20.588% !important;
+    --modal-background: var(--primary-600);
+  }
+
+  .no-webkit-scrollbar * {
+    scrollbar-width: none !important;
+  }
+}
