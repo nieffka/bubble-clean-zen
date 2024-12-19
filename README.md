@@ -23,6 +23,4 @@ Go to `about:config` and set:
 | ---        | -------------            | -------------                                     |
 | Font       | `Poppins`                | [Poppins](https://fonts.google.com/specimen/Poppins)|
 | Extensions | `Copy Link Button`                | [Copy Link Button](https://addons.mozilla.org/en-US/firefox/addon/copy-frame-or-page-url/)|
-| JavaScript | `Shorten Urls`                | [Script](https://github.com/wysh3/zen-premium/blob/main/urlshorten.uc.mjs)|
-| JavaScript | `Rename Tab`                | [Script](https://github.com/wysh3/zen-premium/blob/main/advance_rename_tabs.uc.js)|
 | Software  | `MicaForEveryone`      | [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone)|
