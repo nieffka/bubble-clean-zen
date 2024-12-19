@@ -18,6 +18,14 @@ Go to `about:config` and set:
 
 
 
+## 🗨️ FAQ
+| Question   | Answer                  |
+| ---        | -------------            |
+| How to show the Title Bar?       | Open the **userChrome.css** and delete [this line](https://github.com/nieffka/bubble-clean-zen/issues/2#issuecomment-2554052817)|
+| Transparency not working on Reddit              | Go to reddit **setting**>**preference**>**experience**<br> turn off: **use community themes**|
+
+
+
 ## 🏅 Recommendations
 | Type   | Details                  | Links                                             |
 | ---        | -------------            | -------------                                     |
