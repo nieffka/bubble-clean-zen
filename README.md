@@ -32,3 +32,12 @@ Go to `about:config` and set:
 | Font       | `Poppins`                | [Poppins](https://fonts.google.com/specimen/Poppins)|
 | Extensions | `Copy Link Button`                | [Copy Link Button](https://addons.mozilla.org/en-US/firefox/addon/copy-frame-or-page-url/)|
 | Software  | `MicaForEveryone`      | [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone)|
+
+## ✨ Special Thanks & Credits
+(sry if I'm missing some, just hit me some message)
+
+| Details   | Credit                  |
+| ---        | -------------            |
+| Essentials color & folder style        | [lunar-os](https://github.com/lunar-os/ZenCss)|
+| Sleek playing/mute indicator        | [itsmefen](https://github.com/itsmefen/Dark-Harmony)|
+ 
