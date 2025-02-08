@@ -40,4 +40,5 @@ Go to `about:config` and set:
 | ---        | -------------            |
 | Essentials color & folder style        | [lunar-os](https://github.com/lunar-os/ZenCss)|
 | Sleek playing/mute indicator        | [itsmefen](https://github.com/itsmefen/Dark-Harmony)|
- 
+| Urlbar & Findbar        | [greeeen-dev](https://github.com/greeeen-dev/natsumi-browser)|
+
