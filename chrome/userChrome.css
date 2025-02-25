@@ -1438,7 +1438,15 @@ scrollbox:nth-child(5) {
   }
 }
 /* Pinned Tab */
-
+#navigator-toolbox[zen-sidebar-expanded="true"] {
+  & #tabbrowser-tabs {
+    & .tabbrowser-tab {
+      &[zen-pinned-changed="true"]:not([zen-essential])>.tab-stack>.tab-content>.tab-icon-stack {
+        left: unset !important;
+      }
+    }
+  }
+}
 #vertical-pinned-tabs-container>.zen-workspace-tabs-section {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
