@@ -1439,20 +1439,39 @@ scrollbox:nth-child(5) {
 }
 /* Pinned Tab */
 
-#vertical-pinned-tabs-container {
+#vertical-pinned-tabs-container>.zen-workspace-tabs-section {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
+  margin-top: 5px !important;
   scrollbar-width: thin !important;
 }
-#vertical-pinned-tabs-container .tab-close-button {
+#vertical-pinned-tabs-container>.zen-workspace-tabs-section>.tabbrowser-tab[pinned] {
+  --toolbarbutton-inner-padding: 0;
+}
+#vertical-pinned-tabs-container > .zen-workspace-tabs-section {
+  gap: 1px !important;
+}
+.vertical-pinned-tabs-container-separator {
+  visibility: hidden !important;
+  margin-top: 3px !important;
+}
+#tabbrowser-arrowscrollbox .tabbrowser-tab:first-child {
+  margin-top: 3px !important;
+}
+#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-close-button {
   display: none !important;
 }
-#vertical-pinned-tabs-container .tab-label-container {
+#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-button {
   display: none !important;
 }
-
+#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-label-container {
+  display: none !important;
+}
+#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-pin-button {
+  display: none !important;
+}
 .tab-throbber:is([pinned]) {
   margin-inline-end: unset !important;
         margin-inline-start: unset !important;
