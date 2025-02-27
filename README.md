@@ -12,8 +12,9 @@ go to `about:config`, type and click add button as boolean:
 | `bubble.clean.show-titlebar`       | `true`                | Show titlebar in hover|
 | `bubble.clean.pinned-grid-bg`       | `true`                | Add Bubble Clean background<br> for grid pinned tab (w/ SuperPins Mod)|
 
-#### 💠 SuperPins mods setting for grid pinned tab
-![Screenshot 2025-02-27 203149](https://github.com/user-attachments/assets/39712591-29ea-45bd-a0a4-5ca31e067ed3)
+#### 💠 SuperPins mods setting
+![image](https://github.com/user-attachments/assets/4b83f7a4-5651-4f5c-af6f-bdb15957bc96)
+
 
 #### 💠 Copy Link Button setting
 ![image](https://github.com/user-attachments/assets/46fee675-8b0f-4ed8-b0ea-c34fd013f28b)
@@ -37,7 +38,7 @@ go to `about:config` and set:
 ## 🗨️ FAQ
 | Question   | Answer                  |
 | ---        | -------------            |
-| Transparency not working on Reddit              | Go to reddit **setting**>**preference**>**experience**<br> turn off: **use community themes**|
+| Why transparency not working on Reddit?              | Go to reddit **setting**>**preference**>**experience**<br> turn off: **use community themes**|
 
 ## 🏅 Recommendations
 | Type   | Details                  | Links                                             |
