@@ -1,0 +1,62 @@
+/* Highlight urlbar when loading the page by @wysh3
+ * https://github.com/wysh3/Zen-Mods/tree/main/Fluid%20URL */
+#urlbar:not([breakout-extend="true"]) {
+  /* Unless urlbar is opened */
+  .urlbar-input-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #cbf4ef56, #4ecdc456, #cbf4ef56);
+    background-size: 200% 100%;
+    animation: urlbar-loading-gradient 1s linear reverse infinite;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+}
+&:has(#reload-button[displaystop="true"]) {
+  /* When 'Stop' button is shown isntead of 'Reload' */
+  .urlbar-input-container::before {
+    animation-play-state: running;
+    opacity: 1;
+  }
+}
+@keyframes urlbar-loading-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* URL bar appear animation */
+#urlbar {
+  --animation-duration: 0.5s;
+}
+
+/* Results appear animation */
+#urlbar-results {
+  --animation-duration: 0s;
+}
+
+/* Individual result appear animation */
+.urlbarView-row {
+  --animation-duration: .5s;
+  --animation-duration-subtle: 0.5s; /* WIP, this won't change anything for now */
+  --animation-delay: 0.05s;
+  --animation-delay-offset: 0s;
+}
+/* Reload border animation */
+browser, .browserSidebarContainer.deck-selected {
+  --animation-duration: 0.2s;
+  --animation-rotation-duration: 2.0s;
+  --animation-exit-duration: 1.0s;
+  --browser-margin: 4px;
+}
+
+/* Reload URLbar animation */
+#urlbar-background {
+  --fadein-duration: 0.5s;
+  --animation-duration: 1s;
+}

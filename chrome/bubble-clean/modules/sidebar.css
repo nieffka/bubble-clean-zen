@@ -1,0 +1,36 @@
+/* Cleaned & Transparent Sidebar */
+#sidebar-box {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  & #sidebar-header {
+    border-bottom: none !important;
+    & #sidebar-close {
+      margin-inline-end: 7px !important;
+      scale: 0.9;
+    }
+  }
+}
+#sidebar-search-container > #search-box,
+#viewButton {
+  padding: 4px 8px !important;
+  appearance: none !important;
+  background-color: transparent !important;
+  border-radius: 10px !important;
+  border: none !important;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+  .sidebar-panel[lwt-sidebar] {
+    background-color: transparent !important;
+  }
+/* Hide the Normal Sidebar Border */
+#sidebar-header {
+  font-size: 1.333em;
+  padding: 5px !important;
+  border-bottom: 0 solid var(--sidebar-border-color) !important;
+}

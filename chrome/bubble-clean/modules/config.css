@@ -1,0 +1,56 @@
+@media not (-moz-bool-pref: "bubble.clean.show-titlebar") {
+  /* Hides Top Toolbar (single toolbar) */
+  :root[zen-single-toolbar="true"] #zen-appcontent-navbar-container {
+    max-height: var(--zen-element-separation) !important;
+    margin-top: 0px;
+  }
+
+  :root[inDOMFullscreen="true"] #zen-appcontent-navbar-container {
+    display: none !important;
+  }
+
+  /* Hide Title Bar */
+
+  .titlebar-button {
+    display: none !important;
+  }
+}
+
+@media not (-moz-bool-pref: "bubble.clean.hide-single-toolbar-icon") {
+  /* show url icon in single toolbar */
+  :root[zen-single-toolbar="true"] {
+    & #urlbar :is(#pageAction-urlbar-copy-frame-url_jeffersonscher_com), & .urlbar-page-action[open] {
+      opacity: 1 !important;
+      margin-inline-end: 0 !important;
+      display: flex !important;
+    }
+    & #urlbar:not([open]) {
+      & #identity-box {
+        order: 0 !important;
+      }
+    }
+    & #identity-icon-box:not([open]), #identity-icon-box[open] {
+      margin-inline-start: -8px !important;
+      margin-inline-end: auto !important; 
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+}
+  
+@media (-moz-bool-pref: "bubble.clean.pinned-grid-bg") {
+  .tabbrowser-tab[pinned]:not([zen-essential="true"]) .tab-stack .tab-background {
+    border: 1px solid #ffffff13 !important;
+  }
+  .tabbrowser-tab[pinned]:not([zen-essential="true"])
+  .tab-stack
+  .tab-background:is([selected], [multiselected]) {
+    border: 1px solid #ffffff13 !important;
+  }
+  .tabbrowser-tab:is([pinned]):not([zen-essential="true"]) .tab-background {
+    border: 1px solid color-mix(in srgb, var(--tab-group-color-gray-invert) 14%, transparent) !important;
+    border-top: 1px solid #ffffff2d !important;
+    border-bottom: 1px solid #4442441f !important;
+    background-color: rgba(255, 255, 255, 0.07) !important;
+  }
+}

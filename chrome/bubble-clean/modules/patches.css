@@ -1,0 +1,79 @@
+/* Padding Icon */
+#zen-sidebar-top-buttons,
+#zen-sidebar-top-buttons-customization-target {
+  & toolbarbutton:not(.titlebar-button) {
+    padding: 0px !important;
+    margin-left: -2px !important;
+    margin-top: 1px !important;
+  }
+}
+
+/* Window controls shadowing fix by @taroj1205 */
+#zen-sidebar-splitter {
+  opacity: 0 !important;
+  border: none !important;
+  min-width: 0 !important;
+  width: 5px !important;
+}
+&:has(#navigator-toolbox:hover) #zen-sidebar-splitter,
+#zen-sidebar-splitter:hover,
+#zen-sidebar-splitter:hover:active {
+  width: 5px !important;
+}
+#tabbrowser-tabpanels[zen-split-view="true"]
+  .browserSidebarContainer.deck-selected {
+  outline: 0px solid color-mix(in srgb, var(--zen-primary-color) 50%, transparent) !important;
+}
+
+/* Drop Shadow */
+& #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0001), 0 6px 20px rgba(0, 0, 0, 0.0001) !important;
+  --uc-tweak-rounded-corners-shadow-color: #141515 !important;
+}
+
+/* Turn workspace indicator (icon + name) into a fake tab separator */
+.zen-current-workspace-indicator {
+  all: unset !important;
+  background: white !important;
+  opacity: 0.1 !important;
+  margin: 8px auto 0px !important;
+  border: none !important;
+  height: 1px !important;
+  width: 100% !important;
+  display: block !important;
+  padding: 0px !important;
+  & * {
+    display: none !important;
+  }
+}
+#zen-current-workspace-indicator-container {
+  margin-bottom: 4px !important;
+}
+
+/* No Sidebar Scrollbar */
+
+scrollbox:nth-child(5) {
+  scrollbar-width: none !important;
+}
+
+/* Hides the name of the extension on tabs loaded from the extension */
+
+#urlbar #identity-box.extensionPage #identity-icon-label {
+  display: none !important;
+}
+
+/* makes the tab stay visible while being closed as well as makes the transition a bit slower */
+
+.tabbrowser-tab:not([pinned], [fadein]) {
+  transition-duration: 240ms, 240ms !important;
+  transition-timing-function: ease-out, ease-out !important;
+  visibility: visible !important;
+}
+.tab-content:not([fadein], [pinned]) .tab-icon-pending:not([fadein]),
+.tab-icon-image:not([fadein]),
+.tab-label:not([fadein]) {
+  visibility: visible !important;
+}
+.tab-label:not([fadein]) {
+  display: flex !important;
+}
