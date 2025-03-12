@@ -38,7 +38,8 @@
   }
 }
   
-@media (-moz-bool-pref: "bubble.clean.pinned-grid-bg") {
+@media (-moz-bool-pref: "bubble.clean.pinned-grid") {
+  /* grid pinned tab */
   .tabbrowser-tab[pinned]:not([zen-essential="true"]) .tab-stack .tab-background {
     border: 1px solid #ffffff13 !important;
   }
@@ -52,6 +53,51 @@
     border-top: 1px solid #ffffff2d !important;
     border-bottom: 1px solid #4442441f !important;
     background-color: rgba(255, 255, 255, 0.07) !important;
+  }
+  #navigator-toolbox[zen-sidebar-expanded="true"] {
+    & #tabbrowser-tabs {
+      & .tabbrowser-tab {
+        &[zen-pinned-changed="true"]:not([zen-essential])>.tab-stack>.tab-content>.tab-icon-stack {
+          left: unset !important;
+        }
+      }
+    }
+  }
+  #vertical-pinned-tabs-container>.zen-workspace-tabs-section {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    margin-top: 5px !important;
+    scrollbar-width: thin !important;
+  }
+  #vertical-pinned-tabs-container>.zen-workspace-tabs-section>.tabbrowser-tab[pinned] {
+    --toolbarbutton-inner-padding: 0;
+  }
+  #vertical-pinned-tabs-container > .zen-workspace-tabs-section {
+    gap: 1px !important;
+  }
+  .vertical-pinned-tabs-container-separator {
+    display: none !important;
+  }
+  #tabbrowser-arrowscrollbox .tabbrowser-tab:first-child {
+    margin-top: 3px !important;
+  }
+  #vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-close-button {
+    display: none !important;
+  }
+  #vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-button {
+    display: none !important;
+  }
+  #vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-label-container {
+    display: none !important;
+  }
+  #vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-pin-button {
+    display: none !important;
+  }
+  .tab-throbber:is([pinned]) {
+    margin-inline-end: unset !important;
+    margin-inline-start: unset !important;
   }
   #tabs-newtab-button {
     margin-top: 10px !important;
