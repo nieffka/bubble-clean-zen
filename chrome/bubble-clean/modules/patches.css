@@ -48,6 +48,8 @@
 }
 #zen-current-workspace-indicator-container {
   margin-bottom: 4px !important;
+  margin-left: 2px !important; 
+  width: 98% !important;
 }
 
 /* No Sidebar Scrollbar */
