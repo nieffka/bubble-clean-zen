@@ -1,0 +1,277 @@
+/* --- Context Menu --- */
+menupopup,
+panel {
+  --panel-background: color-mix(in srgb, var(--zen-primary-color) 25%, black 70%) !important;
+}
+
+#confirmation-hint {
+  --arrowpanel-color: var(--sidebar-text-color) !important;
+}
+
+.menu-iconic-left {
+  margin-inline-start: -2px !important;
+  filter: grayscale(1) brightness(1.5) !important;
+}
+
+/* Fix padding for extensions-related context menu on Windows */
+menu>.menu-iconic-text,
+menuitem>.menu-iconic-text {
+  padding-inline-start: calc(var(--fp-contextmenu-menuicon-margin-inline) - 10px) !important;
+}
+
+/* Fix padding for "Tabs on the right" & "Compact Mode" options on Windows */
+menuitem[checked="true"]>.menu-iconic-text {
+  padding-inline-start: 10px !important;
+}
+
+#zen-toolbar-context-tabs-right {
+  padding-inline-start: 34px !important;
+}
+
+#zen-toolbar-context-tabs-right[checked="true"] {
+  padding-inline-start: 8px !important;
+}
+
+#zen-context-menu-compact-mode {
+  padding-inline-start: calc(var(--fp-contextmenu-menuitem-padding-inline) + 18px + var(--fp-contextmenu-menuicon-margin-inline)) !important;
+}
+
+#zen-context-menu-compact-mode-hide-sidebar,
+#zen-context-menu-compact-mode-hide-toolbar,
+#zen-context-menu-compact-mode-hide-both {
+  padding-inline-start: 40px !important;
+}
+
+#zen-context-menu-compact-mode-hide-sidebar[checked="true"],
+#zen-context-menu-compact-mode-hide-toolbar[checked="true"],
+#zen-context-menu-compact-mode-hide-both[checked="true"] {
+  padding-inline-start: 16px !important;
+
+  & .menu-iconic-text {
+    padding-inline-start: 2px !important;
+  }
+}
+}
+
+/* Hiding unnecessary context menu */
+#context-savepage,
+#context-sendpagetodevice,
+#context-sep-sendlinktodevice,
+#context-sendlinktodevice,
+#context-selectall,
+#context-sep-selectall,
+#context-print-selection,
+#context-translate-selection,
+#context-searchselect-private,
+#context-openlinkinusercontext-menu,
+#context-openlink,
+#context-zenSplitLink,
+#context-savelink,
+#context-stripOnShareLink[disabled="true"],
+#context-zenAddToWebPanel,
+#context-sep-screenshots,
+#context-media-eme-separator,
+#context-viewvideo,
+#context-video-pictureinpicture,
+#context-media-sep-video-commands,
+#context-savevideo[disabled="true"],
+#context-copyvideourl[disabled="true"],
+#context-sendvideo,
+#context-video-fullscreen,
+#context-leave-dom-fullscreen,
+#context-media-loop,
+#context-media-playbackrate>.menu-right,
+#context-sep-open {
+  display: none !important;
+}
+#context-sendimage,
+#context-sep-sharing,
+#context-sep-setbackground,
+#context-viewimageinfo {
+  display: none !important;
+}
+/* Sidebar tab options */
+#context_openANewTab,
+#context_moveTabOptions,
+#context_reopenInContainer,
+#context_zenTabActions,
+#context_closeTabOptions,
+#context_closeTab,
+#context_closeDuplicateTabs[disabled="true"],
+#context_zenSplitTabs[disabled="true"],
+
+/* Sidebar toolbar options */
+#toggle_toolbar-menubar,
+#zen-toolbar-context-tabs-right,
+#toolbar-context-undoCloseTab,
+#toolbar-context-selectAllTabs,
+#toolbar-context-bookmarkSelectedTab,
+#toolbar-context-bookmarkSelectedTabs,
+#toolbar-context-reloadSelectedTab,
+#toolbar-context-reloadSelectedTabs,
+#viewToolbarsMenuSeparator,
+#toolbarItemsMenuSeparator,
+#toolbarNavigatorItemsMenuSeparator {
+  visibility: collapse !important;
+}
+
+#tabContextMenu, #contentAreaContextMenu {
+  --num-of-buttons-in-menu: 4;
+  --translation-factor: calc(var(--panel-width, 261px) / var(--num-of-buttons-in-menu));
+  --button-width: calc(var(--translation-factor) - 8px);
+  --button-height: 40px;
+  --button-bg-color-hover: color-mix(in srgb, white 7%, var(--arrowpanel-background) 93%);
+  --button-bg-color-active: color-mix(in srgb, white 12%, var(--arrowpanel-background) 88%);
+  --zen-appcontent-border: transparent 1px solid;
+  width: 285px !important;
+}
+
+/* Style for menu separators */
+menuseparator {
+  &::before {
+    opacity: 0.3;
+  }
+
+  /* Hide the first separator
+  &:first-of-type {
+    display: none !important;
+  } */
+  &:nth-of-type(4) {
+    display: none !important;
+  }
+  &:nth-of-type(7) {
+    display: none !important;
+  }
+}
+
+/* General styling for buttons */
+
+/*#context_zen-add-essential,
+#context_zen-remove-essential,
+#context_pinTab,
+#context_unpinTab,*/
+#context_toggleMuteTab,
+#context_bookmarkTab,
+#context_reloadTab,
+#context_duplicateTab,
+#context-media-pause,
+#context-media-mute,
+#context-media-unmute,
+#context-media-playbackrate,
+#context-media-showcontrols,
+#context-media-hidecontrols,
+#context-openlinkincontainertab,
+#context-bookmarklink,
+#context-savelinktopocket,
+#context-copylink,
+#context-viewimage,
+#context-saveimage,
+#context-copyimage-contents,
+#context-copyimage {
+  transform: translate(calc(var(--translation-factor) * var(--tab-index) + 1px), 0px);
+  order: calc(-20 + var(--tab-index));
+  margin-top: calc(0px - var(--button-height));
+  margin-bottom: 0px;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--button-bg-color);
+  background-position: center !important;
+
+  & .menu-text {
+    display: none !important;
+  }
+
+  &:hover {
+    background-color: var(--button-bg-color-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--button-bg-color-active) !important;
+  }
+}
+
+/* Individual button ordering */
+
+/* Tab actions */
+#context_reloadTab {
+  --tab-index: 0;
+  margin-top: 0px;
+}
+
+#context_duplicateTab {
+  --tab-index: 1;
+}
+
+#context_toggleMuteTab {
+  --tab-index: 2;
+}
+
+#context_bookmarkTab {
+  --tab-index: 3;
+}
+
+/* Video controls */
+#context-media-pause {
+  --tab-index: 0;
+  margin-top: 0px;
+}
+
+#context-media-mute {
+  --tab-index: 1;
+}
+
+#context-media-unmute {
+  --tab-index: 1;
+}
+
+#context-media-playbackrate {
+  --tab-index: 2;
+}
+
+#context-media-showcontrols {
+  --tab-index: 3;
+}
+
+#context-media-hidecontrols {
+  --tab-index: 3;
+}
+
+/* Link actions */
+#context-openlinkincontainertab {
+  --tab-index: 0;
+  margin-top: 0px;
+}
+
+#context-bookmarklink {
+  --tab-index: 1;
+}
+
+#context-savelinktopocket {
+  --tab-index: 2;
+}
+
+#context-copylink {
+  --tab-index: 3;
+}
+
+/* Image actions */
+#context-viewimage {
+  --tab-index: 0;
+  order: -16;
+  margin-top: 0px;
+}
+
+#context-saveimage {
+  --tab-index: 1;
+  order: -15;
+}
+
+#context-copyimage-contents {
+  --tab-index: 2;
+  order: -14;
+}
+
+#context-copyimage {
+  --tab-index: 3;
+  order: -13;
+}
