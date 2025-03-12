@@ -7,6 +7,24 @@
 .browserSidebarContainer {
   background-color: rgba(0,0,0,0.2) !important; 
 }
+#main-window {
+  #browser:has([zen-empty-tab="true"][selected="true"]) .browserStack {
+	  background-position: center !important;
+	  background-repeat: no-repeat !important;
+	  background-size: cover !important;
+	}
+}
+.browserStack {
+	browser {
+		background-color: transparent !important;
+	}
+}
+#browser:has([zen-empty-tab="true"][selected="true"]) .browserStack {
+	browser {
+		background-color: transparent !important;
+		opacity: 0 !important;
+	}
+}
 
 /* --- Workspace Button --- */
 
@@ -313,7 +331,12 @@
         margin-inline-start: unset !important;
 }
 .vertical-pinned-tabs-container-separator {
-  margin-bottom: 10px !important;
+  margin-bottom: 12px !important;
+  
+  #vertical-pinned-tabs-container .zen-workspace-tabs-section[hide-separator] & {
+    margin: 8px 0 12px !important;
+    max-height: none !important; 
+  }
 }
 #vertical-pinned-tabs-container {
   /* General Customization */
