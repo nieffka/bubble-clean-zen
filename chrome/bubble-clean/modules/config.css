@@ -10,7 +10,6 @@
   }
 
   /* Hide Title Bar */
-
   .titlebar-button {
     display: none !important;
   }
@@ -65,7 +64,7 @@
   }
   #vertical-pinned-tabs-container>.zen-workspace-tabs-section {
     display: grid !important;
-    grid-template-columns: repeat(3, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     margin-top: 5px !important;
@@ -94,6 +93,15 @@
   }
   #vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-pin-button {
     display: none !important;
+  }
+  #vertical-pinned-tabs-container > .zen-workspace-tabs-section[active] {
+    visibility: visible;
+  } 
+  #vertical-pinned-tabs-container > .zen-workspace-tabs-section[hidden]{
+    visibility: hidden;
+    }
+  #vertical-pinned-tabs-container>.zen-workspace-tabs-section>.tabbrowser-tab[pinned] {
+    --toolbarbutton-inner-padding: 0;
   }
   .tab-throbber:is([pinned]) {
     margin-inline-end: unset !important;
