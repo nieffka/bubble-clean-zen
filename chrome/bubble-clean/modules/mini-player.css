@@ -1,0 +1,199 @@
+/* --- Mini Media Player (Natsumi) --- */
+#zen-media-controls-toolbar > toolbaritem {
+  border-radius: 10px !important;
+  margin: 5px 0px !important;
+}
+
+@keyframes fadein-animation {
+  0% { opacity: 0; }
+  100% { opacity: 0.2; }
+}
+
+/* Smooth Infinite Gradient Animation */
+@keyframes glowing-gradient {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+#zen-media-current-time, #zen-media-duration {
+  font-variant-numeric: tabular-nums;
+}
+
+#zen-media-controls-toolbar {
+  & > toolbaritem {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    /* Default Glass Effect */
+    background: light-dark(rgba(235, 235, 235, 0.4),rgba(20, 20, 20, 0.3)) !important;
+    backdrop-filter: blur(20px) saturate(var(--zen-primary-color)) contrast(var(--zen-primary-color)) !important;
+
+    /* Gradient Layer (Initially Hidden) */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+  background: linear-gradient(
+  45deg,
+  color-mix(in srgb, var(--zen-primary-color) 5%, black),  
+  color-mix(in srgb, var(--zen-primary-color) 30%, black),  
+  color-mix(in srgb, var(--zen-primary-color) 75%, black),  
+  color-mix(in srgb, var(--zen-primary-color) 100%, black), /* Peak highlight */
+  color-mix(in srgb, var(--zen-primary-color) 50%, black),  
+  color-mix(in srgb, var(--zen-primary-color) 15%, black)  
+  );
+
+
+      background-size: 400% 400%;
+      opacity: 0;
+      filter: blur(30px);
+      z-index: -1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Box Shadow Effect */
+    box-shadow: 0 4px 10px light-dark(rgba(255, 255, 255, 0.3),rgba(0, 0, 0, 0.3));
+
+    &:hover {
+        background: light-dark(rgba(235, 235, 235, 1), rgba(20, 20, 20, 1)) !important;
+        box-shadow: 0 6px 15px light-dark(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+
+    /* Ensure the gradient layer stays visible */
+    &::before {
+        opacity: 0.3; /* Increase opacity */
+        z-index: 0; /* Make sure it's not hidden under the main background */
+        pointer-events: none;
+    }
+   }
+  }
+
+  /* When playing, enable animation */
+  &.playing > toolbaritem::before {
+    opacity: 0.65; /* Visible glow */
+    animation: glowing-gradient 10s infinite linear;
+  }
+
+  /* Enhance glow on hover when playing */
+  &.playing > toolbaritem:hover::before {
+    opacity: 0.6;
+  }
+  
+  #zen-media-controls-hbox {
+    scale: 0.9 !important;
+  }
+  
+  #zen-media-service-hbox {
+    padding-top: 5px !important;
+    transition: padding 0.15s ease-in-out !important;
+  }
+
+  #zen-media-title {
+    font-weight: 600 !important;
+  }
+
+  #zen-media-artist {
+    font-size: 10px !important;
+  }
+
+  #zen-media-info-vbox::before {
+    display: none !important;
+  }
+
+  #zen-media-progress-bar {
+    &::-moz-range-thumb {
+      scale: 1;
+      transition: scale 0.2s ease;
+    }
+
+    &::-moz-range-track, &::-moz-range-progress {
+      transition: height 0.2s ease;
+    }
+
+    &:hover {
+      &::-moz-range-thumb {
+        scale: 1.4;
+      }
+
+      &::-moz-range-track, &::-moz-range-progress {
+        height: calc(var(--progress-height) + 2px) !important;
+      }
+    }
+  }
+}
+#zen-media-controls-toolbar {
+  & #zen-media-focus-button::after {
+    display:none !important;
+  }
+}
+
+/* button animations miniplayer */
+#zen-media-focus-button,
+#zen-media-mute-button,
+#zen-media-playpause-button,
+#zen-media-nexttrack-button,
+#zen-media-previoustrack-button,
+#zen-media-close-button {
+    transition: opacity 0.3s ease-in-out, transform 0.17s ease-out;
+    opacity: 1;
+    filter: saturate(0.5) brightness(1.25) !important;
+}
+
+#zen-media-focus-button:hover,
+#zen-media-mute-button:hover,
+#zen-media-playpause-button:hover,
+#zen-media-nexttrack-button:hover,
+#zen-media-previoustrack-button:hover,
+#zen-media-close-button:hover {
+    opacity: 0.8;
+    transform: scale(1.11);
+}
+
+/* media info height increase animation */
+#zen-media-controls-toolbar .show-on-hover {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  padding: 0 6px;
+  pointer-events: none;
+  filter: blur(8px);
+  transition: max-height 0.3s ease, filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, padding 0.3s ease;
+}
+
+#zen-media-controls-toolbar:hover .show-on-hover {
+  max-height: 100px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 6px;
+  pointer-events: auto;
+  filter: blur(0);
+}
+
+/* Faster disappearance when unhovering */
+#zen-media-controls-toolbar:not(:hover) .show-on-hover {
+  transition: opacity 0.15s ease, filter 0.15s ease, transform 0.15s ease, padding 0.15s ease, max-height 0.2s ease;
+}
+
+/* Inner elements (timestamps) - With 0.2s delay */
+#zen-media-controls-toolbar .show-on-hover > * {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  filter: blur(8px);
+  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s, filter 0.3s ease 0.2s;
+}
+
+/* Timestamps appear 0.2s after toolbar starts expanding */
+#zen-media-controls-toolbar:hover .show-on-hover > * {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Fade out instantly when unhovering */
+#zen-media-controls-toolbar:not(:hover) .show-on-hover > * {
+  transition: opacity 0.15s ease, transform 0.15s ease, filter 0.15s ease;
+}
