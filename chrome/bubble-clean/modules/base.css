@@ -29,11 +29,13 @@
 /* --- Workspace Button --- */
 
 #zen-workspaces-button {
+  background-color: rgba(255, 255, 255, 0.03) !important;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1) !important;
   border-radius: 8px !important;
   border: 1px solid #ffffff0a !important;
-}
-#zen-workspaces-button {
+  container-type: initial !important;
+  width: auto !important;
+
   .subviewbutton {
     &[active="true"] {
       background: rgba(255, 255, 255, 0.1) !important;
@@ -46,33 +48,16 @@
       background: rgba(255, 255, 255, 0.2) !important;
       transition: 0.3s !important;
     }
-
-    &:after {
-      display: none !important;
-    }
-  }
-}
-
-/* Workspace Button Modifications */
-
-#zen-workspaces-button {
-  background-color: rgba(255, 255, 255, 0.04) !important;
-  border-radius: 8px !important;
-  border: 1px solid #ffffff0c !important;
-}
-
-#zen-workspaces-button {
-  .subviewbutton {
-    &[active="true"] {
-      background: rgba(255, 255, 255, 0.1) !important;
-      transition: 0.3s !important;
-      border: 1px solid #ffffff0a !important;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062) !important;
+    
+    &:active {
+      background-color: var(--toolbarbutton-active-background) !important;
     }
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.2) !important;
-      transition: 0.3s !important;
+    &[active] {
+      background-color: light-dark(rgba(255,255,255,0.42), rgba(255,255,255,0.2)) !important;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2) !important;
+      overflow: hidden !important;
+      position: relative;
     }
 
     &:after {
