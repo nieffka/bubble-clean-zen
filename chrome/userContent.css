@@ -20,7 +20,8 @@
     background: transparent !important;
   }
   .bg-neutral-background,
-  .bg-neutral-background-weak {
+  .bg-neutral-background-weak,
+  flex-left-nav-container[expanded="1"] #flex-left-nav-container {
     background: rgba(0, 0, 0, 0.1) !important;
   }
   .bg-\[color\:var\(--shreddit-content-background\)\] {
@@ -33,7 +34,7 @@
   shreddit-comment-tree {
     background-color: transparent !important;
   }
-}
+}-
 
 @-moz-document domain(chatgpt.com) {
   body, html,
