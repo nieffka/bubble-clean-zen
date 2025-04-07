@@ -1,8 +1,8 @@
 /* --- Context Menu --- */
-menupopup,
+/*menupopup,
 panel {
   --panel-background: color-mix(in srgb, var(--zen-primary-color) 25%, black 70%) !important;
-}
+}*/
 
 #confirmation-hint {
   --arrowpanel-color: var(--sidebar-text-color) !important;
