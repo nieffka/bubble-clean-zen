@@ -1,6 +1,6 @@
 # Bubble Clean Zen Browser 🫧
 ## ▶️ Preview
-![bubble-clean-preview](https://github.com/user-attachments/assets/00e49e5f-5474-4fc9-ac5d-38e7671b57a4)
+![bubble-clean-preview](https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/main.png)
 
 ## ⚙️ Config
 https://github.com/user-attachments/assets/d617851b-3ea9-4f44-93ce-cb3ddacdbe5f
