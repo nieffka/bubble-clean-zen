@@ -111,3 +111,27 @@
     margin-top: 10px !important;
   }
 }
+
+@media not (-moz-bool-pref: "bubble.clean.show-workspace-name") {
+  /* Turn workspace indicator (icon + name) into a fake tab separator */
+   .zen-current-workspace-indicator {
+     all: unset !important;
+     background: white !important;
+     margin: 58px auto 0px !important;
+     position: absolute !important;
+     opacity: 0.05 !important;
+     border: none !important;
+     height: 1px !important;
+     width: 98% !important;
+     padding: 0px !important;
+     & * {
+       display: none !important;
+     }
+  }
+  #zen-current-workspace-indicator-container {
+    margin-bottom: 15px !important;
+    margin-left: 2px !important; 
+    width: 100% !important;
+    min-width: 0px !important;
+  }
+}
