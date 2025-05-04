@@ -242,13 +242,13 @@
 }
 
 /* Change the background color of the first essential tab */
-#zen-essentials-container > tab:nth-child(1) > stack:nth-child(1) > vbox:nth-child(1) {
+.zen-essentials-container > .tabbrowser-tab:nth-child(1) > stack:nth-child(1) > vbox:nth-child(1) {
   background-color: rgba(255, 100, 100, 0.15) !important;
   box-shadow: none !important;
 }
 
 /* Change the background color of the second essential tab */
-#zen-essentials-container > tab:nth-child(2) > stack:nth-child(1) > vbox:nth-child(1) {
+.zen-essentials-container > .tabbrowser-tab:nth-child(2) > stack:nth-child(1) > vbox:nth-child(1) {
   background-color: rgba(93, 155, 255, 0.15) !important;
   box-shadow: none !important;
 }
@@ -259,13 +259,14 @@
   border-bottom: 1px solid #4442441f !important;
 }
 
-#zen-essentials-container .tab-background {
+.zen-essentials-container .tabbrowser-tab {
+  .tab-background {
     border: 1px solid color-mix(in srgb, var(--tab-group-color-gray-invert) 14%, transparent) !important;
     border-top: 1px solid #ffffff2d !important;
     border-bottom: 1px solid #4442441f !important;
-    background-color: rgba(255, 255, 255, 0.07) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
 }
-
 /* Audio Indicator */
 #zen-essentials-container .tabbrowser-tab[pinned] {
   &:is([soundplaying]) .tab-background {
