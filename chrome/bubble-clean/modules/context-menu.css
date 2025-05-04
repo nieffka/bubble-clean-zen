@@ -117,7 +117,7 @@ menuitem[checked="true"]>.menu-iconic-text {
 
 #tabContextMenu, #contentAreaContextMenu {
   --num-of-buttons-in-menu: 4;
-  --translation-factor: calc(var(--panel-width, 261px) / var(--num-of-buttons-in-menu));
+  --translation-factor: calc(var(--panel-width, 282px) / var(--num-of-buttons-in-menu));
   --button-width: calc(var(--translation-factor) - 8px);
   --button-height: 40px;
   --button-bg-color-hover: color-mix(in srgb, white 7%, var(--arrowpanel-background) 93%);
