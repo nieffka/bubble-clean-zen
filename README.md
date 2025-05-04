@@ -11,6 +11,7 @@ go to `about:config`, type and click add button as boolean:
 | `bubble.clean.hide-single-toolbar-icon`       | `true`                | Hide icons in urlbar (single toolbar)|
 | `bubble.clean.show-titlebar`       | `true`                | Show titlebar in hover|
 | `bubble.clean.pinned-grid`       | `true`                |Change pinned tab to grid style|
+| `bubble.clean.show-workspace-name`       | `true`                |Show workspace name indicator|
 
 #### 💠 Copy Link Button setting
 ![image](https://github.com/user-attachments/assets/46fee675-8b0f-4ed8-b0ea-c34fd013f28b)
