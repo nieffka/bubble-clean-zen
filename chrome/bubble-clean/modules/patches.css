@@ -8,6 +8,11 @@
   }
 }
 
+/* Hide Double Audio Button */
+.button-background {
+  display: none !important;
+}
+
 /* Window controls shadowing fix by @taroj1205 */
 #zen-sidebar-splitter {
   opacity: 0 !important;
@@ -29,27 +34,6 @@
 & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0001), 0 6px 20px rgba(0, 0, 0, 0.0001) !important;
   --uc-tweak-rounded-corners-shadow-color: #141515 !important;
-}
-
-/* Turn workspace indicator (icon + name) into a fake tab separator */
-.zen-current-workspace-indicator {
-  all: unset !important;
-  background: white !important;
-  opacity: 0.1 !important;
-  margin: 8px auto 0px !important;
-  border: none !important;
-  height: 1px !important;
-  width: 100% !important;
-  display: block !important;
-  padding: 0px !important;
-  & * {
-    display: none !important;
-  }
-}
-#zen-current-workspace-indicator-container {
-  margin-bottom: 4px !important;
-  margin-left: 2px !important; 
-  width: 98% !important;
 }
 
 /* No Sidebar Scrollbar */
