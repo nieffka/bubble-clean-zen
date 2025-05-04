@@ -333,9 +333,12 @@
 
       #urlbar-background {
         backdrop-filter: blur(5px) !important;
-        background: rgba(36, 35, 38, 0.5) !important; /* url-bgcolor */
+        background: light-dark(rgba(255, 255, 255, 0.42), rgba(0, 0, 0, 0.4)) !important;  /* url-bgcolor */
+        box-shadow: 0 0px 3px light-dark(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)) !important;
         transition: backdrop-filter 0.5s ease, background 0.5s ease;
       }
+      
+      
       
       @media not (-moz-bool-pref: "natsumi.debug.legacy") {
         #identity-box {
