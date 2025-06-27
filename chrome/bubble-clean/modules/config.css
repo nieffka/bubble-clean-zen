@@ -117,16 +117,16 @@
    .zen-current-workspace-indicator {
      all: unset !important;
      background: white !important;
-     margin: 58px auto 0px !important;
-     position: absolute !important;
-     opacity: 0.05 !important;
+     margin: 8px 6.5px 8px !important;
+     position: relative !important;
+     opacity: 0.1 !important;
      border: none !important;
      height: 1px !important;
-     width: 98% !important;
-     padding: 0px !important;
-     & * {
-       display: none !important;
-     }
+     width: 93.7% !important;
+     padding: 0.2px !important;
+       & * {
+         display: none !important;
+       }
   }
   #zen-current-workspace-indicator-container {
     margin-bottom: 15px !important;
