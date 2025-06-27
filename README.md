@@ -24,6 +24,7 @@ Go to `about:config` and set:
 | `zen.theme.content-element-separation`       | `4`                | Thinner web view borders|
 | `browser.tabs.allow_transparent_browser`       | `true`                | Allow transparency|
 | `widget.windows.mica`       | `true`                | Allow transparency|
+| `zen.view.experimental-no-window-controls`       | `true`                | Always hide titlebar in hover|
 
 For `v1.8b` above if you're transparency not working
 go to `about:config` and set:
