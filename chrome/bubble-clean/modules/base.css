@@ -314,16 +314,17 @@
 }
 .tab-throbber:is([pinned]) {
   margin-inline-end: unset !important;
-        margin-inline-start: unset !important;
+  margin-inline-start: unset !important;
 }
+
+/* Always show seperator bottom*/
 .vertical-pinned-tabs-container-separator {
-  margin-bottom: 12px !important;
-  
-  #vertical-pinned-tabs-container .zen-workspace-tabs-section[hide-separator] & {
-    margin: 8px 0 12px !important;
+  .zen-workspace-pinned-tabs-section[hide-separator] & {
+    margin: 8px auto 12px !important;
     max-height: none !important; 
   }
 }
+
 #vertical-pinned-tabs-container {
   /* General Customization */
   .tab-content:is([pinned]) {
