@@ -294,7 +294,7 @@
   & #tabbrowser-tabs {
     & .tabbrowser-tab {
       &[zen-pinned-changed="true"]:not([zen-essential])>.tab-stack>.tab-content>.tab-label-container>.tab-text {
-        margin-left: 26px !important;
+        margin-left: 0px !important;
       }
     }
   }
@@ -311,10 +311,6 @@
 }
 #vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-pin-button {
   display: none !important;
-}
-.tab-throbber:is([pinned]) {
-  margin-inline-end: unset !important;
-  margin-inline-start: unset !important;
 }
 
 /* Always show seperator bottom*/
