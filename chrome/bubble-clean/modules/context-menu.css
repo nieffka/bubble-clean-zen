@@ -8,8 +8,8 @@ panel {
   --arrowpanel-color: var(--sidebar-text-color) !important;
 }
 
-.menu-iconic-left {
-  margin-inline-start: -2px !important;
+.menu-icon {
+  margin-inline-start: -1px !important;
   filter: grayscale(1) brightness(1.5) !important;
 }
 
