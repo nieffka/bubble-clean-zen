@@ -3,7 +3,7 @@
 #zen-sidebar-top-buttons-customization-target {
   & toolbarbutton:not(.titlebar-button) {
     padding: 0px !important;
-    margin-left: -2px !important;
+    margin-left: -4px !important;
     margin-top: 1px !important;
   }
 }
