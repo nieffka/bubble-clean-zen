@@ -45,7 +45,7 @@ tab-group:not([split-view-group]) {
       color: var(--sidebar-text-color) !important;
       padding-left: 23px !important;
       margin: 0 !important;
-      margin-top: -3px !important;
+      margin-top: 0 !important;
       background-color: transparent !important;
       outline: none !important;
     }
@@ -117,6 +117,7 @@ tab-group:not([split-view-group]) {
       border-radius: 0px !important;
       margin-inline: 6px 4px !important;
     }
+    
     & > label::after {
       content: "" !important;
       position: relative !important;
@@ -152,7 +153,7 @@ tab-group:not([split-view-group]) {
     & .tab-group-label-container > label::after {
       content: "" !important;
       position: relative !important;
-      top: 40% !important;
+      top: 36% !important;
       transform: translateY(-50%) rotate(90deg) !important;
       width: 12px !important;
       height: 12px !important;
