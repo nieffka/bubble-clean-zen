@@ -35,7 +35,7 @@
   border: 1px solid #ffffff0a !important;
   container-type: initial !important;
   width: auto !important;
-
+  
   .subviewbutton {
     &[active="true"] {
       background: rgba(255, 255, 255, 0.1) !important;
@@ -48,10 +48,6 @@
       background: rgba(255, 255, 255, 0.2) !important;
       transition: 0.3s !important;
     }
-    
-    &:active {
-      background-color: var(--toolbarbutton-active-background) !important;
-    }
 
     &[active] {
       background-color: light-dark(rgba(255,255,255,0.42), rgba(255,255,255,0.2)) !important;
@@ -59,12 +55,13 @@
       overflow: hidden !important;
       position: relative;
     }
-
+    
     &:after {
       display: none !important;
     }
   }
 }
+
 
 /* makes the icons look nicer*/
 .zen-workspace-icon {
@@ -316,7 +313,7 @@
 /* Always show seperator bottom*/
 .vertical-pinned-tabs-container-separator {
   .zen-workspace-pinned-tabs-section[hide-separator] & {
-    margin: 8px auto 12px !important;
+    margin: 8px auto 8px !important;
     max-height: none !important; 
   }
 }
