@@ -34,30 +34,26 @@
   border-radius: 8px !important;
   border: 1px solid #ffffff0a !important;
   container-type: initial !important;
+  position: relative !important;
+  overflow: visible !important;
+  padding: 3px !important;
+  height: 25px !important;
   width: auto !important;
   
   .subviewbutton {
     &[active="true"] {
-      background: rgba(255, 255, 255, 0.1) !important;
       transition: 0.3s !important;
-      border: 1px solid #ffffff0a !important;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062) !important;
+      z-index: 1 !important;
     }
-
+    
     &:hover {
+      box-shadow: 0 0 4px rgba(0,0,0,0.2) !important;
       background: rgba(255, 255, 255, 0.2) !important;
       transition: 0.3s !important;
     }
-
-    &[active] {
-      background-color: light-dark(rgba(255,255,255,0.42), rgba(255,255,255,0.2)) !important;
-      box-shadow: 0 0 4px rgba(0,0,0,0.2) !important;
-      overflow: hidden !important;
-      position: relative;
-    }
     
     &:after {
-      display: none !important;
+      display: block !important;
     }
   }
 }
@@ -240,7 +236,7 @@
 
 /* Change the background color of the first essential tab */
 .zen-essentials-container > .tabbrowser-tab:nth-child(1) > stack:nth-child(1) > vbox:nth-child(1) {
-  background-color: rgba(255, 100, 100, 0.15) !important;
+  background-color: rgba(75, 100, 100, 0.15) !important;
   box-shadow: none !important;
 }
 
@@ -300,21 +296,16 @@
   margin-top: 4px !important;
   
 }
-#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-close-button {
-  display: none !important;
-}
-#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-button {
-  display: none !important;
-}
-#vertical-pinned-tabs-container .tabbrowser-tab[pinned] .tab-reset-pin-button {
+.tab-close-button:is([pinned]) {
   display: none !important;
 }
 
+
 /* Always show seperator bottom*/
-.vertical-pinned-tabs-container-separator {
+.pinned-tabs-container-separator {
   .zen-workspace-pinned-tabs-section[hide-separator] & {
     margin: 8px auto 8px !important;
-    max-height: none !important; 
+    max-height: unset !important; 
   }
 }
 
