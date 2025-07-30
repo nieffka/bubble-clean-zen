@@ -103,8 +103,7 @@
       }
     }
   }
-
-  /* Make pinned tabs auto-grow to span full width of row */
+  
   #vertical-pinned-tabs-container>.zen-workspace-tabs-section,
   .zen-workspace-pinned-tabs-section {
     display: grid !important;
@@ -121,16 +120,14 @@
       width: 100% !important;
     }
 
-
-    .vertical-pinned-tabs-container-separator {
+    .pinned-tabs-container-separator {
       position: absolute !important;
       bottom: 7px !important;
       left: 50% !important;
       transform: translateX(-50%) !important;
       width: calc(100% - var(--zen-toolbox-padding) * 0.9) !important;
-      opacity: 0.7;
+      opacity: 0.5;
     }
-
 
     #vertical-pinned-tabs-container>.zen-workspace-tabs-section>.tabbrowser-tab[pinned] {
       --toolbarbutton-inner-padding: 0;
@@ -156,7 +153,7 @@
      opacity: 0.1 !important;
      border: none !important;
      height: 1px !important;
-     width: 93.7% !important;
+     width: width: calc(100% - var(--zen-toolbox-padding) * 0.9) !important;
      padding: 0.2px !important;
        & * {
          display: none !important;
