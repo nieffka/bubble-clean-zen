@@ -11,8 +11,8 @@
 }
 
 #unified-extensions-view {
-  --uei-icon-size: 24px;
-  --extensions-in-row: 4;
+  --uei-icon-size: 16px;
+  --extensions-in-row: 5;
   width: 100% !important;
 
   :is(
@@ -67,7 +67,7 @@
   }
 
   .unified-extensions-item-action-button {
-    padding-right: 13px !important;
+    padding-right: 8px !important;
   }
 }
 
