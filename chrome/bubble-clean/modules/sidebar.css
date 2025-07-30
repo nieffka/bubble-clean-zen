@@ -11,6 +11,10 @@
     }
   }
 }
+#sidebar-main, #sidebar-header, #sidebar {
+  background: transparent !important;
+}
+
 #sidebar-search-container > #search-box,
 #viewButton {
   padding: 4px 8px !important;
