@@ -63,3 +63,14 @@ scrollbox:nth-child(5) {
 .tab-label:not([fadein]) {
   display: flex !important;
 }
+
+/* Fix inactive and unload opacity tab */
+.tab-icon-image {
+  @media -moz-pref("browser.tabs.fadeOutExplicitlyUnloadedTabs") {
+    &[pending][discarded] {
+      opacity: unset !important;
+      transition-property: filter, opacity;
+      transition-duration: 1s;
+    }
+  }
+}
