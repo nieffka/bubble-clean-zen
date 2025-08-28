@@ -1,8 +1,47 @@
+/* Folder */
+zen-folder {
+  & > .tab-group-label-container {
+    flex: 0 0 auto !important;
+    position: sticky !important;
+    top: 18 !important;
+    z-index: 1000 !important;
+    margin: 0 !important;
+    border-radius: calc(var(--border-radius-medium) + 2px) !important;
+    transition: transform 0.2s ease;
+    transition: background-color 0.2s ease, border-radius 0.2s ease-in-out;
+    opacity: 0.85 !important;
+
+    & > label {
+      margin: 0 0 0 3px !important;
+      background: transparent !important;
+      font-size: 11px !important;
+      border: unset !important;
+      font-weight: 500 !important;
+      text-align: unset !important;
+      color: inherit !important;
+      background-color: transparent !important;
+      outline: none !important;
+    }
+
+    & .tab-group-folder-icon {
+      width: 24px !important;
+      height: 22px !important;
+      margin-left: 5px !important;
+      margin-bottom: 2px !important;
+    }
+  }
+}
+
 /* Tab Group */
 tab-group:not([split-view-group]) {
   display: grid !important;
-  background: color-mix(in srgb, var(--tab-group-color-invert) 10%, transparent) !important;
-  border: 1px solid color-mix(in srgb, var(--tab-group-color-invert) 14%, transparent) !important;
+  background: color-mix(
+    in srgb,
+    var(--tab-group-color-invert) 10%,
+    transparent
+  ) !important;
+  border: 1px solid
+    color-mix(in srgb, var(--tab-group-color-invert) 14%, transparent) !important;
   border-radius: var(--border-radius-medium);
   margin: 2px 2px 2px 2px !important;
   margin-inline: 2px !important;
@@ -18,7 +57,7 @@ tab-group:not([split-view-group]) {
   & > vbox {
     padding-top: 2px !important;
   }
-  /* folder icon */
+  /* group icon */
   & .tab-group-label-container {
     flex: 0 0 auto !important;
     position: sticky !important;
@@ -75,7 +114,8 @@ tab-group:not([split-view-group]) {
       padding: 0 !important;
       font-size: 0 !important;
       margin: 0 !important;
-      transition: opacity 0.25s ease-in, font-size 0.25s ease-out, margin 0.25s ease-out, padding 0.25s ease-out !important;
+      transition: opacity 0.25s ease-in, font-size 0.25s ease-out,
+        margin 0.25s ease-out, padding 0.25s ease-out !important;
     }
     & .tab-group-label-container > label {
       background: transparent !important;
@@ -84,7 +124,6 @@ tab-group:not([split-view-group]) {
       text-align: unset !important;
       color: var(--sidebar-text-color) !important;
       padding-left: 23px !important;
-      
     }
     & .tab-group-label-container > label::before {
       content: "" !important;
@@ -104,7 +143,7 @@ tab-group:not([split-view-group]) {
 
   /* arrow icon */
   & .tab-group-label-container {
-      transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
     &:after {
       transition: transform 0.2s ease;
       display: none !important;
@@ -117,7 +156,7 @@ tab-group:not([split-view-group]) {
       border-radius: 0px !important;
       margin-inline: 6px 4px !important;
     }
-    
+
     & > label::after {
       content: "" !important;
       position: relative !important;
@@ -138,7 +177,8 @@ tab-group:not([split-view-group]) {
       z-index: -1 !important;
       opacity: 0 !important;
       transform: translateY(-10px) !important;
-      transition: opacity 0.25s ease-in, font-size 0.25s ease-out, margin 0.25s ease-out, padding 0.25s ease-out !important;
+      transition: opacity 0.25s ease-in, font-size 0.25s ease-out,
+        margin 0.25s ease-out, padding 0.25s ease-out !important;
       .tab-text {
         overflow: visible !important;
       }
@@ -158,19 +198,18 @@ tab-group:not([split-view-group]) {
       width: 12px !important;
       height: 12px !important;
     }
-
   }
-  
+
   &:not([collapsed]) {
     max-height: 500px !important;
     overflow: scroll !important;
     scrollbar-width: none !important;
   }
-  
+
   tab-group:has(tab[hidden]) {
     display: none !important;
   }
-  
+
   & tab:not([zen-glance-tab]) {
     overflow: visible !important;
     &:active {
@@ -182,11 +221,9 @@ tab-group:not([split-view-group]) {
       --tab-group-color-invert: transparent !important;
       --tab-group-color: transparent !important;
     }
-      margin-left: 8px !important;
-    
+    margin-left: 8px !important;
   }
   tab::before {
-      background: none !important;
-    }
-  
+    background: none !important;
+  }
 }
