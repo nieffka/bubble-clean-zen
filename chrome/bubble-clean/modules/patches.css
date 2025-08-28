@@ -30,6 +30,15 @@
   outline: 0px solid color-mix(in srgb, var(--zen-primary-color) 50%, transparent) !important;
 }
 
+/* Overflow separator */
+zen-workspace {
+  & > arrowscrollbox {
+    &[overflowing] {
+      --zen-scrollbar-overflow-background: unset !important;
+    }
+  }
+}
+
 /* Drop Shadow */
 & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0001), 0 6px 20px rgba(0, 0, 0, 0.0001) !important;
