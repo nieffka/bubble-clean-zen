@@ -78,13 +78,6 @@
       top: 0 !important;
     }
 
-    /*noinspection CssInvalidFunction*/
-    &:has(.findbar-textbox:is([status="notfound"])) {
-      @media not (-moz-bool-pref: "natsumi.findbar.disable-not-found-bg") {
-        background: color-mix(in srgb, light-dark(rgb(255, 146, 146), rgb(255, 100, 100)) 75%, transparent) !important;
-        box-shadow: 0 0 10px color-mix(in srgb, light-dark(rgb(255, 146, 146), rgb(255, 100, 100)) 75%, light-dark(black, white)) !important;
-      }
-    }
 
     /*noinspection CssInvalidPropertyValue*/
     .findbar-closebutton {
