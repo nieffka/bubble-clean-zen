@@ -263,6 +263,10 @@ menuseparator {
   }
 }
 
+#zen-context-menu-new-folder {
+  --menu-image: url("chrome://browser/skin/zen-icons/folder.svg");
+}
+
 #context-savepage {
   --menu-image: url("chrome://browser/skin/zen-icons/save.svg");
 }
