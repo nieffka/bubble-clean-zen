@@ -60,7 +60,7 @@ go to `about:config` and set:
 | Software   | `MicaForEveryone`  | [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone)                      |
 | Software   | `DWMBlurGlass`     | [DWMBlurGlass](https://github.com/Maplespe/DWMBlurGlass)                                   |
 
-Alternative You can use this DWMBlurGlass config or customize it to your liking.
+You can use this DWMBlurGlass config or customize it to your liking.
 ```
 [config]
 applyglobal=true
