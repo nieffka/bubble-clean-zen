@@ -5,11 +5,11 @@
 ## ⭐ Features
 | Image                                                                                                                                                                                                                                              | Description                   |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" width="300" />     | Grid compact extensions       |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" width="300" /> | Cleaner context menu w/ icons |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" width="300" />         | Grid pinned tab               |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" width="300" />   | Mini player                   |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="300" />           | Cleaner URL bar               |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" width="270" />     | Grid compact extensions       |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" width="270" /> | Cleaner context menu w/ icons |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" width="270" />         | Grid pinned tab               |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" width="270" />   | Mini player                   |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="270" />           | Cleaner URL bar               |
 
 
 ## ⚙️ Config
@@ -36,7 +36,6 @@ Go to `about:config` and set:
 | `zen.theme.content-element-separation`     | `4`    | Thinner web view borders      |
 | `browser.tabs.allow_transparent_browser`   | `true` | Allow transparency            |
 | `widget.windows.mica`                      | `true` | Allow transparency            |
-| `zen.view.experimental-no-window-controls` | `true` | Always hide titlebar in hover |
 
 For `v1.8b` above if you're transparency not working
 go to `about:config` and set:
@@ -59,6 +58,42 @@ go to `about:config` and set:
 | Font       | `Poppins`          | [Poppins](https://fonts.google.com/specimen/Poppins)                                       |
 | Extensions | `Copy Link Button` | [Copy Link Button](https://addons.mozilla.org/en-US/firefox/addon/copy-frame-or-page-url/) |
 | Software   | `MicaForEveryone`  | [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone)                      |
+| Software   | `DWMBlurGlass`     | [DWMBlurGlass](https://github.com/Maplespe/DWMBlurGlass)                                   |
+
+Alternative You can use this DWMBlurGlass config or customize it to your liking.
+```
+[config]
+applyglobal=true
+extendBorder=false
+reflection=false
+oldBtnHeight=false
+customAmount=true
+crossFade=true
+useAccentColor=false
+blurAmount=20.000000
+customBlurAmount=20.000000
+luminosityOpacity=0.650000
+activeTextColor=4278190080
+inactiveTextColor=4290032820
+activeTextColorDark=4294967295
+inactiveTextColorDark=4290032820
+activeBlendColor=1694498815
+inactiveBlendColor=1694498815
+activeBlendColorDark=1677721600
+inactiveBlendColorDark=1677721600
+glassIntensity=0.300000
+aeroColorBalance=0.080000
+aeroAfterglowBalance=0.430000
+aeroBlurBalance=0.490000
+blurMethod=0
+effectType=0
+crossfadeTime=160
+overrideAccent=false
+occlusionCulling=false
+disableOnBattery=true
+titlebtnGlow=false
+disableFramerateLimit=true
+```
 
 ## ✨ Special Thanks & Credits
 (sry if I'm missing some, just hit me some message)
