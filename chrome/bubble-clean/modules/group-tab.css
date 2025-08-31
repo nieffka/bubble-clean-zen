@@ -12,7 +12,7 @@ zen-folder {
     opacity: 0.85 !important;
 
     & > label {
-      margin: 0 0 0 3px !important;
+      margin: 0 0 0 0 !important;
       background: transparent !important;
       font-size: 11px !important;
       border: unset !important;

@@ -1,10 +1,466 @@
-/* PiP */
+/* === Natsumi PiP === */
 @-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
+  /*noinspection CssInvalidFunction*/
+  * {
+    --natsumi-primary-color: #a0d490;
+    --natsumi-colors-primary: color-mix(
+      in srgb,
+      var(--zen-primary-color) 50%,
+      black 50%
+    );
+    --natsumi-colors-secondary: color-mix(
+      in srgb,
+      var(--zen-colors-primary) 20%,
+      white 80%
+    );
+
+    @media (prefers-color-scheme: dark) {
+      --natsumi-colors-primary: color-mix(
+        in srgb,
+        var(--zen-primary-color) 20%,
+        #1d1d1d 80%
+      );
+      --natsumi-colors-secondary: color-mix(
+        in srgb,
+        var(--zen-primary-color) 30%,
+        #1d1d1d 70%
+      );
+      --natsumi-mat-hz-background: rgba(0, 0, 0, 0.2);
+      --natsumi-mat-hz-background-tinted: color-mix(
+        in srgb,
+        var(--zen-colors-secondary) 40%,
+        rgba(0, 0, 0, 0.8)
+      );
+    }
+
+    /* Material: Glass */
+    --natsumi-mat-ga-background: color-mix(
+      in srgb,
+      var(--zen-colors-secondary) 75%,
+      transparent
+    );
+    --natsumi-mat-ga-shadow-color: color-mix(
+      in srgb,
+      var(--zen-colors-secondary) 75%,
+      light-dark(black, white)
+    );
+    --toolbarbutton-hover-background: color-mix(
+      in srgb,
+      light-dark(#1d1d1d, #ebebeb) 10%,
+      transparent 90%
+    );
+    --toolbarbutton-active-background: light-dark(
+      rgba(0, 0, 0, 0.07),
+      rgba(255, 255, 255, 0.11)
+    );
+  }
+
+  @keyframes pip-fadein-html {
+    0% {
+      background-color: transparent;
+      scale: 0.8;
+    }
+
+    99% {
+      background-color: transparent;
+      scale: 1;
+    }
+
+    100% {
+      background-color: black;
+    }
+  }
+
+  @keyframes pip-fadein-player {
+    0% {
+      filter: blur(30px);
+      opacity: 0;
+    }
+
+    70% {
+      filter: blur(5px);
+    }
+
+    100% {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
   html {
+    animation: pip-fadein-html 0.5s ease !important;
     border: 0px solid rgba(255, 0, 0, 255) !important;
     border-radius: 1rem !important;
   }
-}
+
+
+  body[natsumi-scrolling] {
+    cursor: none !important;
+  }
+
+  .player-holder {
+    animation: pip-fadein-player 0.5s ease !important;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  #controls {
+    opacity: 1 !important;
+
+    #controls-bottom-gradient {
+      opacity: 0 !important;
+      transition: opacity 0.2s ease !important;
+    }
+
+    /*noinspection CssInvalidFunction*/
+    & > button {
+      opacity: 0 !important;
+      scale: 0.9 !important;
+      top: 0 !important;
+      border-radius: 50% !important;
+      transition: opacity 0.3s ease, top 0.3s ease, background-color 0.2s ease !important;
+      backdrop-filter: saturate(var(--natsumi-mat-hz-saturation))
+        contrast(var(--natsumi-mat-hz-contrast))
+        blur(var(--natsumi-mat-hz-blur-radius)) !important;
+      background-color: var(--natsumi-mat-hz-background) !important;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.5) !important;
+      background-size: 16px !important;
+      border: 2px solid
+        light-dark(rgba(20, 20, 20, 0.1), rgba(235, 235, 235, 0.1)) !important;
+
+      &:hover {
+        background-color: color-mix(
+          in srgb,
+          var(--natsumi-mat-ga-background) 80%,
+          white
+        ) !important;
+
+        @media (prefers-color-scheme: light) {
+          background-color: color-mix(
+            in srgb,
+            var(--natsumi-mat-ga-background) 80%,
+            black
+          ) !important;
+        }
+      }
+    }
+
+    #close,
+    #unpip,
+    #minimize {
+      -moz-context-properties: fill;
+      fill: light-dark(black, white) !important;
+    }
+
+    /*noinspection CssInvalidFunction*/
+    #controls-bottom {
+      opacity: 0 !important;
+      bottom: -5px !important;
+      padding: 10px 15px !important;
+      margin: 0 5px !important;
+      margin-bottom: 5px !important;
+      width: calc(100% - 10px) !important;
+      box-sizing: border-box !important;
+      transition: opacity 0.3s ease, bottom 0.3s ease !important;
+      left: calc(50% - 5px) !important;
+      transform: translateX(-50%) !important;
+
+      .start-controls,
+      .center-controls,
+      .end-controls {
+        border-radius: 18px !important;
+        background-color: var(--natsumi-mat-hz-background) !important;
+        border: 2px solid
+          light-dark(rgba(20, 20, 20, 0.1), rgba(235, 235, 235, 0.1)) !important;
+        backdrop-filter: saturate(3) contrast(2)
+          blur(var(--natsumi-mat-hz-blur-radius)) !important;
+        gap: 0 !important;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
+      }
+
+      #timestamp {
+        text-align: center !important;
+        width: 100% !important;
+        padding-inline: 12px !important;
+      }
+
+      #seekBackward,
+      #audio {
+        border-radius: 16px 4px 4px 16px !important;
+      }
+
+      #playpause,
+      #closed-caption {
+        border-radius: 4px !important;
+      }
+
+      #seekForward,
+      #fullscreen {
+        border-radius: 4px 16px 16px 4px !important;
+      }
+
+      #playpause::after,
+      #seekBackward::after,
+      #seekForward::after,
+      #audio::after,
+      #closed-caption::after {
+        left: 50% !important;
+        translate: -50% 0 !important;
+      }
+
+      #seekForward::after,
+      #seekBackward::after {
+        top: -54.5px !important;
+      }
+
+      .start-controls {
+        @media (width > 300px) {
+          display: flex !important;
+        }
+
+        @media (width <= 440px) {
+          border-width: 0 !important;
+        }
+
+        /*noinspection CssInvalidFunction*/
+        #timestamp {
+          font-size: 12px !important;
+          color: light-dark(black, white) !important;
+        }
+      }
+
+      .end-controls {
+        display: flex !important;
+      }
+
+      #scrubber,
+      #audio-scrubber {
+        margin: 0 !important;
+
+        /*noinspection CssInvalidFunction*/
+        &::-moz-range-progress {
+          background: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        /*noinspection CssInvalidFunction*/
+        &::-moz-range-track {
+          background-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        /*noinspection CssInvalidFunction*/
+        &::-moz-range-thumb {
+          background-color: rgba(255, 255, 255, 0.7) !important;
+          width: 12px !important;
+          height: 12px !important;
+          border: none !important;
+        }
+      }
+
+      #scrubber {
+        opacity: 1 !important;
+        width: calc(100% - 4px) !important;
+        height: 6px !important;
+        padding: 0 !important;
+        border: 2px solid
+          light-dark(rgba(20, 20, 20, 0.1), rgba(235, 235, 235, 0.1)) !important;
+        background-color: var(--natsumi-mat-hz-background) !important;
+        backdrop-filter: saturate(3) contrast(2)
+          blur(var(--natsumi-mat-hz-blur-radius)) !important;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
+
+        &::-moz-range-track {
+          height: 6px !important;
+          border-radius: 5px !important;
+          background: transparent !important;
+        }
+
+        &::-moz-range-progress {
+          height: 6px !important;
+          border-radius: 3px 0 0 3px !important;
+          width: 100px !important;
+        }
+
+        &::-moz-range-thumb {
+          border: 4px solid var(--natsumi-mat-hz-background) !important;
+          backdrop-filter: saturate(3) contrast(2)
+            blur(var(--natsumi-mat-hz-blur-radius)) !important;
+        }
+      }
+
+      #audio-scrubber {
+        &::-moz-range-thumb {
+          width: 8px !important;
+          height: 8px !important;
+          opacity: 1 !important;
+        }
+      }
+
+      /*noinspection CssInvalidFunction*/
+      button {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+        -moz-context-properties: fill;
+        fill: light-dark(black, white) !important;
+        border-radius: 6px !important;
+        opacity: 1 !important;
+
+        &[disabled] {
+          cursor: default !important;
+          fill-opacity: 0.4 !important;
+
+          &::after {
+            display: none !important;
+          }
+        }
+
+        &:not([disabled]) {
+          &:hover {
+            background-color: var(--natsumi-button-hover-color) !important;
+          }
+
+          &:active,
+          &[aria-expanded="true"] {
+            background-color: var(--natsumi-button-active-color) !important;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
+          }
+        }
+      }
+
+      .controls-bottom-upper {
+        margin: 0 !important;
+        width: 100% !important;
+
+        .scrubber-no-drag {
+          margin: 0 !important;
+        }
+
+        &:has(#scrubber[hidden]) {
+          display: none !important;
+          margin: 0 !important;
+        }
+      }
+
+      .controls-bottom-lower {
+        margin: 0 !important;
+      }
+    }
+
+    #settings {
+      bottom: 80px !important;
+      right: 0 !important;
+      display: block !important;
+      transition: opacity 0.3s ease, bottom 0.3s ease !important;
+
+      .arrow {
+        display: none !important;
+      }
+
+      /*noinspection CssInvalidFunction*/
+      label,
+      legend {
+        font-family: system-ui !important;
+        color: light-dark(black, white) !important;
+      }
+
+      /*noinspection CssInvalidFunction*/
+      .slider {
+        background-color: rgba(0, 0, 0, 0.07) !important;
+        outline: 1px solid light-dark(#8f8f9d, #bfbfc9) !important;
+
+        /*noinspection CssInvalidFunction*/
+        &::before {
+          background-color: light-dark(#8f8f9d, #bfbfc9) !important;
+        }
+      }
+
+      input {
+        /*noinspection CssInvalidFunction*/
+        &:checked {
+          border-color: light-dark(
+            var(--natsumi-colors-primary),
+            var(--natsumi-primary-color)
+          ) !important;
+        }
+
+        /*noinspection CssInvalidFunction*/
+        &:checked + .slider {
+          background-color: light-dark(
+            var(--natsumi-colors-primary),
+            var(--natsumi-primary-color)
+          ) !important;
+          outline-color: light-dark(
+            var(--natsumi-colors-primary),
+            var(--natsumi-primary-color)
+          ) !important;
+
+          &::before {
+            background-color: white !important;
+          }
+        }
+      }
+
+      /*noinspection CssInvalidFunction*/
+      & > .panel-fieldset {
+        background-color: var(--natsumi-mat-hz-background) !important;
+        backdrop-filter: blur(15px);
+        backdrop-filter: saturate(var(--natsumi-mat-hz-saturation))
+          contrast(var(--natsumi-mat-hz-contrast))
+          blur(var(--natsumi-mat-hz-blur-radius)) !important;
+        border: 1px solid
+          light-dark(rgba(20, 20, 20, 0.1), rgba(235, 235, 235, 0.1)) !important;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.5) !important;
+        padding: 0 !important;
+
+        @media -moz-pref("natsumi.pip.material", "tinted-haze") {
+          background-color: var(--natsumi-mat-hz-background-tinted) !important;
+        }
+      }
+
+      /*noinspection CssInvalidFunction*/
+      .grey-line {
+        width: calc(100% - 10px) !important;
+        margin: 0 auto !important;
+        height: 2px !important;
+        border-radius: 2px !important;
+        background-color: light-dark(
+          rgba(20, 20, 20, 0.1),
+          rgba(235, 235, 235, 0.1)
+        ) !important;
+      }
+
+      &.hide {
+        bottom: 70px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+
+        & > .panel-fieldset {
+          backdrop-filter: none !important;
+        }
+      }
+    }
+  }
+
+  body:fullscreen #controls[showing]:hover,
+  body:not(:fullscreen) #controls:hover {
+    #controls-bottom-gradient {
+      opacity: 1 !important;
+    }
+
+    & > button {
+      opacity: 1 !important;
+      top: 10px !important;
+    }
+
+    #controls-bottom {
+      opacity: 1 !important;
+      bottom: 5px !important;
+    }
+  }
+
+  body:fullscreen {
+    &:has(#controls:not([showing])) {
+      cursor: none !important;
+    }
+  }
+    }
 
 /* Hide attention icon (green dot) under tab icons */
 #navigator-toolbox {
