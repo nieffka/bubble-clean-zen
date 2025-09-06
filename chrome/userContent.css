@@ -15,12 +15,14 @@
   body,
   html {
     background: transparent !important;
+    font-family: "Atkinson Hyperlegible", sans-serif !important;
   }
   #comment-tree {
     background: transparent !important;
   }
   .bg-neutral-background,
   .bg-neutral-background-weak,
+  main#main-content,
   flex-left-nav-container[expanded="1"] #flex-left-nav-container {
     background: rgba(0, 0, 0, 0.1) !important;
   }
@@ -34,14 +36,20 @@
   shreddit-comment-tree {
     background-color: transparent !important;
   }
-}-
+}
 
 @-moz-document domain(chatgpt.com) {
-  body, html,
-    .bg-token-main-surface-primary, /* Navbar */
-    .bg-token-sidebar-surface-primary, /* Sidebar */
-    .bg-token-sidebar-surface-primary * /* All sidebar elements */ {
-    background: transparent !important;
+  .dark {
+    --bg-primary: rgba(0, 0, 0, 0.1) !important;
+	--bg-elevated-secondary: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  nav {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .bg-token-message-surface {
+    background-color: rgba(0, 0, 0, 0.2) !important;
   }
 }
 
