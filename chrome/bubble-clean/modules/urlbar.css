@@ -24,7 +24,6 @@
 }
 
 /* Search engine container bg */
-
 .search-one-offs {
     padding: 4px !important;
     margin-bottom: 6px !important;
@@ -42,109 +41,9 @@
   display: flex !important;
 }
 
-/* ==== Natsumi URLbar ==== */
+/* --- Natsumi URLbar --- */
 
-/* Animations */
-
-@keyframes urlbar-appear {
-  0% {
-    margin-top: calc(var(--zen-toolbar-height) * -2);
-  }
-  75% {
-    margin-top: 20px;
-  }
-  100% {
-    margin-top: 0;
-  }
-}
-
-@keyframes urlbar-appear-sideways {
-  0% {
-    margin-left: -28vw;
-  }
-  75% {
-    margin-left: 20px;
-  }
-  100% {
-    margin-left: calc(-1 * var(--urlbar-margin-inline));
-  }
-}
-
-@keyframes results-appear {
-  0% {
-    opacity: 0;
-    margin-top: -90vh;
-  }
-  50% {
-    opacity: 0;
-    margin-top: -90vh;
-  }
-  75% {
-    opacity: 0;
-    margin-top: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes individual-result-appear {
-  0%   {
-    opacity: 0;
-    scale: 0.5;
-    background: var(--zen-colors-tertiary);
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-    scale: 1.1;
-    background: light-dark(var(--zen-primary-bg), var(--zen-colors-primary));
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-    background: transparent;
-  }
-}
-
-@keyframes individual-result-appear-subtle {
-  0%   {
-    opacity: 1;
-    scale: 1;
-    background: transparent;
-  }
-  60% {
-    scale: 1.05;
-    background: light-dark(var(--zen-primary-bg), var(--zen-colors-primary));
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-    background: transparent;
-  }
-}
-
-@keyframes pinned-icon-appear {
-  0% {
-    opacity: 0;
-    scale: 0.5
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-    scale: 1.1;
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-  }
-}
 /* URLbar styling */
-
 @media not (-moz-bool-pref: "natsumi.urlbar.disabled") {
   * {
     --urlbarView-item-block-padding: 4px !important;
@@ -370,7 +269,6 @@
 
       
   /* URLbar hover animation */
-    
     &:not([breakout-extend="true"]) {
       #urlbar-background {
         transition: background 0.2s ease;
@@ -490,20 +388,17 @@
   }
   
   /* Results URL display */
-  
   .urlbarView-url {
     --urlbarView-second-line-indent: calc(var(--urlbarView-icon-margin-start) + var(--urlbarView-icon-margin-end) + var(--urlbarView-favicon-width) + 2px);
     color: var(--zen-colors-primary-foreground) !important;
   }
   
   /* Wrapped indents fix */
-  
   .urlbarView-action {
     --urlbarView-second-line-indent: calc(var(--urlbarView-icon-margin-start) + var(--urlbarView-icon-margin-end) + var(--urlbarView-favicon-width) + 2px);
   }
   
   /* Make borders more visible */
-  
 .urlbarView-body-inner, .search-one-offs {
     border-top: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.2)) !important;
   }

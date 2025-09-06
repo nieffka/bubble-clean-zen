@@ -141,22 +141,26 @@
    .zen-current-workspace-indicator {
      all: unset !important;
      background: white !important;
-     margin: 8px 6.5px 8px !important;
+     margin: 8px 6.5px !important;
      position: relative !important;
      opacity: 0.1 !important;
      border: none !important;
      height: 1px !important;
      width: width: calc(100% - var(--zen-toolbox-padding) * 0.9) !important;
      padding: 0.2px !important;
-       & * {
-         display: none !important;
-       }
+     pointer-events: none !important;
+     
+     & .zen-current-workspace-indicator-icon {
+       display: none !important;
+     }
+     & .zen-current-workspace-indicator-name {
+       visibility: hidden !important;
+       height: 1px !important;
+     }
   }
-  #zen-current-workspace-indicator-container {
-    margin-bottom: 15px !important;
-    margin-left: 2px !important; 
-    width: 100% !important;
-    min-width: 0px !important;
+
+  zen-workspace {
+    height: unset !important;
   }
 }
 
@@ -167,16 +171,19 @@
     border-radius: 20px !important;
     left: 50%;
     position: absolute !important;
+    overflow: hidden !important;
+    animation: fadeIn 0.15s cubic-bezier(0.12, 0, 0.39, 0) !important;
+
   }
-     
   #urlbar[open] #urlbar-background {
     margin: 4px !important;
+    border-radius: 15px !important;
+    backdrop-filter: blur(30px) saturate(130%) !important;
+    opacity: 1 !important;
   }
-     
   #urlbar .urlbarView-body-inner {
     display: none !important;
   }
-     
   #urlbar[usertyping] .urlbarView-body-inner {
     display: block !important;
   }

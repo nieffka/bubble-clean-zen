@@ -3,7 +3,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Browser Container Transparency */
+/* --- Browser Container Transparency --- */
 .browserSidebarContainer {
   background-color: rgba(0,0,0,0.2) !important; 
 }
@@ -25,6 +25,35 @@
 		opacity: 0 !important;
 	}
 }
+
+/* --- Glance --- */
+:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
+  & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer, & #tabbrowser-tabpanels[dragging-split="true"] {
+    &.browserSidebarContainer {
+      :root:not([zen-no-padding="true"]) & {
+        transform: unset !important;
+      }
+    }
+  }
+}
+.browserSidebarContainer.zen-glance-overlay {
+  & .browserContainer {
+    height: 98% !important;
+    border: 0px solid rgba(255, 0, 0, 255) !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 1rem !important;
+  }
+}
+#tabbrowser-tabs {
+  & .tabbrowser-tab {
+    & .tabbrowser-tab {
+      & .tab-content {
+        padding: 0 2px;
+      }
+    }
+  }
+}
+
 
 /* --- Workspace Button --- */
 
@@ -149,10 +178,10 @@
     opacity: 1;
     transition: transform 0.2s ease;
     
-    & .tab-background, .tab-content .tab-icon-stack, .tab-content .tab-label-container {
+      & .tab-background, .tab-content .tab-icon-stack, .tab-content .tab-label-container {
       transition: background 0.2s ease, opacity 0.2s ease;
     }
-  }
+}
 }
 
 .tabbrowser-tab:active {
@@ -295,7 +324,6 @@
 }
 #vertical-pinned-tabs-container>.zen-workspace-tabs-section {
   margin-top: 4px !important;
-  
 }
 .tab-close-button:is([pinned]) {
   display: none !important;

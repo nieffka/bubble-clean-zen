@@ -68,6 +68,8 @@ tab-group:not([split-view-group]) {
     border-radius: calc(var(--border-radius-medium) + 2px) !important;
     transition: transform 0.2s ease;
     transition: background-color 0.2s ease, border-radius 0.2s ease-in-out;
+    display: block;
+
     &:after {
       transition: transform 0.2s ease-out !important;
       display: none !important;
@@ -160,7 +162,7 @@ tab-group:not([split-view-group]) {
     & > label::after {
       content: "" !important;
       position: relative !important;
-      top: 40% !important;
+      top: 50% !important;
       transform: translateY(-50%) rotate(180deg) !important;
       width: 12px !important;
       height: 12px !important;
@@ -193,7 +195,7 @@ tab-group:not([split-view-group]) {
     & .tab-group-label-container > label::after {
       content: "" !important;
       position: relative !important;
-      top: 36% !important;
+      top: 50% !important;
       transform: translateY(-50%) rotate(90deg) !important;
       width: 12px !important;
       height: 12px !important;
@@ -226,4 +228,14 @@ tab-group:not([split-view-group]) {
   tab::before {
     background: none !important;
   }
+}
+
+tab-group[collapsed] .tab-group-container {
+  display: none !important;
+}
+tab-group .tab-group-label-container {
+  display: block;
+}
+tab-group .tab-group-label-container .tab-group-label {
+  display: block;
 }

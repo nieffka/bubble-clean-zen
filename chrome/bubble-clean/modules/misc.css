@@ -93,7 +93,6 @@
     border-radius: 1rem !important;
   }
 
-
   body[natsumi-scrolling] {
     cursor: none !important;
   }
@@ -249,7 +248,7 @@
         /*noinspection CssInvalidFunction*/
         &::-moz-range-thumb {
           background-color: rgba(255, 255, 255, 0.7) !important;
-          width: 12px !important;
+          width: 10px !important;
           height: 12px !important;
           border: none !important;
         }
@@ -266,7 +265,8 @@
         backdrop-filter: saturate(3) contrast(2)
           blur(var(--natsumi-mat-hz-blur-radius)) !important;
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
-
+        overflow: hidden;
+        
         &::-moz-range-track {
           height: 6px !important;
           border-radius: 5px !important;
@@ -460,7 +460,7 @@
       cursor: none !important;
     }
   }
-    }
+}
 
 /* Hide attention icon (green dot) under tab icons */
 #navigator-toolbox {

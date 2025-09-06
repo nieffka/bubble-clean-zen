@@ -1,3 +1,11 @@
+/* Background blur URLbar */
+#browser:has(#urlbar[open][zen-floating-urlbar="true"]) .browserContainer {
+  filter: blur(5px) brightness(50%) !important;
+}
+#browser .browserContainer {
+  transition: all 0.2s ease-in-out !important;
+}
+
 /* Highlight urlbar when loading the page by @wysh3
  * https://github.com/wysh3/Zen-Mods/tree/main/Fluid%20URL */
 #urlbar:not([breakout-extend="true"]) {
@@ -15,7 +23,7 @@
   }
 }
 &:has(#reload-button[displaystop="true"]) {
-  /* When 'Stop' button is shown isntead of 'Reload' */
+  /* When 'Stop' button is shown instead of 'Reload' */
   .urlbar-input-container::before {
     animation-play-state: running;
     opacity: 1;
@@ -59,4 +67,85 @@ browser, .browserSidebarContainer.deck-selected {
 #urlbar-background {
   --fadein-duration: 0.5s;
   --animation-duration: 1s;
+}
+
+/* URLbar animation */
+@keyframes urlbar-appear {
+  0% {
+    margin-top: calc(var(--zen-toolbar-height) * -2);
+  }
+  75% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes results-appear {
+  0% {
+    opacity: 0;
+    margin-top: -90vh;
+  }
+  50% {
+    opacity: 0;
+    margin-top: -90vh;
+  }
+  75% {
+    opacity: 0;
+    margin-top: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes individual-result-appear {
+  100% {
+    opacity: 1;
+    scale: 1;
+    background: transparent;
+  }
+}
+
+@keyframes individual-result-appear-subtle {
+  0%   {
+    opacity: 1;
+    scale: 1;
+    background: transparent;
+  }
+  60% {
+    scale: 1.05;
+    background: light-dark(var(--zen-primary-bg), var(--zen-colors-primary));
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    background: transparent;
+  }
+}
+
+@keyframes pinned-icon-appear {
+  0% {
+    opacity: 0;
+    scale: 0.5
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    scale: 1.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Glance animation */
+.browserSidebarContainer.zen-glance-background.deck-selected {
+  filter: blur(5px) brightness(50%);
+  transition: all 0.2s ease !important;
+  transform: unset !important;
 }
