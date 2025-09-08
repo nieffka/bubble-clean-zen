@@ -159,6 +159,8 @@ browser, .browserSidebarContainer.deck-selected {
 }
 
 #tabbrowser-tabpanels > hbox.deck-selected:not(:has(.zen-glance-background)):not([zen-split="true"]) {
+  z-index: 1;
   opacity: 1 !important;
   position: relative !important;
+  pointer-events: auto !important;
 }
