@@ -6,7 +6,6 @@ zen-folder {
     top: 18 !important;
     z-index: 1000 !important;
     margin: 0 !important;
-    border-radius: calc(var(--border-radius-medium) + 2px) !important;
     transition: transform 0.2s ease;
     transition: background-color 0.2s ease, border-radius 0.2s ease-in-out;
     opacity: 0.85 !important;
@@ -26,7 +25,7 @@ zen-folder {
     & .tab-group-folder-icon {
       width: 24px !important;
       height: 22px !important;
-      margin-left: 5px !important;
+      margin-left: 2px !important;
       margin-bottom: 2px !important;
     }
   }
@@ -143,7 +142,7 @@ tab-group:not([split-view-group]) {
     }
   }
 
-  /* arrow icon */
+  /* Arrow icon */
   & .tab-group-label-container {
     transition: transform 0.2s ease;
     &:after {

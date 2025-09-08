@@ -10,7 +10,7 @@
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" width="270" />         | Grid pinned tab               |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" width="270" />   | Mini player                   |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="270" />           | Cleaner URL bar               |
-
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" width="270" />           | Folder Style               |
 
 ## ⚙️ Config
 https://github.com/user-attachments/assets/d617851b-3ea9-4f44-93ce-cb3ddacdbe5f
@@ -24,6 +24,7 @@ go to `about:config`, type and click add button as boolean:
 | `bubble.clean.pinned-grid`              | `true` | Change pinned tab to grid style       |
 | `bubble.clean.show-workspace-name`      | `true` | Show workspace name indicator         |
 | `bubble.clean.urlbar-only-typing`       | `true` | Cleaner compact URL bar               |
+| `bubble.clean.folder-style`             | `true` | Folder style                          |
 
 #### 💠 Copy Link Button setting
 ![image](https://github.com/user-attachments/assets/46fee675-8b0f-4ed8-b0ea-c34fd013f28b)

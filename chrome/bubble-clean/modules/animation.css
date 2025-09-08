@@ -149,3 +149,16 @@ browser, .browserSidebarContainer.deck-selected {
   transition: all 0.2s ease !important;
   transform: unset !important;
 }
+
+/* Tab switch animation */
+#tabbrowser-tabpanels > hbox:not(:has(.zen-glance-background)):not([zen-split="true"]) {
+  transition: all 0.2s ease;
+  opacity: 0 !important;
+  position: absolute !important;
+  inset: 0;
+}
+
+#tabbrowser-tabpanels > hbox.deck-selected:not(:has(.zen-glance-background)):not([zen-split="true"]) {
+  opacity: 1 !important;
+  position: relative !important;
+}

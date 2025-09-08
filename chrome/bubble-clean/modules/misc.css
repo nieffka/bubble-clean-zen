@@ -1,5 +1,6 @@
 /* === Natsumi PiP === */
-@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
+@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml")
+{
   /*noinspection CssInvalidFunction*/
   * {
     --natsumi-primary-color: #a0d490;
@@ -266,7 +267,7 @@
           blur(var(--natsumi-mat-hz-blur-radius)) !important;
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
         overflow: hidden;
-        
+
         &::-moz-range-track {
           height: 6px !important;
           border-radius: 5px !important;
@@ -506,114 +507,118 @@
   }
 }
 
-@media not (-moz-bool-pref: "natsumi.findbar.disabled") {
+/*noinspection CssInvalidFunction*/
+findbar {
+  position: absolute;
+  top: 20px;
+  width: min(550px, 90%);
+  right: 20px;
+  min-height: 70px;
+  height: auto !important;
+  flex-wrap: wrap;
+  border-radius: var(--zen-border-radius);
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.3)) !important;
+  opacity: 1;
+  transition: background 0.2s ease, opacity 0.2s ease, visibility 0.2s ease,
+    top 0.2s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 0 10px
+    color-mix(in srgb, var(--zen-secondary-color) 75%, light-dark(black, white)) !important;
+  animation: initial-animation 0.2s ease;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+&:is([hidden="true"]) {
+  visibility: inherit !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  top: 0 !important;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.findbar-closebutton {
+  outline: none !important;
+  order: 1;
+}
+
+.findbar-container {
+  margin-left: 10px !important;
+  margin-bottom: 5px !important;
+  flex-wrap: wrap;
+  height: auto !important;
+  row-gap: 10px;
+
   /*noinspection CssInvalidFunction*/
-  findbar {
-    position: absolute;
-    top: 20px;
-    width: min(550px, 90%);
-    right: 20px;
-    min-height: 70px;
-    height: auto !important;
-    flex-wrap: wrap;
-    border-radius: var(--zen-border-radius);
-    background: rgba(0, 0, 0, 0.25) !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.3)) !important;
-    opacity: 1;
-    transition: background 0.2s ease, opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease, box-shadow 0.2s ease !important;
-    box-shadow: 0 0 10px color-mix(in srgb, var(--zen-secondary-color) 75%, light-dark(black, white)) !important;
-    animation: initial-animation 0.2s ease;
+  & > :first-child {
+    width: 100% !important;
+    margin-top: 5px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid
+      light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.3)) !important;
+
+    &::before {
+      content: "";
+      width: 16px !important;
+      min-width: 16px !important;
+      background-image: url(chrome://global/skin/icons/search-glass.svg) !important;
+      background-repeat: no-repeat;
+      margin-top: 4px;
+      margin-right: 15px;
+      margin-left: 5px;
+
+      @media (prefers-color-scheme: dark) {
+        filter: invert();
+      }
     }
 
-    /*noinspection CssInvalidPropertyValue*/
-    &:is([hidden="true"]) {
-      visibility: inherit !important;
-      pointer-events: none !important;
-      opacity: 0 !important;
-      top: 0 !important;
-    }
-
-
-    /*noinspection CssInvalidPropertyValue*/
-    .findbar-closebutton {
-      outline: none !important;
-      order: 1;
-    }
-
-    .findbar-container {
-      margin-left: 10px !important;
-      margin-bottom: 5px !important;
-      flex-wrap: wrap;
-      height: auto !important;
-      row-gap: 10px;
+    .findbar-textbox {
+      background: none !important;
+      padding: 0 !important;
+      font-size: 13px !important;
+      box-shadow: none !important;
+      width: 100% !important;
+      border: none !important;
 
       /*noinspection CssInvalidFunction*/
-      & > :first-child {
-        width: 100% !important;
-        margin-top: 5px !important;
-        padding-bottom: 10px !important;
-        border-bottom: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.3)) !important;
 
-        &::before {
-          content: "";
-          width: 16px !important;
-          min-width: 16px !important;
-          background-image: url(chrome://global/skin/icons/search-glass.svg) !important;
-          background-repeat: no-repeat;
-          margin-top: 4px;
-          margin-right: 15px;
-          margin-left: 5px;
-
-          @media (prefers-color-scheme: dark) {
-            filter: invert();
-          }
-        }
-
-        .findbar-textbox {
-          background: none !important;
-          padding: 0 !important;
-          font-size: 13px !important;
-          box-shadow: none !important;
-          width: 100% !important;
-          border: none !important;
-
-          /*noinspection CssInvalidFunction*/
-
-          &::-moz-selection {
-            background: light-dark(var(--zen-primary-bg), color-mix(in srgb, var(--zen-primary-bg) 60%, white)) !important;
-          }
-        }
-
-        toolbarbutton {
-          width: 24px !important;
-          justify-content: space-between !important;
-          padding: 4px !important;
-          margin-left: 4px !important;
-        }
+      &::-moz-selection {
+        background: light-dark(
+          var(--zen-primary-bg),
+          color-mix(in srgb, var(--zen-primary-bg) 60%, white)
+        ) !important;
       }
+    }
 
-      checkbox, label, description {
-        margin-left: 4px !important;
-        margin-right: 6px !important;
-      }
+    toolbarbutton {
+      width: 24px !important;
+      justify-content: space-between !important;
+      padding: 4px !important;
+      margin-left: 4px !important;
+    }
+  }
 
-      .findbar-label {
-        display: flex;
-        flex-basis: 100% !important;
+  checkbox,
+  label,
+  description {
+    margin-left: 4px !important;
+    margin-right: 6px !important;
+  }
 
-        &:is([hidden="true"]) {
-          display: none;
-        }
-      }
+  .findbar-label {
+    display: flex;
+    flex-basis: 100% !important;
 
-      .findbar-find-status {
-        display: none;
+    &:is([hidden="true"]) {
+      display: none;
+    }
+  }
 
-        &:is([data-l10n-id]) {
-          display: flex;
-        }
-      }
+  .findbar-find-status {
+    display: none;
+
+    &:is([data-l10n-id]) {
+      display: flex;
     }
   }
 }

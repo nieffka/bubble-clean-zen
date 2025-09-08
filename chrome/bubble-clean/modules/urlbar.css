@@ -1,6 +1,11 @@
 /* --- Urlbar --- */
 #urlbar {
+  --urlbar-height: 39.33px !important;
   border-radius: 8px !important;
+  
+  &:is([pageproxystate="invalid"]) {
+      --urlbar-height: 39.33px !important;
+  }
 }
 
 #urlbar-background {
