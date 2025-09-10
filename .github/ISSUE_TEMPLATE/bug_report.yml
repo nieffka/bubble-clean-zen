@@ -1,0 +1,63 @@
+name: Bug report
+description: Create a report to help us improve
+title: 'bug: '
+labels:
+  - bug
+body:
+  - type: checkboxes
+    id: '1'
+    attributes:
+      label: Checklist
+      description: Please follow the general troubleshooting steps first
+      options:
+        - label: >-
+            My version of the Bubble Clean is the latest available
+          required: true
+        - label: >-
+            I have checked that the mods and custom CSS I installed do not have any conflicts with the theme
+          required: true
+        - label: >-
+            I have checked the [readme](https://github.com/nieffka/bubble-clean-zen/blob/main/README.md) for the fix
+          required: true
+  - type: textarea
+    id: '2'
+    attributes:
+      label: Bug Severity
+      description: Usability is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: '3'
+    attributes:
+      label: Bug Description / To Reproduce
+      description: A clear and concise description of what the bug is and the steps to reproduce it.
+    validations:
+      required: true
+  - type: textarea
+    id: '4'
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+  - type: textarea
+    id: '5'
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+  - type: input
+    id: '6'
+    attributes:
+      label: Theme Version
+      description: Enter the version of Bubble Theme you are using.
+      placeholder: v2.2.9
+    validations:
+      required: true
+  - type: dropdown
+    id: '7'
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - Linux
+        - MacOS
+    validations:
+      required: true
