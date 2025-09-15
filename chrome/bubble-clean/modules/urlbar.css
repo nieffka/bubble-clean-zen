@@ -1,17 +1,37 @@
-/* --- Urlbar --- */
-#urlbar {
-  --urlbar-height: 39.33px !important;
-  border-radius: 8px !important;
-  
-  &:is([pageproxystate="invalid"]) {
+/* --- URLbar --- */
+:root[zen-single-toolbar="true"] {
+  #urlbar {
+    --urlbar-height: 39.33px !important;
+    border-radius: 8px !important;
+
+    &:is([pageproxystate="invalid"]) {
       --urlbar-height: 39.33px !important;
+    }
   }
 }
 
-#urlbar-background {
+#urlbar-background, .urlbar-background {
   border: 1px solid #ffffff13 !important;
   border-top: 1px solid #ffffff13 !important;
   border-bottom: 1px solid #4442441f !important;
+}
+
+/* Search engine container bg */
+.search-one-offs {
+  padding: 4px !important;
+  margin-bottom: 6px !important;
+  opacity: 0.5 !important;
+  background: var(--urlbarView-highlight-background) !important;
+  border-radius: 8px !important;
+}
+
+/* delete this to show shorcut icon in URLbar */
+.search-one-offs {
+  display: none !important;
+}
+
+.search-one-offs:has(.searchbar-engine-one-off-item[selected]) {
+  display: flex !important;
 }
 
 /* Center url text */
@@ -21,259 +41,243 @@
   text-align: center !important;
   margin-bottom: 1px !important;
 }
+
 #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]) {
   #urlbar-input {
     font-size: 13px !important;
     text-align: left !important;
+    mask-image: none !important;
   }
-}
-
-/* Search engine container bg */
-.search-one-offs {
-    padding: 4px !important;
-    margin-bottom: 6px !important;
-    opacity: 0.5 !important;
-    background: var(--urlbarView-highlight-background) !important;
-    border-radius: 8px !important;
-}
-
-/* delete this to show shorcut icon in URL bar */
-.search-one-offs {
-  display: none !important;
-}
-
-.search-one-offs:has(.searchbar-engine-one-off-item[selected]) {
-  display: flex !important;
 }
 
 /* --- Natsumi URLbar --- */
 
 /* URLbar styling */
-@media not (-moz-bool-pref: "natsumi.urlbar.disabled") {
-  * {
-    --urlbarView-item-block-padding: 4px !important;
-    --urlbarView-item-inline-padding: 4px !important;
+* {
+  --urlbarView-item-block-padding: 4px !important;
+  --urlbarView-item-inline-padding: 4px !important;
+}
+
+#urlbar #urlbar-background {
+  backdrop-filter: none;
+  transition: backdrop-filter 0s ease, background 0s ease;
+}
+
+#urlbar {
+  .urlbarView {
+    overflow: initial !important;
   }
 
-  #urlbar #urlbar-background {
-    backdrop-filter: none;
-    transition: backdrop-filter 0s ease, background 0s ease;
-    
-  }
+  &[breakout-extend] {
+    @media not (-moz-bool-pref: "natsumi.urlbar.light") {
+      /* URLbar animations, toggleable to make things lighter. */
 
-  #urlbar {
-    .urlbarView {
-      overflow: initial !important;
-    }
-    
-    &[breakout-extend] {
-      @media not (-moz-bool-pref: "natsumi.urlbar.light") {
-        /* URLbar animations, toggleable to make things lighter. */
-        
-        animation-name: urlbar-appear;
+      animation-name: urlbar-appear;
+      animation-duration: var(--animation-duration);
+
+      @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
+        animation-name: urlbar-appear-sideways;
+      }
+
+      #urlbar-results {
+        animation-name: results-appear;
         animation-duration: var(--animation-duration);
-        
-        @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
-          animation-name: urlbar-appear-sideways;
-        }
-        
-        #urlbar-results {
-          animation-name: results-appear;
+        counter-reset: results 0;
+
+        .urlbarView-row {
+          animation-name: individual-result-appear;
           animation-duration: var(--animation-duration);
-          counter-reset: results 0;
+          animation-fill-mode: forwards;
+          opacity: 0;
 
-          .urlbarView-row {
-            animation-name: individual-result-appear;
-            animation-duration: var(--animation-duration);
-            animation-fill-mode: forwards; 
+          .urlbarView-type-icon {
+            animation-name: pinned-icon-appear;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
             opacity: 0;
-
-            .urlbarView-type-icon {
-              animation-name: pinned-icon-appear;
-              animation-duration: 0.5s;
-              animation-fill-mode: forwards; 
-              opacity: 0;
-            }
-          }
-
-          .urlbarView-row:nth-child(1) {
-            animation-delay: calc((var(--animation-delay) * 0) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 0) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(2) {
-            animation-delay: calc((var(--animation-delay) * 1) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 1) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(3) {
-            animation-delay: calc((var(--animation-delay) * 2) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 2) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(4) {
-            animation-delay: calc((var(--animation-delay) * 3) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 3) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(5) {
-            animation-delay: calc((var(--animation-delay) * 4) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 4) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(6) {
-            animation-delay: calc((var(--animation-delay) * 5) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 5) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(7) {
-            animation-delay: calc((var(--animation-delay) * 6) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 6) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(8) {
-            animation-delay: calc((var(--animation-delay) * 7) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 7) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-
-          .urlbarView-row:nth-child(9) {
-            animation-delay: calc((var(--animation-delay) * 8) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 8) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-          
-          .urlbarView-row:nth-child(10) {
-            animation-delay: calc((var(--animation-delay) * 9) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 9) + var(--animation-delay-offset) + var(--animation-duration));
-            }
-          }
-          
-          .urlbarView-row:nth-child(n+11) {
-            animation-delay: calc((var(--animation-delay) * 10) + var(--animation-delay-offset));
-
-            .urlbarView-type-icon {
-              animation-delay: calc((var(--animation-delay) * 10) + var(--animation-delay-offset) + var(--animation-duration));
-            }
           }
         }
-      }
 
-      #urlbar-input {
-        margin-left: 2px !important;
-        margin-right: 0 !important;
-        
-        @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
-          margin-left: 4px !important;
-        }
-        
-        &::-moz-selection {
-          background: light-dark(var(--zen-primary-color), color-mix(in srgb, var(--zen-colors-primary) 60%, white)) !important;
-        }
-      }
+        .urlbarView-row:nth-child(1) {
+          animation-delay: calc((var(--animation-delay) * 0) + var(--animation-delay-offset));
 
-      #identity-permission-box, #tracking-protection-icon-container, #page-action-buttons {
-        display: none !important;
-      }
-
-      #identity-icon-box {
-        margin-left: 1px !important;
-        padding-left: 6px !important;
-        padding-right: 6px !important;
-        border-radius: var(--urlbar-icon-border-radius) !important;
-        
-        @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
-          margin-left: 3px !important;
-        }
-      }
-
-      .verifiedDomain {
-        image {
-          list-style-image: url('chrome://browser/skin/zen-icons/link.svg') !important;
-        }
-      }
-
-      #identity-box {
-        &:is([pageproxystate="invalid"]).verifiedDomain {
-          image {
-            list-style-image: url('chrome://global/skin/icons/search-glass.svg') !important;
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 0) + var(--animation-delay-offset) + var(--animation-duration));
           }
         }
-      }
 
-      #urlbar-background {
-        backdrop-filter: blur(5px) !important;
-        background: light-dark(rgba(255, 255, 255, 0.42), rgba(0, 0, 0, 0.4)) !important;  /* url-bgcolor */
-        box-shadow: 0 0px 3px light-dark(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)) !important;
-        transition: backdrop-filter 0.5s ease, background 0.5s ease;
-      }
-      
-      
-      
-      @media not (-moz-bool-pref: "natsumi.debug.legacy") {
-        #identity-box {
-          margin-right: 10px !important;
-        }
-        
-        .urlbar-input-container {
-          padding-inline: calc(var(--urlbar-margin-inline) + var(--urlbar-container-padding) - 2px) !important;
-        }
-      }
-      
-      @media (-moz-bool-pref: "natsumi.urlbar.force-nowrap") {
-        .urlbarView-no-wrap {
-          flex-basis: unset !important;
+        .urlbarView-row:nth-child(2) {
+          animation-delay: calc((var(--animation-delay) * 1) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 1) + var(--animation-delay-offset) + var(--animation-duration));
+          }
         }
 
-        .urlbarView-row-inner {
-          flex-wrap: nowrap !important;
+        .urlbarView-row:nth-child(3) {
+          animation-delay: calc((var(--animation-delay) * 2) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 2) + var(--animation-delay-offset) + var(--animation-duration));
+          }
         }
 
-        .urlbarView-title-separator {
-          display: flex !important;
+        .urlbarView-row:nth-child(4) {
+          animation-delay: calc((var(--animation-delay) * 3) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 3) + var(--animation-delay-offset) + var(--animation-duration));
+          }
         }
 
-        .urlbarView-url {
-          margin-left: 0 !important;
+        .urlbarView-row:nth-child(5) {
+          animation-delay: calc((var(--animation-delay) * 4) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 4) + var(--animation-delay-offset) + var(--animation-duration));
+          }
+        }
+
+        .urlbarView-row:nth-child(6) {
+          animation-delay: calc((var(--animation-delay) * 5) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 5) + var(--animation-delay-offset) + var(--animation-duration));
+          }
+        }
+
+        .urlbarView-row:nth-child(7) {
+          animation-delay: calc((var(--animation-delay) * 6) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 6) + var(--animation-delay-offset) + var(--animation-duration));
+          }
+        }
+
+        .urlbarView-row:nth-child(8) {
+          animation-delay: calc((var(--animation-delay) * 7) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 7) + var(--animation-delay-offset) + var(--animation-duration));
+          }
+        }
+
+        .urlbarView-row:nth-child(9) {
+          animation-delay: calc((var(--animation-delay) * 8) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 8) + var(--animation-delay-offset) + var(--animation-duration));
+          }
+        }
+
+        .urlbarView-row:nth-child(10) {
+          animation-delay: calc((var(--animation-delay) * 9) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 9) + var(--animation-delay-offset) + var(--animation-duration));
+          }
+        }
+
+        .urlbarView-row:nth-child(n + 11) {
+          animation-delay: calc((var(--animation-delay) * 10) + var(--animation-delay-offset));
+
+          .urlbarView-type-icon {
+            animation-delay: calc((var(--animation-delay) * 10) + var(--animation-delay-offset) + var(--animation-duration));
+          }
         }
       }
     }
-    
-    &:is([pageproxystate='invalid']):is([usertyping]) {
-      .urlbarView-row, .urlbarView-row .urlbarView-type-icon {
-        animation: none !important;
-        opacity: 1 !important;
+
+    #urlbar-input {
+      margin-left: 2px !important;
+      margin-right: 0 !important;
+
+      @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
+        margin-left: 4px !important;
       }
 
-      
-  /* URLbar hover animation */
+      &::-moz-selection {
+        background: light-dark(var(--zen-primary-color), color-mix(in srgb, var(--zen-colors-primary) 60%, white)) !important;
+      }
+    }
+
+    #identity-permission-box,
+    #tracking-protection-icon-container,
+    #page-action-buttons {
+      display: none !important;
+    }
+
+    #identity-icon-box {
+      margin-left: 1px !important;
+      padding-left: 6px !important;
+      padding-right: 6px !important;
+      border-radius: var(--urlbar-icon-border-radius) !important;
+
+      @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
+        margin-left: 3px !important;
+      }
+    }
+
+    .verifiedDomain {
+      image {
+        list-style-image: url("chrome://browser/skin/zen-icons/link.svg") !important;
+      }
+    }
+
+    #identity-box {
+      &:is([pageproxystate="invalid"]).verifiedDomain {
+        image {
+          list-style-image: url("chrome://global/skin/icons/search-glass.svg") !important;
+        }
+      }
+    }
+
+    #urlbar-background {
+      backdrop-filter: blur(5px) !important;
+      background: light-dark(rgba(255, 255, 255, 0.42), rgba(0, 0, 0, 0.5)) !important;
+      /* url-bgcolor */
+      box-shadow: 0 0px 3px light-dark(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)) !important;
+      transition: backdrop-filter 0.5s ease, background 0.5s ease;
+    }
+
+    @media not (-moz-bool-pref: "natsumi.debug.legacy") {
+      #identity-box {
+        margin-right: 10px !important;
+      }
+
+      .urlbar-input-container {
+        padding-inline: calc(var(--urlbar-margin-inline) + var(--urlbar-container-padding) - 2px) !important;
+      }
+    }
+
+    @media (-moz-bool-pref: "natsumi.urlbar.force-nowrap") {
+      .urlbarView-no-wrap {
+        flex-basis: unset !important;
+      }
+
+      .urlbarView-row-inner {
+        flex-wrap: nowrap !important;
+      }
+
+      .urlbarView-title-separator {
+        display: flex !important;
+      }
+
+      .urlbarView-url {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  &:is([pageproxystate="invalid"]):is([usertyping]) {
+
+    .urlbarView-row,
+    .urlbarView-row .urlbarView-type-icon {
+      animation: none !important;
+      opacity: 1 !important;
+    }
+
+    /* URLbar hover animation */
     &:not([breakout-extend="true"]) {
       #urlbar-background {
         transition: background 0.2s ease;
@@ -293,11 +297,13 @@
       transition: background 0.2s ease;
     }
 
-    .urlbarView-title, .urlbarView-url {
+    .urlbarView-title,
+    .urlbarView-url {
       font-weight: 400 !important;
-      font-size: 13px !important;;
+      font-size: 13px !important;
       margin-top: auto !important;
       margin-bottom: auto !important;
+      text-shadow: rgba(255, 255, 255, 0.1) -1px -1px 1px, rgba(0, 0, 0, 0.5) 1px 1px 1px;
     }
 
     .urlbarView-title-separator {
@@ -325,18 +331,18 @@
     &:active {
       transform: scale(0.95, 0.95);
     }
-    
+
     &[selected] {
       background: transparent !important;
     }
 
-    &:hover {    
+    &:hover {
       background: transparent !important;
-      
+
       .urlbarView-row-inner {
         background: var(--urlbarView-hover-background) !important;
       }
-      
+
       .urlbarView-button {
         max-width: 24px !important;
         max-height: 24px !important;
@@ -352,7 +358,7 @@
       background: var(--urlbarView-hover-background) !important;
     }
   }
-  
+
   .urlbarView-title-separator::before {
     color: rgba(20, 20, 20, 0.2) !important;
     opacity: 1 !important;
@@ -361,22 +367,26 @@
       color: rgba(235, 235, 235, 0.2) !important;
     }
   }
-  
-  .urlbarView-row[has-action]:is([type="switchtab"], [type="remotetab"], [type="clipboard"]) {
+
+  .urlbarView-row[has-action]:is([type="switchtab"],
+    [type="remotetab"],
+    [type="clipboard"]) {
     .urlbarView-action {
       margin-left: 8px !important;
     }
-    
+
     .urlbarView-title-separator::before {
       opacity: 0 !important;
     }
   }
 
   .urlbarView-row-inner .urlbarView-url {
+    /* url span */
     color: light-dark(var(--zen-colors-primary), var(--zen-colors-primary-foreground)) !important;
   }
 
-  .urlbarView-row:hover .urlbarView-row-inner, .urlbarView-row-inner[selected] {
+  .urlbarView-row:hover .urlbarView-row-inner,
+  .urlbarView-row-inner[selected] {
     .urlbarView-no-wrap .urlbarView-favicon {
       background-color: color-mix(in srgb, light-dark(var(--zen-primary-color), var(--zen-colors-primary-foreground)) 50%, transparent) !important;
     }
@@ -386,25 +396,27 @@
     }
   }
 
-  .urlbarView-action, .urlbarView-button,
+  .urlbarView-action,
+  .urlbarView-button,
   .searchbar-engine-one-off-item {
     --urlbar-box-focus-bgcolor: color-mix(in srgb, currentColor 16%, transparent);
     transition: background-color 0.2s ease !important;
   }
-  
+
   /* Results URL display */
   .urlbarView-url {
     --urlbarView-second-line-indent: calc(var(--urlbarView-icon-margin-start) + var(--urlbarView-icon-margin-end) + var(--urlbarView-favicon-width) + 2px);
     color: var(--zen-colors-primary-foreground) !important;
   }
-  
+
   /* Wrapped indents fix */
   .urlbarView-action {
     --urlbarView-second-line-indent: calc(var(--urlbarView-icon-margin-start) + var(--urlbarView-icon-margin-end) + var(--urlbarView-favicon-width) + 2px);
   }
-  
+
   /* Make borders more visible */
-.urlbarView-body-inner, .search-one-offs {
+  .urlbarView-body-inner,
+  .search-one-offs {
     border-top: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.2)) !important;
   }
 }

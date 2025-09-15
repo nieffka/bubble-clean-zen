@@ -1,30 +1,38 @@
 # Bubble Clean Zen Browser 🫧
 ## ▶️ Preview
 ![bubble-clean-preview](https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/main.png)
+<details><summary>Multiple Toolbar</summary>
+<pre>
+  <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/multiple-compact.png">
+  <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/multiple.png">
+</pre></details>
 
 ## ⭐ Features
-| Image                                                                                                                                                                                                                                              | Description                   |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" width="270" />     | Grid compact extensions       |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" width="270" /> | Cleaner context menu w/ icons |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" width="270" />         | Grid pinned tab               |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" width="270" />   | Mini player                   |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="270" />           | Cleaner URL bar               |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" width="270" />           | Folder Style               |
-
+| Image                                                                                                                                                                                                                                                            | Description                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" width="270" />                   | Grid Arc-like compact extensions |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" width="270" />               | Cleaner context menu with icons  |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" width="270" />                       | Grid pinned tab                  |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" width="270" />                 | Mini player                      |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="270" />                         | Cleaner URLbar                   |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" width="270" />               | Folder style                     |
+| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" width="270" /> | Show extension icons on hover    |
 ## ⚙️ Config
 https://github.com/user-attachments/assets/d617851b-3ea9-4f44-93ce-cb3ddacdbe5f
 
 go to `about:config`, type and click add button as boolean:
 
-| Name                                    | Set    | Description                           |
-| --------------------------------------- | ------ | ------------------------------------- |
-| `bubble.clean.hide-single-toolbar-icon` | `true` | Hide icons in urlbar (single toolbar) |
-| `bubble.clean.show-titlebar`            | `true` | Show titlebar in hover                |
-| `bubble.clean.pinned-grid`              | `true` | Change pinned tab to grid style       |
-| `bubble.clean.show-workspace-name`      | `true` | Show workspace name indicator         |
-| `bubble.clean.urlbar-only-typing`       | `true` | Cleaner compact URL bar               |
-| `bubble.clean.folder-style`             | `true` | Folder style                          |
+| Name                                    | Set    | Description                             |
+| --------------------------------------- | ------ | --------------------------------------- |
+| `bubble.clean.hide-single-toolbar-icon` | `true` | Hide icons in urlbar (single toolbar)   |
+| `bubble.clean.show-titlebar`            | `true` | Show titlebar in hover                  |
+| `bubble.clean.pinned-grid`              | `true` | Change pinned tab to grid style         |
+| `bubble.clean.show-workspace-name`      | `true` | Show workspace name indicator           |
+| `bubble.clean.urlbar-only-typing`       | `true` | Compact floating URLbar                 |
+| `bubble.clean.folder-style`             | `true` | Folder style                            |
+| `bubble.clean.multiple-urlbar-compact`  | `true` | Compact URLbar for multiple toolbar     |
+| `bubble.clean.multiple-urlbar-bg`       | `true` | URLbar background for multiple toolbar  |
+| `bubble.clean.show-extensions-hover`    | `true` | Hides extensions buttons unless hovered |
 
 #### 💠 Copy Link Button setting
 ![image](https://github.com/user-attachments/assets/46fee675-8b0f-4ed8-b0ea-c34fd013f28b)
@@ -32,19 +40,12 @@ go to `about:config`, type and click add button as boolean:
 #### 💠 Optional Tweak
 Go to `about:config` and set:
 
-| Name                                       | Set    | Description                   |
-| ------------------------------------------ | ------ | ----------------------------- |
-| `zen.theme.content-element-separation`     | `4`    | Thinner web view borders      |
-| `browser.tabs.allow_transparent_browser`   | `true` | Allow transparency            |
-| `widget.windows.mica`                      | `true` | Allow transparency            |
-
-For `v1.8b` above if you're transparency not working
-go to `about:config` and set:
-
-| Name                         | Set     |
-| ---------------------------- | ------- |
-| `zen.widget.windows.acrylic` | `false` |
-
+| Name                                                  | Set    | Description                                      |
+| ----------------------------------------------------- | ------ | ------------------------------------------------ |
+| `toolkit.legacyUserProfileCustomizations.stylesheets` | `true` | Allow custom CSS*                                |
+| `zen.theme.content-element-separation`                | `6`    | Thinner web view borders                         |
+| `browser.tabs.allow_transparent_browser`              | `true` | Allow transparency                               |
+| `widget.windows.mica`                                 | `true` | Allow transparency                               |
 
 ## 🗨️ FAQ
 
@@ -99,8 +100,12 @@ disableFramerateLimit=true
 ## ✨ Special Thanks & Credits
 (sry if I'm missing some, just hit me some message)
 
-| Details                         | Credit                                                        |
-| ------------------------------- | ------------------------------------------------------------- |
-| Essentials color & folder style | [lunar-os](https://github.com/lunar-os/ZenCss)                |
-| Sleek playing/mute indicator    | [itsmefen](https://github.com/itsmefen/Dark-Harmony)          |
-| Urlbar & Findbar                | [greeeen-dev](https://github.com/greeeen-dev/natsumi-browser) |
+| Details                              | Credit                                                           |
+| ------------------------------------ | ---------------------------------------------------------------- |
+| Zen Browser                          | [mr-cheffy](https://github.com/zen-browser/)                     |
+| Folder style                         | [lunar-os](https://github.com/lunar-os/ZenCss)                   |
+| Sleek playing/mute indicator         | [itsmefen](https://github.com/itsmefen/Dark-Harmony)             |
+| Natsumi based CSS (e.g. URL Bar,PiP) | [greeeen-dev](https://github.com/greeeen-dev/natsumi-browser)    |
+| Better customize toolbar             | [Tanay-Kar](https://github.com/Tanay-Kar)                        |
+| Highlight loading bar                | [wysh3](https://github.com/wysh3/Zen-Mods/tree/main/Fluid%20URL) |
+| Zen Deta loading bar                 | [rasyidrafi](https://github.com/rasyidrafi/zen-deta-loading-bar) |

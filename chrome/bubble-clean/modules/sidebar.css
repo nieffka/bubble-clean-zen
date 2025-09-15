@@ -1,72 +1,130 @@
-/* Cleaned & Transparent Sidebar */
+/* --- Cleaned & Transparent Sidebar --- */
+:root:not([zen-single-toolbar="true"], [zen-compact-mode="true"]) {
+  #browser:has(#sidebar-box[checked="true"][style*="order: 1"]):not(:has(#zen-sidebar-web-panel:not([hidden]))) {
+    #tabbrowser-tabbox {
+      .browserSidebarContainer {
+        border-radius: 0px 0px var(--zen-element-separation) 0px !important;
+      }
+
+      #sidebar-box {
+        border-radius: 0px 0px 0px var(--zen-element-separation) !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+      }
+      
+      #sidebar-splitter {
+        --splitter-width: unset !important;
+        margin: 0 calc(-1.1 * var(--zen-element-separation) + 0px) !important;
+      }
+      
+      &[sidebar-positionend] {
+        .browserSidebarContainer {
+          border-radius: 0px 0px 0px var(--zen-element-separation) !important;
+        }
+        
+        #sidebar-box {
+          border-radius: 0px 0px var(--zen-element-separation) 0px !important;
+        }
+      }
+    }
+  }
+}
+
+:root[zen-single-toolbar="true"] {
+  #sidebar-box {
+    border-radius: var(--zen-native-inner-radius) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
 #sidebar-box {
-  background-color: transparent !important;
+  border-radius: 0px 0px 0px 10px !important;
   border: none !important;
   box-shadow: none !important;
+
   & #sidebar-header {
     border-bottom: none !important;
+
     & #sidebar-close {
       margin-inline-end: 7px !important;
       scale: 0.9;
     }
   }
 }
-#sidebar-main, #sidebar-header, #sidebar {
-  background: transparent !important;
-}
 
-#sidebar-search-container > #search-box,
+#sidebar-search-container>#search-box,
 #viewButton {
   padding: 4px 8px !important;
   appearance: none !important;
   background-color: transparent !important;
   border-radius: 10px !important;
   border: none !important;
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
   }
+
   &:active {
     background-color: rgba(255, 255, 255, 0.1) !important;
   }
 }
-.sidebar-panel[lwt-sidebar] {
-  background-color: transparent !important;
+
+/* --- Compact Sidebar --- */
+:root[zen-compact-mode="true"] {
+  .browserSidebarContainer {
+    border-radius: 0 0 var(--zen-element-separation) var(--zen-element-separation) !important;
+  }
 }
 
-/* Hide the Normal Sidebar Border */
-#sidebar-header {
-  font-size: 1.333em;
-  padding: 5px !important;
-  border-bottom: 0 solid var(--sidebar-border-color) !important;
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
+  @media -moz-pref("zen.view.compact.hide-tabbar") or -moz-pref("zen.view.use-single-toolbar") {
+    body:has([zen-compact-mode="true"]) #titlebar {
+      background: var(--zen-primary-background) !important;
+      backdrop-filter: brightness(0.55) blur(10px) saturate(200%) !important;
+      border-radius: 8px !important;
+      top: calc(var(--zen-element-separation) / 1.4) !important;
+      left: calc(var(--zen-element-separation) / 0.999) !important;
+      height: calc(100% - (var(--zen-element-separation) * 2.4)) !important;
+      margin: calc(var(--zen-element-separation) / 2) 0 !important;
+      scale: 1 !important;
+      padding: 6px !important;
+    }
+
+    #navigator-toolbox:not([animate="true"]) #titlebar::before {
+      border-radius: 8px !important;
+      background: var(--zen-primary-background) !important;
+      backdrop-filter: blur(30px) !important;
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    #navigator-toolbox:not([animate="true"]) #titlebar::after {
+      content: "";
+      position: absolute;
+      background: var(--zen-primary-background) !important;
+      backdrop-filter: blur(30px) !important;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: saturation;
+    }
+  }
 }
 
-/* Compact Sidebar Transparency */
-body:has([zen-compact-mode="true"]) #titlebar {
-  background: var(--zen-primary-background) !important;
-  backdrop-filter: brightness(0.55) blur(30px) saturate(200%) !important;
-  border-radius: 10px !important;
-  top: calc(var(--zen-element-separation) / 1.4) !important;
-  left: calc(var(--zen-element-separation) / 0.999) !important;
-  height: calc(100% - (var(--zen-element-separation) * 2.4)) !important;
-  margin: calc(var(--zen-element-separation) / 2) 0 !important;
-  scale: 1 !important;
-  padding: 6px !important;
-}
-#navigator-toolbox:not([animate='true']) #titlebar::before {
-  border-radius: 10px !important;
-  background: var(--zen-primary-background) !important;
-  backdrop-filter: blur(30px) !important;
-  content: '';
-  position: absolute;
-  pointer-events: none;
-  z-index: -1;
-}
-#navigator-toolbox:not([animate='true']) #titlebar::after {
-  content: '';
-  position: absolute;
-  background: var(--zen-primary-background) !important;
-  backdrop-filter: blur(30px) !important;
-  pointer-events: none;
-  z-index: 0;
-  mix-blend-mode: saturation;
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
+  @media -moz-pref("zen.view.compact.hide-toolbar") {
+    &:not([zen-single-toolbar="true"]) {
+      & #zen-appcontent-navbar-wrapper {
+        & #zen-appcontent-navbar-container {
+          top: calc(var(--zen-element-separation) / 1.4) !important;
+          left: calc(var(--zen-element-separation) / 0.999) !important;
+          height: calc(100% - (var(--zen-element-separation) * 2.4)) !important;
+          background: var(--zen-primary-background) !important;
+          backdrop-filter: brightness(0.55) blur(10px) saturate(150%) !important;
+          border-radius: 8px !important;
+          scale: 1 !important;
+        }
+      }
+    }
+  }
 }

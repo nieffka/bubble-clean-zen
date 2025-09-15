@@ -1,0 +1,27 @@
+@-moz-document domain(github.com) {
+  :root {
+    --bgColor-default: rgba(0, 0, 0, 0.2) !important;
+	--bgColor-muted: rgba(0, 0, 0, 0.1) !important;
+	
+  }
+  
+  body,
+  html,
+  #repository-container-header,
+  .gh-header,
+  .bgColor-muted,
+  section,
+  .feed-background {
+    background-color: transparent !important;
+  }
+
+  header,
+  .feed-item-content,
+  .discussion-timeline-actions,
+  .QkQOb, .hycJXc {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+  }
+  .js-snippet-clipboard-copy-unpositioned .markdown-body .snippet-clipboard-content, .js-snippet-clipboard-copy-unpositioned .markdown-body .highlight {
+	background-color: initial !important;
+  }
+}

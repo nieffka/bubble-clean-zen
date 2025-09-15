@@ -1,0 +1,25 @@
+@-moz-document domain(reddit.com) {
+  body,
+  html {
+    background: transparent !important;
+  }
+  #comment-tree {
+    background: transparent !important;
+  }
+  .bg-neutral-background,
+  .bg-neutral-background-weak,
+  main#main-content,
+  flex-left-nav-container[expanded="1"] #flex-left-nav-container {
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+  .bg-\[color\:var\(--shreddit-content-background\)\] {
+    background-color: transparent !important;
+  }
+  .threadline,
+  .shreddit-post,
+  aside,
+  comment-body-header,
+  shreddit-comment-tree {
+    background-color: transparent !important;
+  }
+}

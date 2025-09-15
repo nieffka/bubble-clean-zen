@@ -1,0 +1,14 @@
+@-moz-document domain(chatgpt.com) {
+  .dark {
+    --bg-primary: rgba(0, 0, 0, 0.1) !important;
+	--bg-elevated-secondary: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  nav {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .bg-token-message-surface {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+  }
+}

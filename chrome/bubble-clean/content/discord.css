@@ -1,0 +1,60 @@
+@-moz-document domain(discord.com) {
+  :root, .theme-light,
+  .theme-dark {
+   --background-primary: #00000000 !important;
+   --background-secondary: #00000000 !important;
+   --background-tertiary: #00000000 !important;
+   --home-background: #00000000 !important;
+   --bg-base-primary: #00000000 !important;
+   --background-base-lowest: transparent !important;
+  }
+  html, body, #pass-sidebar, header, .app-root, #main, main, #content,
+  .callContainer_cb9592, .bg__960e4, .tabBody__133bf, .chat_f75fb0, .page_c48ade,
+  .children__9293f::after, .contentRegionScroller__23e6b, .childContainer__91a9d,
+  .visual-refresh .member__5d473, .container__7d20c, .nowPlayingColumn__133bf, .visual-refresh .content__908e2, .container_f369db, [aria-label="Resize Sidebar"] {
+    background-color: transparent !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: background-color 0.5s ease-in-out, background 0.5s ease-in-out, border 0.5s ease-in-out, box-shadow 0.5s ease-in-out !important;
+  }
+  nav, section, .header__34c2c, 
+  .visual-refresh .container__37e49,
+  .container_c8ffbb, .members_c8ffbb,
+  .visual-refresh .sidebar_c48ade,
+  :where(.visual-refresh) .themedBackground__74017,
+  .visual-refresh .channelTextArea_f75fb0 {
+    background-color: transparent !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: background-color 0.5s ease-in-out, background 0.5s ease-in-out, border 0.5s ease-in-out, box-shadow 0.5s ease-in-out !important;
+  }
+  .title_c38106 {
+    background-color: transparent !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+  .outer_bf1984, .wrapper__44df5, .embedFull__623de {
+    background-color: transparent !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+  .visual-refresh .sidebarListRounded_c48ade {
+    border-top-left-radius: 0 !important;
+    border: 0 !important
+  }
+  .visual-refresh .wrapper_ef3116 {
+    margin-bottom: calc(0 + var(--space-xs)) !important
+  }
+  .mainCard_f369db, .section_bf424d {
+   background: none !important;
+  }
+  .floating__01ae2 {
+    background-color: var(--panel-bg) !important;
+  }
+  img.bannerImg_f37cb1 {
+   border-radius: 0 0 1em 1em !important;
+  }
+  .app_a3002d{
+    color: transparent !important;
+  }
+}

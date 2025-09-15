@@ -1,0 +1,31 @@
+@-moz-document domain(x.com) {
+  :root {
+    --theme-popup: rgba(0, 0, 0, 0.8);
+    --theme-bg-dim: rgba(0 ,0, 0, 0.4);
+  }
+
+  body {
+    background-color: var(--theme-bg-dim) !important;
+  }
+
+  [data-testid="primaryColumn"],
+  [aria-label="Trending"] > * > *,
+  [aria-label="Home timeline"] > *> *,
+  [aria-label="Search"] > * {
+    background: transparent !important;
+  }
+  
+  select,
+	[data-testid="Dropdown"],
+	[data-testid="hoverCardParent"],
+	[data-testid="DMDrawer"] > div,
+	div[role="dialog"],
+	div[role="listbox"],
+	div[role="radio"] {
+		background: var(--theme-popup) !important;
+	}
+
+  .r-kemksi, .r-5zmot {
+    background: transparent !important;
+  }
+}

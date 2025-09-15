@@ -1,0 +1,17 @@
+@-moz-document domain(deepseek.com) {
+  body, html,
+  ._48cdfc1, ._83421f9 ._2f87737 {
+    background: transparent !important;
+  }
+  [data-ds-dark-theme] ._2be88ba,
+  [data-ds-dark-theme] ._77cefa5,
+  .b8812f16, [data-ds-dark-theme] ._83421f9 {
+    background: rgba(0,0,0,0.2) !important;
+  }
+  [data-ds-dark-theme] .dd442025,
+  [data-ds-dark-theme] ._62b4800,
+  [data-ds-dark-theme] ._62b4800,
+  ._871cbca {
+    background: none !important;
+  }
+}

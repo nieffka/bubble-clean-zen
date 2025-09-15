@@ -1,14 +1,32 @@
+/* makes the tab stay visible while being closed as well as makes the transition a bit slower */
+.tabbrowser-tab:not([pinned][fadein]) {
+  transition-duration: 240ms, 240ms !important;
+  transition-timing-function: ease-out, ease-out !important;
+  visibility: visible !important;
+}
+
+.tab-content:not([fadein][pinned]) .tab-icon-pending:not([fadein]),
+.tab-icon-image:not([fadein]),
+.tab-label:not([fadein]) {
+  visibility: visible !important;
+}
+
+.tab-label:not([fadein]) {
+  display: flex !important;
+}
+
 /* Background blur URLbar */
 #browser:has(#urlbar[open][zen-floating-urlbar="true"]) .browserContainer {
   filter: blur(5px) brightness(50%) !important;
 }
+
 #browser .browserContainer {
   transition: all 0.2s ease-in-out !important;
 }
 
-/* Highlight urlbar when loading the page by @wysh3
- * https://github.com/wysh3/Zen-Mods/tree/main/Fluid%20URL */
+/* Single toolbar loading bar by @wysh3 */
 #urlbar:not([breakout-extend="true"]) {
+
   /* Unless urlbar is opened */
   .urlbar-input-container::before {
     content: "";
@@ -19,24 +37,127 @@
     animation: urlbar-loading-gradient 1s linear reverse infinite;
     animation-play-state: paused;
     opacity: 0;
-    transition: opacity 0.25s;
+    transition: opacity 0.25s !important;
   }
 }
+
 &:has(#reload-button[displaystop="true"]) {
+
   /* When 'Stop' button is shown instead of 'Reload' */
   .urlbar-input-container::before {
     animation-play-state: running;
     opacity: 1;
   }
 }
+
 @keyframes urlbar-loading-gradient {
   0% {
     background-position: 0% 0%;
   }
+
   100% {
     background-position: 200% 0%;
   }
 }
+
+/* Disable animation when bubble.clean.multiple-urlbar-compact="true" */
+@media (-moz-bool-pref: "bubble.clean.multiple-urlbar-compact") {
+  :root:not([zen-single-toolbar="true"]) {
+    #urlbar:not([breakout-extend="true"]) {}
+
+    &:has(#reload-button[displaystop="true"]) {
+      .urlbar-input-container::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+/* Zen Deta loading bar by @rasyidrafi */
+:root {
+  --mod-detaloadingbar-blur-intensity: 1.7px;
+  --mod-detaloadingbar-boxshadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25), 0 1.5px 4px 0 rgba(0, 0, 0, 0.15);
+  --mod-detaloadingbar-maincolor: var(--zen-primary-color);
+  --mod-detaloadingbar-maxwidth: 180px;
+  --mod-detaloadingbar-middlecolor: rgba(255, 255, 255, 255);
+  --mod-detaloadingbar-minwidth: 20px;
+  --mod-detaloadingbar-thickness: 0.8px;
+  --mod-detaloadingbar-primarycolor-final: var(--zen-primary-color);
+  --mod-detaloadingbar-secondarycolor-final: rgba(255, 255, 255, 255);
+}
+
+#zen-tabbox-wrapper {
+  position: relative !important;
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+/* Loading bar base */
+#main-window #zen-tabbox-wrapper::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  height: var(--mod-detaloadingbar-thickness) !important;
+  border-radius: calc(var(--mod-detaloadingbar-thickness) / 2) !important;
+  z-index: 9999 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+
+  /* Always include box shadow */
+  box-shadow: var(--mod-detaloadingbar-boxshadow) !important;
+
+  /* Gradient color (since singlecolor=false) */
+  background: linear-gradient(to right,
+      var(--mod-detaloadingbar-primarycolor-final),
+      var(--mod-detaloadingbar-secondarycolor-final),
+      var(--mod-detaloadingbar-primarycolor-final)) !important;
+}
+
+/* Show loading bar ONLY when tab is busy */
+#main-window:has(.tabbrowser-tab[selected][busy]) #zen-tabbox-wrapper::before,
+.tabbrowser-tab[selected][busy] .browserStack::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: zen-loading-pulse 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate !important;
+}
+
+@keyframes zen-loading-pulse {
+  0% {
+    width: var(--mod-detaloadingbar-minwidth);
+    filter: blur(var(--mod-detaloadingbar-blur-intensity));
+    opacity: 0.3;
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  25% {
+    opacity: 0.5;
+    filter: blur(var(--mod-detaloadingbar-blur-intensity));
+  }
+
+  50% {
+    opacity: 0.7;
+    filter: blur(var(--mod-detaloadingbar-blur-intensity));
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  75% {
+    opacity: 0.9;
+    filter: blur(var(--mod-detaloadingbar-blur-intensity));
+    transform: translateX(-50%) scale(1);
+  }
+
+  100% {
+    width: var(--mod-detaloadingbar-maxwidth);
+    filter: blur(var(--mod-detaloadingbar-blur-intensity));
+    opacity: 1;
+    transform: translateX(-50%) scale(1.02);
+  }
+}
+
 
 /* URL bar appear animation */
 #urlbar {
@@ -51,12 +172,14 @@
 /* Individual result appear animation */
 .urlbarView-row {
   --animation-duration: .5s;
-  --animation-duration-subtle: 0.5s; /* WIP, this won't change anything for now */
+  --animation-duration-subtle: 0.5s;
   --animation-delay: 0.05s;
   --animation-delay-offset: 0s;
 }
+
 /* Reload border animation */
-browser, .browserSidebarContainer.deck-selected {
+browser,
+.browserSidebarContainer.deck-selected {
   --animation-duration: 0.2s;
   --animation-rotation-duration: 2.0s;
   --animation-exit-duration: 1.0s;
@@ -70,31 +193,22 @@ browser, .browserSidebarContainer.deck-selected {
 }
 
 /* URLbar animation */
-@keyframes urlbar-appear {
-  0% {
-    margin-top: calc(var(--zen-toolbar-height) * -2);
-  }
-  75% {
-    margin-top: 20px;
-  }
-  100% {
-    margin-top: 0;
-  }
-}
-
 @keyframes results-appear {
   0% {
     opacity: 0;
     margin-top: -90vh;
   }
+
   50% {
     opacity: 0;
     margin-top: -90vh;
   }
+
   75% {
     opacity: 0;
     margin-top: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -109,15 +223,17 @@ browser, .browserSidebarContainer.deck-selected {
 }
 
 @keyframes individual-result-appear-subtle {
-  0%   {
+  0% {
     opacity: 1;
     scale: 1;
     background: transparent;
   }
+
   60% {
     scale: 1.05;
     background: light-dark(var(--zen-primary-bg), var(--zen-colors-primary));
   }
+
   100% {
     opacity: 1;
     scale: 1;
@@ -130,13 +246,16 @@ browser, .browserSidebarContainer.deck-selected {
     opacity: 0;
     scale: 0.5
   }
+
   50% {
     opacity: 1;
   }
+
   60% {
     opacity: 1;
     scale: 1.1;
   }
+
   100% {
     opacity: 1;
     scale: 1;
@@ -151,16 +270,35 @@ browser, .browserSidebarContainer.deck-selected {
 }
 
 /* Tab switch animation */
-#tabbrowser-tabpanels > hbox:not(:has(.zen-glance-background)):not([zen-split="true"]) {
-  transition: all 0.2s ease;
-  opacity: 0 !important;
-  position: absolute !important;
-  inset: 0;
+#tabbrowser-tabpanels>hbox:not(:has(.zen-glance-background)):not([zen-split="true"]) {
+  transition: all 0.2s ease !important;
+  filter: brightness(0);
 }
 
-#tabbrowser-tabpanels > hbox.deck-selected:not(:has(.zen-glance-background)):not([zen-split="true"]) {
-  z-index: 1;
-  opacity: 1 !important;
-  position: relative !important;
-  pointer-events: auto !important;
+#tabbrowser-tabpanels>hbox.deck-selected:not(:has(.zen-glance-background)):not([zen-split="true"]) {
+  scale: 1 !important;
+  filter: brightness(1);
+}
+
+/* Split view animation */
+#tabbrowser-tabpanels[zen-split-view="true"] {
+  transition: none !important;
+}
+
+#tabbrowser-tabpanels[zen-split-view="true"] .browserSidebarContainer {
+  animation: fadeinsplit 0.4s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes fadeinsplit {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+    filter: brightness(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
 }

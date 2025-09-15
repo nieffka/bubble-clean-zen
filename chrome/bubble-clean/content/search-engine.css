@@ -1,0 +1,47 @@
+@-moz-document domain(search.brave.com) {
+  body,
+  html {
+    background: transparent !important;
+  }
+  .snippet.svelte-n9nog2 {
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain(google.com) {
+  .sfbg {
+    background-color: transparent !important;
+  }
+  body,
+  html,
+  .f6F9Be,
+  div#search > * {
+    background-color: transparent !important;
+  }
+  .g,
+  .appbar {
+    background-color: transparent !important;
+  }
+  div#rso {
+    * {
+      background-color: transparent !important;
+    }
+  }
+  div#cnt > div {
+  }
+}
+
+@-moz-document domain(duckduckgo.com) {
+  body,
+  html,
+  .site-wrapper,
+  .zci-wrap,
+  .zci,
+  .header-wrap,
+  .metabar,
+  .footer,
+  *::before,
+  .module--translations-translatedtext {
+    background: transparent !important;
+  }
+}

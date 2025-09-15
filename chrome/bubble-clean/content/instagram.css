@@ -1,0 +1,79 @@
+@-moz-document domain(instagram.com){
+  *{
+    background-color: transparent !important;
+  }
+  div.xixxii4:nth-child(2){
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    border-right: transparent !important;
+    border-radius: 5px !important;
+  }
+  div.x1hnuoi9:nth-child(1) > div:nth-child(1){
+    background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+  .xseo6mj{
+    padding-top: 10px !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    border-radius: 5px !important;
+  }
+  .x1uipg7g{
+    border-left: transparent !important;
+    border-right: transparent !important;
+  }
+  div.xjp7ctv:nth-child(1) > div:nth-child(1) > div:nth-child(2){
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+  }
+  *{
+    --mwp-message-row-background: transparent !important;
+  }
+  .x1u3tz30{
+    background-color: rgba(0, 0, 0, 0.55) !important;
+    border-radius: 5px !important;
+    backdrop-filter: blur(10px) !important; 
+  }
+  .xmnaoh6 > div:nth-child(1) > div:nth-child(1){
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    border-radius: 5px !important;
+  }
+  .x1p0ryx0{
+    border-right: 0 !important;
+  }
+  .xq9evs9{
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-radius: 5px !important;
+    backdrop-filter: blur(10px) !important; 
+  }
+  .x1l895ks:hover{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 5px !important;
+  }
+  .x19g9edo{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 5px !important;
+  }
+  .xrrpcnn{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 1.5rem !important;
+  }
+  .xpmdkuv{
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 1.5rem !important;
+  }
+  .x1yvgwvq{
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 1rem !important;
+  }
+  .x1tu34mt{
+    background-color: rgb(var(--ig-primary-button)) !important;
+  }
+  div.x1afcbsf{
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px) !important; 
+  }
+  .xleuxlb > div:nth-child(1){
+    border-right: transparent !important;
+  }
+}

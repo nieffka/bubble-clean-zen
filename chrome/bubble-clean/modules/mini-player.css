@@ -1,12 +1,17 @@
 /* --- Mini Media Player (Natsumi & ZenZero edit) --- */
-#zen-media-controls-toolbar > toolbaritem {
+#zen-media-controls-toolbar>toolbaritem {
   border-radius: 10px !important;
   margin: 5px 0px !important;
 }
 
 @keyframes fadein-animation {
-  0% { opacity: 0; }
-  100% { opacity: 0.2; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }
 
 #zen-media-controls-toolbar {
@@ -16,8 +21,7 @@
     transform: translateY(0) !important;
     padding-right: 6px;
     pointer-events: none;
-    transition: max-height 0.2s ease, opacity 0.2s ease, transform 0.2s ease,
-      padding 0.2s ease;
+    transition: max-height 0.2s ease, opacity 0.2s ease, transform 0.2s ease, padding 0.2s ease;
   }
 }
 
@@ -36,6 +40,7 @@
     }
   }
 }
+
 /* Media controls glow effect */
 #zen-media-controls-toolbar::after {
   position: absolute;
@@ -50,28 +55,26 @@
   filter: blur(15px);
   opacity: 0 !important;
   transition: all 0.3s ease-in-out !important;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--zen-primary-color) 10%, black),
-    var(--zen-primary-color),
-    color-mix(in srgb, var(--zen-primary-color) 25%, white),
-    var(--zen-primary-color),
-    light-dark(#fffd, #000d),
-    light-dark(#fffd, #000d),
-    var(--zen-primary-color),
-    color-mix(in srgb, var(--zen-primary-color) 50%, white),
-    color-mix(in srgb, var(--zen-primary-color) 25%, white),
-    var(--zen-primary-color),
-    color-mix(in srgb, var(--zen-primary-color) 25%, black),
-    light-dark(#fffd, #000d),
-    color-mix(in srgb, var(--zen-primary-color) 10%, black),
-    light-dark(#fffd, #000d),
-    color-mix(in srgb, var(--zen-primary-color) 75%, black),
-    color-mix(in srgb, var(--zen-primary-color) 50%, black),
-    color-mix(in srgb, var(--zen-primary-color) 25%, black),
-    color-mix(in srgb, var(--zen-primary-color) 10%, black),
-    light-dark(#fffd, #000d)
-  );
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--zen-primary-color) 10%, black),
+      var(--zen-primary-color),
+      color-mix(in srgb, var(--zen-primary-color) 25%, white),
+      var(--zen-primary-color),
+      light-dark(#fffd, #000d),
+      light-dark(#fffd, #000d),
+      var(--zen-primary-color),
+      color-mix(in srgb, var(--zen-primary-color) 50%, white),
+      color-mix(in srgb, var(--zen-primary-color) 25%, white),
+      var(--zen-primary-color),
+      color-mix(in srgb, var(--zen-primary-color) 25%, black),
+      light-dark(#fffd, #000d),
+      color-mix(in srgb, var(--zen-primary-color) 10%, black),
+      light-dark(#fffd, #000d),
+      color-mix(in srgb, var(--zen-primary-color) 75%, black),
+      color-mix(in srgb, var(--zen-primary-color) 50%, black),
+      color-mix(in srgb, var(--zen-primary-color) 25%, black),
+      color-mix(in srgb, var(--zen-primary-color) 10%, black),
+      light-dark(#fffd, #000d));
 
   background-size: 200% 200%;
 }
@@ -83,9 +86,9 @@
 #zen-media-nexttrack-button,
 #zen-media-previoustrack-button,
 #zen-media-close-button {
-    transition: opacity 0.3s ease-in-out, transform 0.17s ease-out;
-    opacity: 1;
-    filter: saturate(0.5) brightness(1.25) !important;
+  transition: opacity 0.3s ease-in-out, transform 0.17s ease-out;
+  opacity: 1;
+  filter: saturate(0.5) brightness(1.25) !important;
 }
 
 #zen-media-focus-button:hover,
@@ -94,25 +97,40 @@
 #zen-media-nexttrack-button:hover,
 #zen-media-previoustrack-button:hover,
 #zen-media-close-button:hover {
-    opacity: 0.8;
-    transform: scale(1.11);
+  opacity: 0.8;
+  transform: scale(1.11);
 }
 
 /* Smooth Infinite Gradient Animation */
 @keyframes glowing-gradient {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 0%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-#zen-media-current-time, #zen-media-duration {
+#zen-media-current-time,
+#zen-media-duration {
   font-variant-numeric: tabular-nums;
 }
 
 #zen-media-controls-toolbar {
-  & > toolbaritem {
+  &>toolbaritem {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
@@ -127,15 +145,14 @@
       content: "";
       position: absolute;
       inset: 0;
-  background: linear-gradient(
-  45deg,
-  color-mix(in srgb, var(--zen-primary-color) 5%, black),  
-  color-mix(in srgb, var(--zen-primary-color) 30%, black),  
-  color-mix(in srgb, var(--zen-primary-color) 75%, black),  
-  color-mix(in srgb, var(--zen-primary-color) 100%, black), /* Peak highlight */
-  color-mix(in srgb, var(--zen-primary-color) 50%, black),  
-  color-mix(in srgb, var(--zen-primary-color) 15%, black)  
-  );
+      background: linear-gradient(45deg,
+          color-mix(in srgb, var(--zen-primary-color) 5%, black),
+          color-mix(in srgb, var(--zen-primary-color) 30%, black),
+          color-mix(in srgb, var(--zen-primary-color) 75%, black),
+          color-mix(in srgb, var(--zen-primary-color) 100%, black),
+          /* Peak highlight */
+          color-mix(in srgb, var(--zen-primary-color) 50%, black),
+          color-mix(in srgb, var(--zen-primary-color) 15%, black));
 
 
       background-size: 400% 400%;
@@ -146,34 +163,38 @@
     }
 
     /* Box Shadow Effect */
-    box-shadow: 0 4px 10px light-dark(rgba(255, 255, 255, 0.3),rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 10px light-dark(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
 
     &:hover {
-        box-shadow: 0 6px 15px light-dark(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+      box-shadow: 0 6px 15px light-dark(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
 
-    /* Ensure the gradient layer stays visible */
-    &::before {
-        opacity: 0.3; /* Increase opacity */
-        z-index: 0; /* Make sure it's not hidden under the main background */
+      /* Ensure the gradient layer stays visible */
+      &::before {
+        opacity: 0.3;
+        /* Increase opacity */
+        z-index: 0;
+        /* Make sure it's not hidden under the main background */
         pointer-events: none;
+      }
     }
-   }
   }
+
   /* When playing, enable animation */
-  &.playing > toolbaritem::before {
-    opacity: 0.65; /* Visible glow */
+  &.playing>toolbaritem::before {
+    opacity: 0.65;
+    /* Visible glow */
     animation: glowing-gradient 10s infinite linear;
   }
 
   /* Enhance glow on hover when playing */
-  &.playing > toolbaritem:hover::before {
+  &.playing>toolbaritem:hover::before {
     opacity: 0.6;
   }
-  
+
   #zen-media-controls-hbox {
     scale: 0.9 !important;
   }
-  
+
   #zen-media-service-hbox {
     padding-top: 5px !important;
     transition: padding 0.15s ease-in-out !important;
@@ -197,7 +218,8 @@
       transition: scale 0.2s ease;
     }
 
-    &::-moz-range-track, &::-moz-range-progress {
+    &::-moz-range-track,
+    &::-moz-range-progress {
       transition: height 0.2s ease;
     }
 
@@ -206,22 +228,26 @@
         scale: 1.4;
       }
 
-      &::-moz-range-track, &::-moz-range-progress {
+      &::-moz-range-track,
+      &::-moz-range-progress {
         height: calc(var(--progress-height) + 2px) !important;
       }
     }
   }
 }
+
 #zen-media-controls-toolbar {
   & #zen-media-focus-button::after {
-    display:none !important;
+    display: none !important;
   }
 }
+
 /* Faster disappearance when unhovering */
 #zen-media-controls-toolbar:not(:hover) .show-on-hover {
   transition: opacity 0.15s ease, filter 0.15s ease, transform 0.15s ease, padding 0.15s ease, max-height 0.2s ease;
 }
+
 /* Fade out instantly when unhovering */
-#zen-media-controls-toolbar:not(:hover) .show-on-hover > * {
+#zen-media-controls-toolbar:not(:hover) .show-on-hover>* {
   transition: opacity 0.15s ease, transform 0.15s ease, filter 0.15s ease;
 }

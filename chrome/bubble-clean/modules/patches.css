@@ -1,14 +1,63 @@
-/* Padding Icon */
-#zen-sidebar-top-buttons,
-#zen-sidebar-top-buttons-customization-target {
-  & toolbarbutton:not(.titlebar-button) {
-    padding: 0px !important;
-    margin-left: -4px !important;
-    margin-top: 1px !important;
+/* Fix color text */
+@media (-moz-platform: linux) {
+  :root {
+    --sidebar-text-color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
-/* Hide Double Audio Button */
+[zen-should-be-dark-mode="false"] #browser {
+  --sidebar-text-color: light-dark(rgb(249, 249, 250), rgb(249, 249, 250)) !important;
+}
+
+.tab-label,
+toolbarbutton {
+  color: var(--sidebar-text-color) !important;
+}
+
+/* Bleeding corner */
+:root[zen-single-toolbar="true"] {
+  html:not([sizemode="fullscreen"]) {
+
+    .browserStack,
+    browser {
+      clip-path: inset(0 round var(--zen-native-inner-radius));
+    }
+  }
+}
+
+/* Disable dragging from the tab vertical sidebar */
+#TabsToolbar {
+  -moz-window-dragging: no-drag !important;
+}
+
+/* Padding toolbar */
+:root[zen-single-toolbar="true"] {
+
+  #zen-sidebar-top-buttons,
+  #zen-sidebar-top-buttons-customization-target {
+    & toolbarbutton:not(.titlebar-button) {
+      padding: 0px !important;
+      margin-left: -4px !important;
+    }
+  }
+}
+
+:root:not([zen-single-toolbar="true"], [zen-compact-mode="true"]) {
+
+  toolbar .toolbarbutton-1,
+  #nav-bar-customization-target {
+    padding: 1px !important;
+  }
+
+  #zen-sidebar-top-buttons,
+  #zen-sidebar-top-buttons-customization-target {
+    & toolbarbutton:not(.titlebar-button) {
+      margin-left: -3px !important;
+    }
+  }
+}
+
+/* Hide double audio button */
 .button-background {
   display: none !important;
 }
@@ -17,60 +66,53 @@
 #zen-sidebar-splitter {
   opacity: 0 !important;
   border: none !important;
-  min-width: 0 !important;
-  width: 5px !important;
+  min-width: var(--zen-toolbox-padding) !important;
+  max-width: var(--zen-toolbox-padding) !important;
 }
+
 &:has(#navigator-toolbox:hover) #zen-sidebar-splitter,
 #zen-sidebar-splitter:hover,
 #zen-sidebar-splitter:hover:active {
-  width: 5px !important;
+  width: var(--zen-toolbox-padding) !important;
 }
-#tabbrowser-tabpanels[zen-split-view="true"]
-  .browserSidebarContainer.deck-selected {
+
+#tabbrowser-tabpanels[zen-split-view="true"] .browserSidebarContainer.deck-selected {
   outline: 0px solid color-mix(in srgb, var(--zen-primary-color) 50%, transparent) !important;
+}
+
+/* Always show seperator bottom */
+.pinned-tabs-container-separator {
+  background: light-dark(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) !important;
+
+  .zen-workspace-pinned-tabs-section[hide-separator] & {
+    margin: 8px auto 8px !important;
+    max-height: 1px !important;
+  }
 }
 
 /* Overflow separator */
 zen-workspace {
-  & > arrowscrollbox {
+  &>arrowscrollbox {
     &[overflowing] {
       --zen-scrollbar-overflow-background: unset !important;
     }
   }
 }
 
-/* Drop Shadow */
+/* Drop shadow */
 & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0001), 0 6px 20px rgba(0, 0, 0, 0.0001) !important;
   --uc-tweak-rounded-corners-shadow-color: #141515 !important;
 }
 
-/* No Sidebar Scrollbar */
-
+/* No sidebar scrollbar */
 scrollbox:nth-child(5) {
   scrollbar-width: none !important;
 }
 
 /* Hides the name of the extension on tabs loaded from the extension */
-
 #urlbar #identity-box.extensionPage #identity-icon-label {
   display: none !important;
-}
-
-/* makes the tab stay visible while being closed as well as makes the transition a bit slower */
-
-.tabbrowser-tab:not([pinned], [fadein]) {
-  transition-duration: 240ms, 240ms !important;
-  transition-timing-function: ease-out, ease-out !important;
-  visibility: visible !important;
-}
-.tab-content:not([fadein], [pinned]) .tab-icon-pending:not([fadein]),
-.tab-icon-image:not([fadein]),
-.tab-label:not([fadein]) {
-  visibility: visible !important;
-}
-.tab-label:not([fadein]) {
-  display: flex !important;
 }
 
 /* Fix inactive and unload opacity tab */
@@ -81,5 +123,18 @@ scrollbox:nth-child(5) {
       transition-property: filter, opacity;
       transition-duration: 1s;
     }
+  }
+}
+
+/* Hide attention icon (green dot) under tab icons */
+#navigator-toolbox {
+
+  .tabbrowser-tab:is([image], [pinned])>.tab-stack>.tab-content[attention]:not([selected]),
+  .tabbrowser-tab>.tab-stack>.tab-content[pinned][titlechanged]:not([selected]) {
+    background-image: none !important;
+  }
+
+  .tabbrowser-tab>.tab-stack>.tab-content[titlechanged]:not([selected="true"]) {
+    background-image: none !important;
   }
 }

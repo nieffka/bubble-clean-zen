@@ -1,15 +1,17 @@
 /* --- Context Menu --- */
 #contentAreaContextMenu {
-    width: 275px !important;
+  width: 275px !important;
 }
+
 #tabContextMenu {
-    width: 225px !important;
+  width: 225px !important;
 }
 
 #confirmation-hint {
   --arrowpanel-color: var(--sidebar-text-color) !important;
 }
 
+/* BW extension icons */
 .menu-icon {
   margin-inline-start: -1px !important;
   filter: grayscale(1) brightness(1.5) !important;
@@ -19,46 +21,53 @@
 #context_zen-add-essential::before {
   content: "Add to Essentials" !important;
 }
-#context_zen-add-essential > .menu-text {
+
+#context_zen-add-essential>.menu-text {
   display: none !important;
 }
 
 #context_bookmarkTab::before {
   content: "Bookmark Tab" !important;
 }
-#context_bookmarkTab > .menu-text {
+
+#context_bookmarkTab>.menu-text {
   display: none !important;
 }
 
 #context-zen-change-workspace-tab::before {
   content: "Move to Workspace" !important;
 }
+
 #context-zen-change-workspace-tab::after {
   position: absolute;
   right: 10px;
 }
-#context-zen-change-workspace-tab > .menu-text {
+
+#context-zen-change-workspace-tab>.menu-text {
   display: none !important;
 }
 
 #context_zenSplitTabs::before {
   content: "Split Tab..." !important;
 }
-#context_zenSplitTabs > .menu-text {
+
+#context_zenSplitTabs>.menu-text {
   display: none !important;
 }
 
 #context_zen-replace-pinned-url-with-current::before {
   content: "Replace Pinned URL" !important;
 }
-#context_zen-replace-pinned-url-with-current > .menu-text {
+
+#context_zen-replace-pinned-url-with-current>.menu-text {
   display: none !important;
 }
 
 #context-searchselect-private::before {
   content: "Search in a Private Window" !important;
 }
-#context-searchselect-private > .menu-text {
+
+#context-searchselect-private>.menu-text {
   display: none !important;
 }
 
@@ -127,6 +136,7 @@ menuitem[checked="true"]>.menu-iconic-text {
 #context-sep-open {
   display: none !important;
 }
+
 #context-sendimage,
 #context-sep-sharing,
 #context-sep-setbackground,
@@ -139,6 +149,7 @@ menuitem[checked="true"]>.menu-iconic-text {
 #context-viewimageinfo {
   display: none !important;
 }
+
 /* Sidebar tab options */
 #context_openANewTab,
 #context_moveTabOptions,
@@ -151,7 +162,6 @@ menuitem[checked="true"]>.menu-iconic-text {
 
 /* Sidebar toolbar options */
 #toggle_toolbar-menubar,
-#zen-toolbar-context-tabs-right,
 #toolbar-context-undoCloseTab,
 #toolbar-context-selectAllTabs,
 #toolbar-context-bookmarkSelectedTab,
@@ -179,6 +189,7 @@ menuseparator {
   &:nth-of-type(4) {
     display: none !important;
   }
+
   &:nth-of-type(7) {
     display: none !important;
   }
@@ -187,9 +198,12 @@ menuseparator {
 /* Bring Back Icon */
 :root {
   --zen-contextmenu-menuitem-padding-inline: 6px;
-  --zen-contextmenu-menuicon-margin-inline: 48px; /* For standard icons */
-  --zen-contextmenu-menuicon-margin-small-inline: 6px; /* For .menu-iconic-text */
-  --zen-contextmenu-menuitem-margin: 0 2px; /* 0px to 0 */
+  --zen-contextmenu-menuicon-margin-inline: 48px;
+  /* For standard icons */
+  --zen-contextmenu-menuicon-margin-small-inline: 6px;
+  /* For .menu-iconic-text */
+  --zen-contextmenu-menuitem-margin: 0 2px;
+  /* 0px to 0 */
 }
 
 #context_zenSplitTabs {
@@ -204,6 +218,7 @@ menuseparator {
 #context-zenSplitLink {
   --menu-image: url("chrome://browser/skin/zen-icons/split.svg") !important;
 }
+
 #context_zenOpenWorkspace {
   --menu-image: url("chrome://browser/skin/zen-icons/open.svg") !important;
 }
@@ -214,7 +229,6 @@ menuseparator {
 }
 
 /* Context Menu Icons */
-
 #context-video-pictureinpicture:not([checked="true"]) .menu-iconic-icon {
   list-style-image: url("chrome://browser/skin/zen-icons/media-pip.svg") !important;
 }
@@ -223,26 +237,18 @@ menuseparator {
   list-style-image: url("chrome://browser/skin/zen-icons/media-loop.svg") !important;
 }
 
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup
-  > menuitem:not(
-    .menuitem-iconic,
-    [type="checkbox"],
-    [type="radio"],
-    .in-menulist,
-    .in-menulist menuitem,
-    .unified-nav-current
-  ),
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup
-  > menu:not(
-    .menu-iconic,
-    [type="checkbox"],
-    [type="radio"],
-    .in-menulist,
-    .in-menulist menu,
-    .unified-nav-current
-  ),
+:not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic,
+  [type="checkbox"],
+  [type="radio"],
+  .in-menulist,
+  .in-menulist menuitem,
+  .unified-nav-current),
+:not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic,
+  [type="checkbox"],
+  [type="radio"],
+  .in-menulist,
+  .in-menulist menu,
+  .unified-nav-current),
 #toggle_toolbar-menubar,
 #PanelUI-history toolbarbutton,
 #unified-extensions-context-menu menuitem {
@@ -255,39 +261,47 @@ menuseparator {
 }
 
 @media not (-moz-platform: windows) {
-  menu > .menu-iconic-text,
-  menuitem > .menu-iconic-text {
-    padding-inline-start: var(
-      --zen-contextmenu-menuicon-margin-small-inline
-    ) !important;
+
+  menu>.menu-iconic-text,
+  menuitem>.menu-iconic-text {
+    padding-inline-start: var(--zen-contextmenu-menuicon-margin-small-inline) !important;
   }
 }
 
 /* Folder */
-#zen-context-menu-new-folder, #zen-context-menu-new-folder-toolbar {
+#zen-context-menu-new-folder,
+#zen-context-menu-new-folder-toolbar {
   --menu-image: url("chrome://browser/skin/zen-icons/folder.svg");
 }
+
 #context_zenFolderRename {
   --menu-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3Csvg xmlns:xlink='http://www.w3.org/1999/xlink' width='128' height='128' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.75 2C11.3358 2 11 2.33579 11 2.75C11 3.16421 11.3358 3.5 11.75 3.5H13.25V24.5H11.75C11.3358 24.5 11 24.8358 11 25.25C11 25.6642 11.3358 26 11.75 26H16.25C16.6642 26 17 25.6642 17 25.25C17 24.8358 16.6642 24.5 16.25 24.5H14.75V3.5H16.25C16.6642 3.5 17 3.16421 17 2.75C17 2.33579 16.6642 2 16.25 2H11.75Z' fill='%23fff' style='--darkreader-inline-fill: var(--darkreader-text-ffffff, %23e8e6e3);' data-darkreader-inline-fill=''/%3E%3Cpath d='M6.25 6.01958H12.25V7.51958H6.25C5.2835 7.51958 4.5 8.30308 4.5 9.26958V18.7696C4.5 19.7361 5.2835 20.5196 6.25 20.5196H12.25V22.0196H6.25C4.45507 22.0196 3 20.5645 3 18.7696V9.26958C3 7.47465 4.45507 6.01958 6.25 6.01958Z' fill='%23fff' style='--darkreader-inline-fill: var(--darkreader-text-ffffff, %23e8e6e3);' data-darkreader-inline-fill=''/%3E%3Cpath d='M21.75 20.5196H15.75V22.0196H21.75C23.5449 22.0196 25 20.5645 25 18.7696V9.26958C25 7.47465 23.5449 6.01958 21.75 6.01958H15.75V7.51958H21.75C22.7165 7.51958 23.5 8.30308 23.5 9.26958V18.7696C23.5 19.7361 22.7165 20.5196 21.75 20.5196Z' fill='%23fff' style='--darkreader-inline-fill: var(--darkreader-text-ffffff, %23e8e6e3);' data-darkreader-inline-fill=''/%3E%3C/svg%3E") !important;
 }
+
 #context_zenFolderChangeIcon {
   --menu-image: url("chrome://browser/skin/zen-icons/edit-theme.svg") !important;
 }
+
 #context_zenFolderUnloadAll {
   --menu-image: url("chrome://browser/skin/zen-icons/close-all.svg");
 }
+
 #context_zenFolderNewSubfolder {
   --menu-image: url("chrome://browser/skin/zen-icons/folder.svg");
 }
+
 #context_zenChangeFolderSpace {
   --menu-image: url("chrome://browser/skin/zen-icons/move-tab.svg") !important;
 }
+
 #context_zenFolderToSpace {
   --menu-image: url("chrome://browser/skin/zen-icons/manage.svg");
 }
+
 #context_zenFolderUnpack {
   --menu-image: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg' fill='context-fill' fill-opacity='context-fill-opacity'%3E%3Cpath class='st0' d='M1.086,5.183c-.357-1.334.434-2.704,1.768-3.062l3.864-1.035c1.334-.357,2.704.434,3.062,1.768l.575,2.146h-1.035l-.506-1.888c-.214-.8-1.037-1.275-1.837-1.061l-3.864,1.035c-.8.214-1.275,1.037-1.061,1.837l1.035,3.864c.214.8,1.037,1.275,1.837,1.061l.076-.02v1.028c-1.274.242-2.538-.537-2.879-1.81l-1.035-3.864ZM8,6c-1.105,0-2,.895-2,2v5c0,1.105.895,2,2,2h5c1.105,0,2-.895,2-2v-5c0-1.105-.895-2-2-2h-5ZM7,8c0-.552.448-1,1-1h5c.552,0,1,.448,1,1v5c0,.552-.448,1-1,1h-5c-.552,0-1-.448-1-1v-5ZM10.501-8183v16383M-8183,10.491h16383M12.853,10.946l.003-.003c.047-.047.082-.102.106-.16.024-.058.038-.122.038-.188v-.003s0-.003,0-.003c0-.067-.014-.13-.038-.188-.024-.059-.061-.114-.109-.162l-2-2c-.195-.195-.512-.195-.707,0-.195.195-.195.512,0,.707l1.146,1.146h-2.793c-.276,0-.5.224-.5.5s.224.5.5.5h2.793l-1.146,1.146c-.195.195-.195.512,0,.707.195.195.512.195.707,0l2-2Z'/%3E%3C/svg%3E");
 }
+
 #context_zenFolderDelete {
   --menu-image: url("chrome://browser/skin/zen-icons/close.svg");
 }
@@ -296,6 +310,7 @@ menuseparator {
 #context-savepage {
   --menu-image: url("chrome://browser/skin/zen-icons/save.svg");
 }
+
 #context-selectall,
 .textbox-contextmenu menuitem[cmd*="selectAll"],
 #context_selectAllTabs,
@@ -640,13 +655,13 @@ menuitem[id="placesContext_new:separator"] {
 #context_moveTabToNewGroup {
   --menu-image: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg' fill='context-fill' fill-opacity='context-fill-opacity'%3E%3Cpath class='st0' d='M1.086,5.183c-.357-1.334.434-2.704,1.768-3.062l3.864-1.035c1.334-.357,2.704.434,3.062,1.768l.575,2.146h-1.035l-.506-1.888c-.214-.8-1.037-1.275-1.837-1.061l-3.864,1.035c-.8.214-1.275,1.037-1.061,1.837l1.035,3.864c.214.8,1.037,1.275,1.837,1.061l.076-.02v1.028c-1.274.242-2.538-.537-2.879-1.81l-1.035-3.864ZM8,6c-1.105,0-2,.895-2,2v5c0,1.105.895,2,2,2h5c1.105,0,2-.895,2-2v-5c0-1.105-.895-2-2-2h-5ZM7,8c0-.552.448-1,1-1h5c.552,0,1,.448,1,1v5c0,.552-.448,1-1,1h-5c-.552,0-1-.448-1-1v-5ZM11,8.5c0-.276-.224-.5-.5-.5s-.5.224-.5.5v1.5h-1.5c-.276,0-.5.224-.5.5s.224.5.5.5h1.5v1.5c0,.276.224.5.5.5s.5-.224.5-.5v-1.5h1.5c.276,0,.5-.224.5-.5s-.224-.5-.5-.5h-1.5v-1.5Z'/%3E%3C/svg%3E");
 }
-        
+
 #context_ungroupTab {
   --menu-image: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg' fill='context-fill' fill-opacity='context-fill-opacity'%3E%3Cpath class='st0' d='M1.086,5.183c-.357-1.334.434-2.704,1.768-3.062l3.864-1.035c1.334-.357,2.704.434,3.062,1.768l.575,2.146h-1.035l-.506-1.888c-.214-.8-1.037-1.275-1.837-1.061l-3.864,1.035c-.8.214-1.275,1.037-1.061,1.837l1.035,3.864c.214.8,1.037,1.275,1.837,1.061l.076-.02v1.028c-1.274.242-2.538-.537-2.879-1.81l-1.035-3.864ZM8,6c-1.105,0-2,.895-2,2v5c0,1.105.895,2,2,2h5c1.105,0,2-.895,2-2v-5c0-1.105-.895-2-2-2h-5ZM7,8c0-.552.448-1,1-1h5c.552,0,1,.448,1,1v5c0,.552-.448,1-1,1h-5c-.552,0-1-.448-1-1v-5ZM10.501-8183v16383M-8183,10.491h16383M12.853,10.946l.003-.003c.047-.047.082-.102.106-.16.024-.058.038-.122.038-.188v-.003s0-.003,0-.003c0-.067-.014-.13-.038-.188-.024-.059-.061-.114-.109-.162l-2-2c-.195-.195-.512-.195-.707,0-.195.195-.195.512,0,.707l1.146,1.146h-2.793c-.276,0-.5.224-.5.5s.224.5.5.5h2.793l-1.146,1.146c-.195.195-.195.512,0,.707.195.195.512.195.707,0l2-2Z'/%3E%3C/svg%3E");
 }
 
 /* FIX header icons for the app menu sub menus (eg. fx account, history...) */
-.panel-header > h1 {
+.panel-header>h1 {
   text-align: left;
   margin-left: 8px !important;
 }
@@ -654,6 +669,7 @@ menuitem[id="placesContext_new:separator"] {
 .wordmark::after {
   content: "Plus" !important;
 }
+
 @media not (-moz-platform: linux) {
   .unified-extensions-context-menu-pin-to-toolbar {
     --menu-image: url("chrome://browser/skin/zen-icons/pin.svg");
@@ -668,36 +684,26 @@ menuitem[id="placesContext_new:separator"] {
   --menu-image: url("chrome://browser/skin/zen-icons/arrow-up.svg");
 }
 
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup
-  > menuitem:not(
-    .menuitem-iconic,
-    [type="checkbox"],
-    [type="radio"],
-    .in-menulist,
-    .in-menulist menuitem,
-    .unified-nav-current
-  ),
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup
-  > menu:not(
-    .menu-iconic,
-    [type="checkbox"],
-    [type="radio"],
-    .in-menulist,
-    .in-menulist menu,
-    .unified-nav-current
-  ),
-:not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
-  padding-inline-start: calc(
-    var(--zen-contextmenu-menuitem-padding-inline) +
-      var(--zen-contextmenu-menuicon-margin-inline) / 2
-  ) !important; /* Default: approx 30px */
+:not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic,
+  [type="checkbox"],
+  [type="radio"],
+  .in-menulist,
+  .in-menulist menuitem,
+  .unified-nav-current),
+:not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic,
+  [type="checkbox"],
+  [type="radio"],
+  .in-menulist,
+  .in-menulist menu,
+  .unified-nav-current),
+:not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menucaption {
+  padding-inline-start: calc(var(--zen-contextmenu-menuitem-padding-inline) + var(--zen-contextmenu-menuicon-margin-inline) / 2) !important;
+  /* Default: approx 30px */
 }
 
 /* Linux-specific adjustment for menucaption padding based on user feedback */
 @media (-moz-platform: linux) {
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+  :not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menucaption {
     /*
       Original calculation: var(--zen-contextmenu-menuitem-padding-inline) + var(--zen-contextmenu-menuicon-margin-inline) / 2 (approx. 30px).
       Feedback indicated this created a "big gap" and that a calculation equivalent to using
@@ -705,14 +711,12 @@ menuitem[id="placesContext_new:separator"] {
       was preferable.
       This change implements that feedback. 
     */
-    padding-inline-start: calc(
-      var(--zen-contextmenu-menuitem-padding-inline) +
-        var(--zen-contextmenu-menuicon-margin-inline) / 8
-    ) !important; /* Approx 12px on Linux */
+    padding-inline-start: calc(var(--zen-contextmenu-menuitem-padding-inline) + var(--zen-contextmenu-menuicon-margin-inline) / 8) !important;
+    /* Approx 12px on Linux */
   }
 }
 
-menupopup > menuitem[type="checkbox"] .menu-iconic-left {
+menupopup>menuitem[type="checkbox"] .menu-iconic-left {
   --menu-image: none !important;
   margin-inline-start: 4px;
 
@@ -723,7 +727,7 @@ menupopup > menuitem[type="checkbox"] .menu-iconic-left {
 }
 
 @media (-moz-platform: windows) {
-  menupopup > menuitem[checked="true"] {
+  menupopup>menuitem[checked="true"] {
     padding-inline-start: 6px;
   }
 }

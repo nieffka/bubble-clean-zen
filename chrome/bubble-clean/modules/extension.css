@@ -15,54 +15,38 @@
   --extensions-in-row: 5;
   width: 100% !important;
 
-  :is(
-      toolbarseparator,
-      .unified-extensions-item-menu-button.subviewbutton,
-      .unified-extensions-item-action-button .unified-extensions-item-contents,
-      #unified-extensions-description,
-      .panel-header
-    ) {
+  :is(toolbarseparator,
+    .unified-extensions-item-menu-button.subviewbutton,
+    .unified-extensions-item-action-button .unified-extensions-item-contents,
+    #unified-extensions-description,
+    .panel-header) {
     display: none !important;
   }
 
-  :is(
-      #overflowed-extensions-list,
-      #unified-extensions-area,
-      .unified-extensions-list
-    ) {
+  :is(#overflowed-extensions-list,
+    #unified-extensions-area,
+    .unified-extensions-list) {
     display: grid !important;
-
     grid-template-columns: repeat(var(--extensions-in-row), auto);
-
     justify-items: center !important;
-
     align-items: center !important;
   }
 
-  :is(
-      :is(#unified-extensions-area, .unified-extensions-list)
-        .unified-extensions-item,
-      .unified-extensions-list
-    ) {
+  :is( :is(#unified-extensions-area, .unified-extensions-list) .unified-extensions-item,
+    .unified-extensions-list) {
     max-width: max-content;
   }
 
   #unified-extensions-area {
     margin-bottom: 5px !important;
-
     border-top: 0px solid var(--panel-separator-color);
-
     border-bottom: 1px solid var(--panel-separator-color);
-
     padding-top: 5px !important;
-
     padding-bottom: 5px !important;
-
     display: none;
   }
 
-  .unified-extensions-item[attention]
-    > .unified-extensions-item-action-button.subviewbutton {
+  .unified-extensions-item[attention]>.unified-extensions-item-action-button.subviewbutton {
     background-position: leftcalc(var(--uei-dot-horizontal-position-in-panel) - 4px) bottomvar(--uei-dot-vertical-position-in-panel) !important;
   }
 
@@ -75,7 +59,17 @@
   scale: 0.85;
 }
 
-/* Less saturated extension icons */
+/* Smaller Extension Badge */
+.toolbarbutton-badge {
+  height: 50%;
+  width: 50%;
+  font-size: 6px !important;
+  margin: -3px 0 0 !important;
+  margin-inline-end: -1px !important;
+  min-width: 12px important;
+}
+
+/* More unified extension icons */
 .unified-extensions-item {
-  filter: saturate(0.5) brightness(1.25) !important;
+  filter: saturate(0.5) grayscale(0.4) brightness(1.25) !important;
 }
