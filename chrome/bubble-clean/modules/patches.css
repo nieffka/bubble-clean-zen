@@ -25,6 +25,35 @@ toolbarbutton {
   }
 }
 
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.tabbrowser-tab *,
+#nav-bar toolbarbutton *,
+#PersonalToolbar toolbarbutton *,
+#urlbar *,
+#searchbar *,
+menupopup *,
+menuitem *,
+#sidebar-box *,
+#downloads-notification-anchor * {
+  backface-visibility: hidden;
+}
+.zen-floating-urlbar,
+.zen-floating-status-bar {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease-out;
+  contain: layout style paint;
+}
+
 /* Disable dragging from the tab vertical sidebar */
 #TabsToolbar {
   -moz-window-dragging: no-drag !important;

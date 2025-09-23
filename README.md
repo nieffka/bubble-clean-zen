@@ -8,6 +8,7 @@
 </pre></details>
 
 ## ⭐ Features
+
 | Image                                                                                                                                                                                                                                                            | Description                      |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" width="270" />                   | Grid Arc-like compact extensions |
@@ -18,8 +19,6 @@
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" width="270" />               | Folder style                     |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" width="270" /> | Show extension icons on hover    |
 ## ⚙️ Config
-https://github.com/user-attachments/assets/d617851b-3ea9-4f44-93ce-cb3ddacdbe5f
-
 go to `about:config`, type and click add button as boolean:
 
 | Name                                    | Set    | Description                             |

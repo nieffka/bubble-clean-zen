@@ -3,11 +3,6 @@
   --zen-settings-secondary-background: transparent !important;
   --background-color-canvas: transparent !important;
   --background-color-box: transparent !important;
-  background-color: transparent !important;
-}
-
-groupbox {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @-moz-document domain(zen-browser.app) {
@@ -244,7 +239,10 @@ groupbox {
   }
 }
 
-@-moz-document url(about:config) {
+@-moz-document url(about:config), url(about:preferences) {
+  :root {
+    background-color: transparent !important;
+  }
   tr,
   table {
     background-color: transparent !important;
@@ -253,10 +251,7 @@ groupbox {
   tr {
     outline: solid 1px #88888822 !important;
   }
-}
-
-@-moz-document url(about:preferences) {
   groupbox {
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
   }
 }

@@ -10,7 +10,7 @@
   }
 }
 
-#urlbar-background, .urlbar-background {
+.urlbar-background {
   border: 1px solid #ffffff13 !important;
   border-top: 1px solid #ffffff13 !important;
   border-bottom: 1px solid #4442441f !important;
@@ -58,7 +58,7 @@
   --urlbarView-item-inline-padding: 4px !important;
 }
 
-#urlbar #urlbar-background {
+#urlbar .urlbar-background {
   backdrop-filter: none;
   transition: backdrop-filter 0s ease, background 0s ease;
 }
@@ -232,7 +232,7 @@
       }
     }
 
-    #urlbar-background {
+    .urlbar-background {
       backdrop-filter: blur(5px) !important;
       background: light-dark(rgba(255, 255, 255, 0.42), rgba(0, 0, 0, 0.5)) !important;
       /* url-bgcolor */

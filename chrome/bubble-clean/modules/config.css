@@ -334,24 +334,24 @@
   :root:not([customizing]) {
     #nav-bar:not(:has(*[open="true"])) {
       .unified-extensions-item-row-wrapper {
-        transition: opacity 0.25s !important;
+        transition: opacity 0.25s;
       }
 
       &:not(:hover) {
         .unified-extensions-item-row-wrapper {
-          opacity: 0 !important;
+          opacity: 0;
         }
       }
     }
     #zen-sidebar-top-buttons {
       & #zen-sidebar-top-buttons-customization-target {
         .unified-extensions-item-row-wrapper {
-          transition: opacity 0.25s !important;
+          transition: opacity 0.25s;
         }
 
         &:not(:hover) {
           .unified-extensions-item-row-wrapper {
-            opacity: 0 !important;
+            opacity: 0;
           }
         }
       }

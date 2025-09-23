@@ -1,10 +1,10 @@
 /* --- Context Menu --- */
 #contentAreaContextMenu {
-  width: 275px !important;
+  width: 250px !important;
 }
 
 #tabContextMenu {
-  width: 225px !important;
+  width: 220px !important;
 }
 
 #confirmation-hint {

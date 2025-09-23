@@ -33,8 +33,7 @@
       }
 
       #urlbar-input {
-        mask-image: linear-gradient(-90deg, transparent, black 3ch, black calc(100% - 3ch), transparent),
-          linear-gradient(90deg, transparent, black 3ch, black calc(100% - 3ch), transparent) !important;
+        mask-image: linear-gradient(90deg, transparent, black 3ch, black calc(100% - 3ch), transparent) !important;
       }
 
       #userContext-icons {
@@ -48,7 +47,7 @@
   }
 
   @media not (-moz-bool-pref: "bubble.clean.multiple-urlbar-bg") {
-    #urlbar-background, .urlbar-background {
+    .urlbar-background {
       background: unset !important;
       border: unset !important;
     }

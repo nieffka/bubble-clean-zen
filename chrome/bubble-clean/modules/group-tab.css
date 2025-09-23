@@ -14,10 +14,8 @@ zen-folder {
     }
 
     & .tab-group-folder-icon {
-      width: 24px !important;
-      height: 22px !important;
-      margin-left: 2px !important;
-      margin-bottom: 0px !important;
+      scale: 0.85;
+      margin-top: 1px !important;
     }
   }
 }
