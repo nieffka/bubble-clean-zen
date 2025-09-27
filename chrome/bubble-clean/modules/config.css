@@ -215,7 +215,7 @@
 
   }
 
-  #urlbar[open] #urlbar-background {
+  #urlbar[open] .urlbar-background {
     margin: 4px !important;
     border-radius: 15px !important;
     backdrop-filter: blur(30px) saturate(130%) !important;

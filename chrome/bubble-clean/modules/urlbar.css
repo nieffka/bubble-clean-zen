@@ -279,11 +279,11 @@
 
     /* URLbar hover animation */
     &:not([breakout-extend="true"]) {
-      #urlbar-background {
+      .urlbar-background {
         transition: background 0.2s ease;
       }
 
-      &:hover #urlbar-background {
+      &:hover .urlbar-background {
         background: color-mix(in srgb, var(--zen-primary-color) 40%, transparent) !important;
       }
     }

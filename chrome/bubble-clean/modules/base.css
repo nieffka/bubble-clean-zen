@@ -27,9 +27,12 @@
         left: 50% !important;
       }
 
-      #nav-bar-customization-target,
-      #urlbar-container[breakout] {
+      #urlbar-container {
         -moz-window-dragging: drag !important;
+      }
+      
+      #urlbar {
+        -moz-window-dragging: no-drag !important;
       }
 
       #urlbar-input {

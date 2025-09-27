@@ -35,7 +35,7 @@
 }
 
 #context-zen-change-workspace-tab::before {
-  content: "Move to Workspace" !important;
+  content: "Move to Space" !important;
 }
 
 #context-zen-change-workspace-tab::after {
