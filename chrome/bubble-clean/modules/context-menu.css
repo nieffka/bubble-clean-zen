@@ -159,6 +159,7 @@ menuitem[checked="true"]>.menu-iconic-text {
 #context_closeTab,
 #context_closeDuplicateTabs[disabled="true"],
 #context_zenSplitTabs[disabled="true"],
+.share-tab-url-item,
 
 /* Sidebar toolbar options */
 #toggle_toolbar-menubar,

@@ -77,18 +77,6 @@
 
 :root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
   @media -moz-pref("zen.view.compact.hide-tabbar") or -moz-pref("zen.view.use-single-toolbar") {
-    body:has([zen-compact-mode="true"]) #titlebar {
-      background: var(--zen-primary-color) !important;
-      backdrop-filter: brightness(0.55) blur(10px) saturate(200%) !important;
-      border-radius: 8px !important;
-      top: calc(var(--zen-element-separation) / 1.4) !important;
-      left: calc(var(--zen-element-separation) / 0.999) !important;
-      height: calc(100% - (var(--zen-element-separation) * 2.4)) !important;
-      margin: calc(var(--zen-element-separation) / 2) 0 !important;
-      scale: 1 !important;
-      padding: 6px !important;
-    }
-
     #navigator-toolbox:not([animate="true"]) #titlebar::before {
       border-radius: 8px !important;
       background: var(--zen-primary-color) !important;

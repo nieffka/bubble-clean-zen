@@ -515,7 +515,6 @@ findbar {
 
   .findbar-label {
     display: flex;
-    flex-basis: 100% !important;
 
     &:is([hidden="true"]) {
       display: none;

@@ -86,6 +86,12 @@ menuitem *,
   }
 }
 
+:root:not([zen-single-toolbar="true"]) #urlbar:not([breakout-extend="true"]) .urlbar-input-container:not([pageproxystate="invalid"]) {
+  & #identity-box {
+    order: unset !important;
+  }
+}
+
 /* Hide double audio button */
 .button-background {
   display: none !important;

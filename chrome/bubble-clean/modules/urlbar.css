@@ -40,6 +40,7 @@
   color: white !important;
   text-align: center !important;
   margin-bottom: 1px !important;
+  mask-image: linear-gradient(90deg, transparent, black 3ch, black calc(100% - 3ch), transparent) !important;
 }
 
 #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]) {
