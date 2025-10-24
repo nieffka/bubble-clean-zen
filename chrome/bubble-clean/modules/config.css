@@ -43,11 +43,12 @@
       opacity: 1 !important;
     }
 
-    #urlbar :is(#pageAction-urlbar-copy-frame-url_jeffersonscher_com),
+    #urlbar :is(#zen-copy-url-button),
     & .urlbar-page-action[open] {
       opacity: 0.9 !important;
       margin-inline-end: 0 !important;
       display: flex !important;
+      visibility: visible !important;
     }
   }
 }

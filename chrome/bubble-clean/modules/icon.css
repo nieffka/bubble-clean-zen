@@ -6,6 +6,7 @@
 
 #preferences-button {
   scale: 0.91;
+  opacity: 0.8 !important;
 }
 
 #zen-site-data-icon-button:not(#urlbar[open][zen-floating-urlbar="true"] *) {
@@ -120,14 +121,19 @@ toolbar .toolbaritem-combined-buttons {
 }
 
 /* Copy link icon */
-#pageAction-urlbar-copy-frame-url_jeffersonscher_com {
-  list-style-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.32755 1.30212H7.48846V0.302124H9.32755C11.1392 0.302124 12.6079 1.77078 12.6079 3.58246C12.6079 5.39414 11.1392 6.86279 9.32756 6.86279H7.48846V5.86279H9.32756C10.587 5.86279 11.6079 4.84185 11.6079 3.58246C11.6079 2.32307 10.5869 1.30212 9.32755 1.30212ZM5.48846 0.302124V1.30212H3.51032C2.25092 1.30212 1.22998 2.32307 1.22998 3.58246C1.22998 4.84185 2.25092 5.86279 3.51032 5.86279H5.48846V6.86279H3.51032C1.69864 6.86279 0.22998 5.39414 0.22998 3.58246C0.22998 1.77078 1.69864 0.302124 3.51032 0.302124H5.48846ZM3.58313 4.08246H9.39375V3.08246H3.58313V4.08246Z' fill='white'/%3E%3Cscript xmlns=''/%3E%3C/svg%3E") !important;
+#zen-copy-url-button {
   scale: 0.75;
+  order: unset !important;
+  
+  & image {
+    opacity: 0.5 !important;
+    list-style-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.32755 1.30212H7.48846V0.302124H9.32755C11.1392 0.302124 12.6079 1.77078 12.6079 3.58246C12.6079 5.39414 11.1392 6.86279 9.32756 6.86279H7.48846V5.86279H9.32756C10.587 5.86279 11.6079 4.84185 11.6079 3.58246C11.6079 2.32307 10.5869 1.30212 9.32755 1.30212ZM5.48846 0.302124V1.30212H3.51032C2.25092 1.30212 1.22998 2.32307 1.22998 3.58246C1.22998 4.84185 2.25092 5.86279 3.51032 5.86279H5.48846V6.86279H3.51032C1.69864 6.86279 0.22998 5.39414 0.22998 3.58246C0.22998 1.77078 1.69864 0.302124 3.51032 0.302124H5.48846ZM3.58313 4.08246H9.39375V3.08246H3.58313V4.08246Z' fill='white'/%3E%3Cscript xmlns=''/%3E%3C/svg%3E") !important;
+  }
 }
 
 :root:not([zen-single-toolbar="true"]) {
 
-  #urlbar :is(#pageAction-urlbar-copy-frame-url_jeffersonscher_com),
+  #urlbar :is(#zen-copy-url-button),
   & .urlbar-page-action[open] {
     opacity: 0.9 !important;
     margin-inline-end: 0 !important;
@@ -137,8 +143,7 @@ toolbar .toolbaritem-combined-buttons {
 
 /* --- Hides The Icons --- */
 #identity-permission-box,
-#identity-icon-label,
-#zen-copy-url-button {
+#identity-icon-label {
   display: none !important;
 }
 

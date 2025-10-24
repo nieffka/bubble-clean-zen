@@ -1,4 +1,7 @@
-/* Smaller Extension Badge */
+/* Smaller extension icons */
+.unified-extensions-item-action-button {
+  scale: 0.85;
+}
 .toolbarbutton-badge {
   height: 50%;
   width: 50%;

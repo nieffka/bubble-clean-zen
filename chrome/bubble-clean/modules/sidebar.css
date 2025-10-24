@@ -73,6 +73,16 @@
   .browserSidebarContainer {
     border-radius: 0 0 var(--zen-element-separation) var(--zen-element-separation) !important;
   }
+  #nav-bar {
+    transition: all 0.2s ease-in-out !important;
+    margin-left: var(--zen-element-separation) !important;
+  }
+}
+
+:root[zen-compact-mode="true"]:is([zen-single-toolbar="true"]) {
+  .browserSidebarContainer {
+    border-radius: var(--zen-element-separation) !important;
+  }
 }
 
 :root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) {

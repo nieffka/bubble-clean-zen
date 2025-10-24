@@ -18,6 +18,7 @@
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="270" />                         | Cleaner URLbar                   |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" width="270" />               | Folder style                     |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" width="270" /> | Show extension icons on hover    |
+
 ## ⚙️ Config
 go to `about:config`, type and click add button as boolean:
 
@@ -32,9 +33,6 @@ go to `about:config`, type and click add button as boolean:
 | `bubble.clean.multiple-urlbar-compact`  | `true` | Compact URLbar for multiple toolbar     |
 | `bubble.clean.multiple-urlbar-bg`       | `true` | URLbar background for multiple toolbar  |
 | `bubble.clean.show-extensions-hover`    | `true` | Hides extensions buttons unless hovered |
-
-#### 💠 Copy Link Button setting
-![image](https://github.com/user-attachments/assets/46fee675-8b0f-4ed8-b0ea-c34fd013f28b)
 
 #### 💠 Optional Tweak
 Go to `about:config` and set:
@@ -57,7 +55,6 @@ Go to `about:config` and set:
 | Type       | Details            | Links                                                                                      |
 | ---------- | ------------------ | ------------------------------------------------------------------------------------------ |
 | Font       | `Poppins`          | [Poppins](https://fonts.google.com/specimen/Poppins)                                       |
-| Extensions | `Copy Link Button` | [Copy Link Button](https://addons.mozilla.org/en-US/firefox/addon/copy-frame-or-page-url/) |
 | Software   | `MicaForEveryone`  | [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone)                      |
 | Software   | `DWMBlurGlass`     | [DWMBlurGlass](https://github.com/Maplespe/DWMBlurGlass)                                   |
 

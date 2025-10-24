@@ -72,7 +72,6 @@ menuitem *,
 }
 
 :root:not([zen-single-toolbar="true"], [zen-compact-mode="true"]) {
-
   toolbar .toolbarbutton-1,
   #nav-bar-customization-target {
     padding: 1px !important;
