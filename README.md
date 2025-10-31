@@ -11,11 +11,9 @@
 
 | Image                                                                                                                                                                                                                                                            | Description                      |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extension.png" width="270" />                   | Grid Arc-like compact extensions |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/contextmenu.png" width="270" />               | Cleaner context menu with icons  |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/gridpin.gif" width="270" />                       | Grid pinned tab                  |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/miniplayer.gif" width="270" />                 | Mini player                      |
-| <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/urlbar.gif" width="270" />                         | Cleaner URLbar                   |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/folderstyle.gif" width="270" />               | Folder style                     |
 | <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" data-canonical-src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/extensiononlyhover.gif" width="270" /> | Show extension icons on hover    |
 
@@ -28,7 +26,6 @@ go to `about:config`, type and click add button as boolean:
 | `bubble.clean.show-titlebar`            | `true` | Show titlebar in hover                  |
 | `bubble.clean.pinned-grid`              | `true` | Change pinned tab to grid style         |
 | `bubble.clean.show-workspace-name`      | `true` | Show workspace name indicator           |
-| `bubble.clean.urlbar-only-typing`       | `true` | Compact floating URLbar                 |
 | `bubble.clean.folder-style`             | `true` | Folder style                            |
 | `bubble.clean.multiple-urlbar-compact`  | `true` | Compact URLbar for multiple toolbar     |
 | `bubble.clean.multiple-urlbar-bg`       | `true` | URLbar background for multiple toolbar  |

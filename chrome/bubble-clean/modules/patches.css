@@ -91,6 +91,10 @@ menuitem *,
   }
 }
 
+#notification-popup-box {
+  height: unset !important;
+}
+
 /* Hide double audio button */
 .button-background {
   display: none !important;
@@ -116,11 +120,11 @@ menuitem *,
 
 /* Always show seperator bottom */
 .pinned-tabs-container-separator {
-  background: light-dark(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) !important;
-
   .zen-workspace-pinned-tabs-section[hide-separator] & {
     margin: 8px auto 8px !important;
     max-height: 1px !important;
+    height: unset !important;
+    opacity: unset !important;
   }
 }
 
