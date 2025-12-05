@@ -60,6 +60,16 @@ menuitem *,
 }
 
 /* Padding toolbar */
+:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
+  @media (not -moz-pref("zen.view.shift-down-site-on-hover")) and (not ((-moz-pref("zen.view.experimental-no-window-controls") or (not -moz-pref("zen.view.hide-window-controls"))) and -moz-pref("zen.view.use-single-toolbar"))) {
+    & .browserSidebarContainer:is(.deck-selected, [zen-split="true"]) .browserContainer {
+      #tabbrowser-tabpanels[has-toolbar-hovered] & {
+        --margin-top-fix: unset !important;
+      }
+    }
+  }
+}
+
 :root[zen-single-toolbar="true"] {
 
   #zen-sidebar-top-buttons,
@@ -125,6 +135,10 @@ menuitem *,
     max-height: 1px !important;
     height: unset !important;
     opacity: unset !important;
+    
+    & toolbarseparator {
+       height: 0.7px !important;
+     }
   }
 }
 

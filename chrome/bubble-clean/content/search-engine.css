@@ -30,6 +30,14 @@
   div#cnt > div {
   }
 }
+@-moz-document domain("gemini.google.com") {
+  * {
+	--bard-color-sidenav-background-desktop: rgba(0, 0, 0, 0.1) !important;
+	--gem-sys-color--surface: none !important;
+	--bard-color-synthetic--chat-window-surface: none !important;
+	--gem-sys-color--surface-container-low: rgba(0, 0, 0, 0.1) !important;
+  }
+}
 
 @-moz-document domain(duckduckgo.com) {
   body,

@@ -53,9 +53,13 @@
     & .urlbar-page-action[open] {
       opacity: 0.9 !important;
       margin-inline-end: 0 !important;
-      display: flex !important;
+      display: flex;
       visibility: visible !important;
     }
+  }
+  
+  &:not([zen-has-empty-tab="true"]) #urlbar:not([breakout-extend="true"]) #zen-copy-url-button {
+    display: flex !important;
   }
 }
 
@@ -177,13 +181,13 @@
 /* Turn workspace indicator into a fake tab separator */
 @media not (-moz-bool-pref: "bubble.clean.show-workspace-name") {
   .zen-current-workspace-indicator {
-    min-block-size: 0.5px !important;
-    max-block-size: 0.5px !important;
+    min-block-size: 0.9px !important;
+    max-block-size: 0.9px !important;
     inline-size: unset !important;
     min-inline-size: unset !important;
     max-inline-size: unset !important;
     background: white !important;
-    margin: 8px 6.5px !important;
+    margin: 8px 8.5px !important;
     position: relative !important;
     opacity: 0.1 !important;
     border: none !important;

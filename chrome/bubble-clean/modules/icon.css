@@ -129,16 +129,6 @@ toolbar .toolbaritem-combined-buttons {
   }
 }
 
-:root:not([zen-single-toolbar="true"]) {
-
-  #urlbar :is(#zen-copy-url-button),
-  & .urlbar-page-action[open] {
-    opacity: 0.9 !important;
-    margin-inline-end: 0 !important;
-    display: flex !important;
-  }
-}
-
 /* --- Hides The Icons --- */
 #identity-permission-box,
 #identity-icon-label {
