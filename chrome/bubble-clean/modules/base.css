@@ -120,16 +120,6 @@ browser {
   }
 }
 
-#tabbrowser-tabs {
-  & .tabbrowser-tab {
-    & .tabbrowser-tab {
-      & .tab-content {
-        padding: 0 2px !important;
-      }
-    }
-  }
-}
-
 /* --- Workspace Button --- */
 #wrapper-zen-workspaces-button {
   justify-content: center !important;
@@ -202,7 +192,6 @@ browser {
 .tab-icon-image:not([pinned]) {
   width: 14px !important;
   height: 14px !important;
-  margin-left: 3.5px !important;
 }
 
 /* Tab style */

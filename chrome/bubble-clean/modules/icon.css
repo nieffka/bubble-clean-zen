@@ -6,7 +6,7 @@
 
 #preferences-button {
   scale: 0.91;
-  opacity: 0.8 !important;
+  opacity: 1 !important;
 }
 
 #zen-site-data-icon-button:not(#urlbar[open][zen-floating-urlbar="true"] *) {

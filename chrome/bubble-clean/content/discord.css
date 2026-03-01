@@ -8,8 +8,8 @@
    --bg-base-primary: #00000000 !important;
    --background-base-lowest: transparent !important;
   }
-  html, body, #pass-sidebar, header, .app-root, #main, main, #content,
-  .callContainer_cb9592, .bg__960e4, .tabBody__133bf, .chat_f75fb0, .page_c48ade,
+  html, body, #pass-sidebar, header, .app-root, #main, main, #content, ._133bf5eea8e33a34-nowPlayingColumn,
+  .callContainer_cb9592, .bg__960e4, .tabBody__133bf, .chat_f75fb0, .page_c48ade, ._7d20cf18f8a2784c-container,
   .children__9293f::after, .contentRegionScroller__23e6b, .childContainer__91a9d,
   .visual-refresh .member__5d473, .container__7d20c, .nowPlayingColumn__133bf, .visual-refresh .content__908e2, .container_f369db, [aria-label="Resize Sidebar"] {
     background-color: transparent !important;
@@ -23,7 +23,7 @@
   .container_c8ffbb, .members_c8ffbb,
   .visual-refresh .sidebar_c48ade,
   :where(.visual-refresh) .themedBackground__74017,
-  .visual-refresh .channelTextArea_f75fb0 {
+  .visual-refresh .channelTextArea_f75fb0, ._133bf5eea8e33a34-tabBody {
     background-color: transparent !important;
     background: rgba(0, 0, 0, 0.1) !important;
     border: none !important;
