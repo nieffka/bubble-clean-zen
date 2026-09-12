@@ -101,12 +101,8 @@ menuitem *,
   }
 }
 
-#notification-popup-box {
-  height: unset !important;
-}
-
 /* Hide double audio button */
-.button-background {
+.tab-audio-button {
   display: none !important;
 }
 

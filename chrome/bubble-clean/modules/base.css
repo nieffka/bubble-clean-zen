@@ -489,6 +489,7 @@ browser {
   min-width: 13px !important;
   align-self: center;
   margin-left: 10px !important;
+  corner-shape: superellipse(1) !important;
 }
 
 .titlebar-buttonbox {
