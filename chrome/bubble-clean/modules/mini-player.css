@@ -156,7 +156,7 @@
 
 
       background-size: 400% 400%;
-      opacity: 0;
+      opacity: 30%;
       filter: blur(30px);
       z-index: -1;
       transition: opacity 0.3s ease-in-out;
@@ -250,4 +250,12 @@
 /* Fade out instantly when unhovering */
 #zen-media-controls-toolbar:not(:hover) .show-on-hover>* {
   transition: opacity 0.15s ease, transform 0.15s ease, filter 0.15s ease;
+}
+
+/* Stacked player */
+#zen-media-controls-toolbar:not(:hover):has(.zen-media-card[stacked-behind])
+.zen-media-card[stacked-behind] {
+  & .zen-media-main-vbox {
+    opacity: 0 !important;
+  }
 }

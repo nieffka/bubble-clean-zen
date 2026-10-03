@@ -429,7 +429,7 @@
 
 /*noinspection CssInvalidFunction*/
 findbar {
-  position: absolute;
+  position: fixed  !important;
   top: 20px;
   width: min(550px, 90%);
   right: 20px;
