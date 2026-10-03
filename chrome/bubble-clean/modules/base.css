@@ -26,7 +26,7 @@
         position: relative !important;
       }
       
-      #urlbar {
+      #urlbar:not([breakout-extend]) {
         --urlbar-width: unset !important;
         position: absolute !important;
         display: flex !important;
