@@ -414,118 +414,131 @@
   backdrop-filter: blur(10px) saturate(150%) !important;
 }
 
-/* --- Natsumi Findbar --- */
-@keyframes initial-animation {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-
-  to {
-    top: 20px;
-    opacity: 1;
-  }
+/* --- Zia Findbar --- */
+.browserContainer:has(> findbar) {
+  position: relative;
 }
 
-/*noinspection CssInvalidFunction*/
 findbar {
-  position: fixed  !important;
-  top: 20px;
-  width: min(550px, 90%);
-  right: 20px;
-  min-height: 70px;
-  height: auto !important;
-  flex-wrap: wrap;
-  border-radius: var(--zen-border-radius);
-  background: rgba(0, 0, 0, 0.3) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.3)) !important;
-  opacity: 1;
-  transition: background 0.2s ease, opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease, box-shadow 0.2s ease !important;
-  box-shadow: 0 0 10px color-mix(in srgb, var(--zen-secondary-color) 75%, light-dark(black, white)) !important;
-  animation: initial-animation 0.2s ease;
-}
+  grid-area: auto !important;
+  position: absolute !important;
+  top: 10px;
+  right: 12px;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 3;
+  width: 380px;
+  max-width: calc(100% - 24px);
+  height: var(--zia-urlbar-height, 32px);
+  margin: 0 !important;
+  padding: 0 4px 0 10px !important;
+  display: flex;
+  align-items: center;
+  background: rgba(38, 38, 38, 0.78) !important;
+  backdrop-filter: blur(18px) saturate(1.4);
+  border: none !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.92) !important;
+  color-scheme: dark;
+  transition: none !important;
 
-/*noinspection CssInvalidPropertyValue*/
-&:is([hidden="true"]) {
-  visibility: inherit !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-  top: 0 !important;
-}
+  &[hidden] {
+    display: none !important;
+  }
 
-/*noinspection CssInvalidPropertyValue*/
-.findbar-closebutton {
-  outline: none !important;
-  order: 1;
-}
+  flex-direction: row !important;
 
-.findbar-container {
-  margin-left: 10px !important;
-  margin-bottom: 5px !important;
-  flex-wrap: wrap;
-  height: auto !important;
-  row-gap: 10px;
+  & :is(.findbar-textbox-wrapper, [anonid="findbar-textbox-wrapper"], .findbar-container > :has(> .findbar-textbox)) {
+    display: contents !important;
+  }
 
-  /*noinspection CssInvalidFunction*/
-  &> :first-child {
-    width: 100% !important;
-    margin-top: 5px !important;
-    padding-bottom: 10px !important;
-    border-bottom: 1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.3)) !important;
+  & .findbar-textbox {
+    order: 1;
+    flex: 1 1 auto !important;
+    min-width: 0;
+    width: auto !important;
+    max-width: none !important;
+    height: 28px;
+    margin: 0 !important;
+    appearance: none !important;
+    background: rgba(22, 24, 23, 50) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    font-size: 14px !important;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    &[status="notfound"] {
+      color: rgb(255, 128, 128) !important;
+    }
+  }
+
+  & .found-matches {
+    order: 2;
+    margin: 0 6px !important;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  & :is(.findbar-find-previous, .findbar-find-next) {
+    order: 3;
+    width: 28px;
+    height: 28px;
+    margin: 0 !important;
+    padding: 6px !important;
+    border: none !important;
+    border-radius: 7px !important;
+    background: transparent !important;
+    color: inherit !important;
+    fill: currentColor !important;
+
+    &:hover:not([disabled]) {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  & .findbar-find-previous {
+    order: 3;
+  }
+
+  & .findbar-find-next {
+    order: 4;
+  }
+
+  & :is(.findbar-highlight, .findbar-case-sensitive, .findbar-match-diacritics, .findbar-entire-word),
+  & .findbar-label:not(.found-matches) {
+    display: none !important;
+  }
+
+  & .findbar-closebutton {
+    order: 2;
+    flex: none;
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 0 0 7px !important;
+    padding: 7px !important;
+    border-radius: 7px !important;
+    position: relative;
+    background: none !important;
+    fill: currentColor !important;
+    color: inherit !important;
 
     &::before {
       content: "";
-      width: 16px !important;
-      min-width: 16px !important;
-      background-image: url(chrome://global/skin/icons/search-glass.svg) !important;
-      background-repeat: no-repeat;
-      margin-top: 4px;
-      margin-right: 15px;
-      margin-left: 5px;
-
-      @media (prefers-color-scheme: dark) {
-        filter: invert();
-      }
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.15);
     }
 
-    .findbar-textbox {
-      background: none !important;
-      padding: 0 !important;
-      font-size: 13px !important;
-      box-shadow: none !important;
-      width: 100% !important;
-      border: none !important;
-    }
-
-    toolbarbutton {
-      width: 24px !important;
-      justify-content: space-between !important;
-      padding: 4px !important;
-      margin-left: 4px !important;
-    }
-  }
-
-  checkbox,
-  label,
-  description {
-    margin-left: 4px !important;
-    margin-right: 6px !important;
-  }
-
-  .findbar-label {
-    display: flex;
-
-    &:is([hidden="true"]) {
-      display: none;
-    }
-  }
-
-  .findbar-find-status {
-    display: none;
-
-    &:is([data-l10n-id]) {
-      display: flex;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
     }
   }
 }

@@ -1,0 +1,51 @@
+[
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.hide-single-toolbar-icon",
+    "label": "Hide Single Toolbar Icon",
+    "description": "Hide icons in the URL bar when using a single toolbar.",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.show-titlebar",
+    "label": "Show Titlebar",
+    "description": "Show the titlebar when hovering over the window.",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.show-workspace-name",
+    "label": "Show Workspace Name",
+    "description": "Show the current workspace name indicator.",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.folder-style",
+    "label": "Folder Style",
+    "description": "Enable the Bubble Clean folder styling.",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.multiple-urlbar-compact",
+    "label": "Compact Multiple URL Bars",
+    "description": "Use a more compact URL bar when multiple toolbars are enabled.",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.multiple-urlbar-bg",
+    "label": "Multiple URL Bar Background",
+    "description": "Add a background to the URL bar when using multiple toolbars.",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "preference": "bubble.clean.show-extensions-hover",
+    "label": "Show Extensions on Hover",
+    "description": "Hide extension buttons until the extension area is hovered.",
+    "defaultValue": true
+  }
+]

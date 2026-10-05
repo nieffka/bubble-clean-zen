@@ -1,0 +1,25 @@
+{
+  "id": "bubble-clean-zen",
+  "name": "Bubble Clean Zen",
+  "description": "Clean and seamless—personal Zen Browser theme.",
+  "homepage": "https://github.com/nieffka/bubble-clean-zen",
+  "readme": "https://raw.githubusercontent.com/nieffka/bubble-clean-zen/main/README.md",
+  "image": "https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/main.png",
+  "author": "nieffka",
+  "version": "2.4.0",
+  "createdAt": "2024-12-18",
+  "updatedAt": "2026-10-05",
+  "style": {
+    "chrome": "userChrome.css",
+    "content": "userContent.css"
+  },
+  "tags": [
+    "chrome",
+    "minimal",
+    "clean"
+  ],
+  "fork": [
+    "zen"
+  ],
+  "preferences": "preferences.json"
+}
