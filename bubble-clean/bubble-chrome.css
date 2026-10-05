@@ -1,0 +1,14 @@
+/* --- Load Config --- */
+
+@import "modules/base.css";
+@import "modules/config.css";
+@import "modules/patches.css";
+@import "modules/urlbar.css";
+@import "modules/sidebar.css";
+@import "modules/icon.css";
+@import "modules/extension.css";
+@import "modules/group-tab.css";
+@import "modules/animation.css";
+@import "modules/misc.css";
+@import "modules/context-menu.css";
+@import "modules/mini-player.css";
