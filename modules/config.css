@@ -1,0 +1,199 @@
+/* Show top toolbar (single toolbar) */
+@media not (-moz-bool-pref: "bubble.clean.show-titlebar") {
+  /* Hides top toolbar */
+  :root[zen-single-toolbar="true"] #zen-appcontent-navbar-wrapper {
+    max-height: var(--zen-element-separation) !important;
+    margin-top: 0px;
+  }
+
+  :root[inDOMFullscreen="true"] #zen-appcontent-navbar-wrapper {
+    display: none;
+  }
+
+  /* Hide title bar */
+  :root[zen-single-toolbar="true"]:not([privatebrowsingmode="temporary"])
+    .titlebar-button {
+    display: none;
+  }
+
+  /* Private mode */
+  :root[privatebrowsingmode="temporary"][zen-single-toolbar="true"]
+    #zen-appcontent-navbar-wrapper {
+    max-height: initial !important;
+    margin-top: initial !important;
+  }
+
+  :root[privatebrowsingmode="temporary"][inDOMFullscreen="true"]
+    #zen-appcontent-navbar-wrapper {
+    display: initial !important;
+  }
+}
+
+/* Show url icon in single toolbar */
+@media not (-moz-bool-pref: "bubble.clean.hide-single-toolbar-icon") {
+  :root[zen-single-toolbar="true"] {
+    & #urlbar:not([open]) {
+      & #identity-box {
+        order: 0 !important;
+      }
+    }
+    #zen-site-data-icon-button:not(
+        #urlbar[open][zen-floating-urlbar="true"] *
+      ) {
+      margin-left: 2px !important;
+      opacity: 0.9 !important;
+      visibility: visible !important;
+    }
+
+    & #identity-icon-box:not([open]),
+    #identity-icon-box[open] {
+      margin-inline-start: -8px !important;
+      margin-inline-end: auto !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+
+    #urlbar :is(#zen-copy-url-button),
+    & .urlbar-page-action[open] {
+      opacity: 0.9 !important;
+      margin-inline-end: 0 !important;
+      display: flex;
+      visibility: visible !important;
+    }
+  }
+
+  &:not([zen-has-empty-tab="true"])
+    #urlbar:not([breakout-extend="true"])
+    #zen-copy-url-button {
+    display: flex !important;
+  }
+}
+
+@media (-moz-bool-pref: "bubble.clean.hide-single-toolbar-icon") {
+  :root[zen-single-toolbar="true"] {
+    #identity-box {
+      #identity-icon-box {
+        border-radius: 10px !important;
+        display: none !important;
+      }
+    }
+  }
+}
+
+/* Always show bottom separator */
+@media (-moz-bool-pref: "bubble.clean.always-bottomsep") {
+  .pinned-tabs-container-separator {    
+    .zen-workspace-pinned-tabs-section[hide-separator] & {
+      margin: 2px auto 2px !important;
+      height: unset !important;
+      opacity: 1 !important;
+    }
+    & toolbarbutton {
+      background: linear-gradient( var(--zen-pinned-separator-color), var(--zen-pinned-separator-color) ) 0 50% / calc(100% - 4px) 1px no-repeat !important;
+    }
+  }
+}
+
+/* Turn workspace indicator into a fake tab separator */
+@media not (-moz-bool-pref: "bubble.clean.show-workspace-name") {
+  .zen-current-workspace-indicator {
+    min-block-size: 0.9px !important;
+    max-block-size: 0.9px !important;
+    inline-size: unset !important;
+    min-inline-size: unset !important;
+    max-inline-size: unset !important;
+    background: white !important;
+    margin: 8px 8.5px !important;
+    position: relative !important;
+    opacity: 0.1 !important;
+    border: none !important;
+    height: 1px !important;
+    padding: 0.5px !important;
+    pointer-events: none !important;
+
+    & .zen-current-workspace-indicator-icon {
+      display: none !important;
+    }
+
+    & .zen-current-workspace-indicator-name {
+      visibility: hidden !important;
+      height: 1px !important;
+    }
+  }
+
+  [zen-should-be-dark-mode="false"] .zen-current-workspace-indicator {
+    background: white !important;
+  }
+
+  [privatebrowsingmode="temporary"] .zen-current-workspace-indicator {
+    display: none !important;
+  }
+}
+
+/* Hides extensions buttons unless hovered */
+@media (-moz-bool-pref: "bubble.clean.show-extensions-hover") {
+  :root:not([customizing]) {
+    #nav-bar:not(:has(*[open="true"])) {
+      .unified-extensions-item-row-wrapper {
+        transition: opacity 0.25s;
+      }
+
+      &:not(:hover) {
+        .unified-extensions-item-row-wrapper {
+          opacity: 0;
+        }
+      }
+    }
+    #zen-sidebar-top-buttons {
+      & #zen-sidebar-top-buttons-customization-target {
+        .unified-extensions-item-row-wrapper {
+          transition: opacity 0.25s;
+        }
+
+        &:not(:hover) {
+          .unified-extensions-item-row-wrapper {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tab Preview Panel */
+@media (-moz-bool-pref: "browser.tabs.hoverPreview.enabled") {
+  #tab-preview-panel {
+    --panel-text-color: #ffffff !important;
+    --text-color-deemphasized: #a0a0a0 !important;
+    --panel-background: color-mix(
+      in srgb,
+      var(--arrowpanel-background),
+      transparent 75%
+    ) !important;
+    background: color-mix(
+      in srgb,
+      rgba(255, 255, 255, 0.2) 10%,
+      var(--zen-primary-color) 24%
+    ) !important;
+    margin-left: 8px !important;
+    margin-top: -1.5px !important;
+  }
+  #tab-preview-panel .tab-preview-title {
+    font-weight: bold;
+  }
+  #tab-preview-panel .tab-preview-uri {
+    font-size: 0.95em;
+  }
+  .tab-preview-container-indicator {
+    position: absolute;
+    float: right;
+    top: 5px;
+    right: 5px;
+    scale: 0.9;
+    color: #a0a0a0 !important;
+  }
+  .tab-preview-container-icon {
+    scale: 0.8;
+    fill: #a0a0a0;
+  }
+}

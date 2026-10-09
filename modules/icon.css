@@ -1,0 +1,212 @@
+toolbar .toolbaritem-combined-buttons {
+  margin-inline: unset !important;
+}
+#preferences-button {
+  opacity: 1 !important;
+}
+
+/* Zen site data icon */
+#zen-site-data-icon-button {
+  color: #fff !important;
+  width: 24px !important;
+  min-width: 24px !important;
+  height: 24px !important;
+  min-height: 24px !important;
+  padding: 0 !important;
+  background: none !important;
+  box-sizing: border-box !important;
+  justify-content: center !important;
+  align-self: center !important;
+  
+  &:hover {
+    background: var(--toolbarbutton-background-color-hover) !important;
+  }
+}
+#zen-site-data-icon-button image {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/identity.svg") !important;
+  scale: 0.9 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+#urlbar:not([breakout-extend="true"]) {
+  #identity-box:is([pageproxystate="invalid"]) {
+    display: none !important;
+  }
+}
+
+/* Copy link icon */
+#zen-copy-url-button {
+  scale: 0.9;
+  color: #fff !important;
+  order: unset !important;
+
+  & image {
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/copy-link.svg") !important;
+  }
+  
+  &:hover {
+    background: var(--toolbarbutton-background-color-hover) !important;
+  }
+}
+
+/* Zen split button */
+#zen-split-views-button {
+  scale: 1 !important;
+  opacity: 0.8 !important;
+}
+#zen-split-views-box {
+  scale: 0.9 !important;
+}
+
+/* Replace the icons */
+#zen-expand-sidebar-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/expand-sidebar.svg") !important;
+  scale: 0.9;
+}
+#history-panelmenu {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/history.svg") !important;
+  scale: 0.9;
+  padding-inline-start: 3px !important;
+  height: 100 !important;
+}
+#bookmarks-menu-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/bookmark.svg") !important;
+}
+#back-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/back.svg") !important;
+}
+#forward-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/forward.svg") !important;
+}
+#reload-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/reload.svg") !important;
+}
+#stop-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/stop.svg") !important;
+}
+#PanelUI-menu-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/zen.svg") !important;
+}
+#fullscreen-button {
+  scale: 0.9;
+}
+
+/* Zoom controls */
+.toolbaritem-combined-buttons {
+  & > separator {
+    toolbar & {
+      color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+}
+#zoom-reset-button {
+  margin-top: 3px !important;
+}
+
+/* Download button */
+#downloads-button,
+#downloads-indicator-anchor {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/downloads.svg") !important;
+}
+#downloads-button[hidden],
+#downloads-button[hidden="true"] {
+  display: none !important;
+}
+#downloads-button
+  > :is(
+    .toolbarbutton-badge-stack,
+    #downloads-indicator-anchor,
+    .toolbarbutton-icon
+  ) {
+  translate: 0 1px;
+}
+#downloads-indicator-start-box,
+#downloads-indicator-finish-box,
+#downloads-indicator-progress-outer {
+  display: none !important;
+}
+#downloads-button[animate][notification="start"] #downloads-indicator-icon {
+  animation: zia-download-start 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+#downloads-button[animate][notification="finish"] #downloads-indicator-icon {
+  animation: zia-download-finish 2.1s ease-in-out;
+}
+@keyframes zia-download-start {
+  0% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(2px) scale(0.92);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes zia-download-finish {
+  0% {
+    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    transform: scale(1);
+    opacity: 1;
+  }
+  14% {
+    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  15% {
+    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  30% {
+    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    transform: scale(1);
+    opacity: 1;
+  }
+  84% {
+    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  85% {
+    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  100% {
+    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Zen library */
+#zen-library-button {
+  list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/history.svg") !important;
+}
+#zen-library-button {
+  & .zen-library-sprite::before {
+    display: none !important;
+  }
+}
+#library-button-badge {
+  display: none !important;
+}
+
+/* Hides the icons */
+#identity-permission-box,
+#identity-icon-label {
+  display: none !important;
+}
+#star-button-box,
+#tracking-protection-icon-container,
+#reader-mode-button,
+#picture-in-picture-button {
+  display: None;
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="context-fill">
+  <style>
+    rect { transform-box: fill-box; transform-origin: center; animation: zia-bar 0.6s ease-in-out infinite alternate; }
+    .b1 { animation-duration: 0.55s; animation-delay: -0.2s; }
+    .b2 { animation-duration: 0.68s; animation-delay: -0.5s; }
+    .b3 { animation-duration: 0.5s; animation-delay: -0.3s; }
+    .b4 { animation-duration: 0.74s; animation-delay: -0.1s; }
+    @keyframes zia-bar { from { transform: scaleY(0.22); } to { transform: scaleY(1); } }
+    @media (prefers-reduced-motion: reduce) {
+      rect { animation: none; }
+      .b1 { transform: scaleY(0.5); } .b2 { transform: scaleY(0.85); }
+      .b3 { transform: scaleY(0.65); } .b4 { transform: scaleY(0.4); }
+    }
+  </style>
+  <rect class="b1" x="1.6" y="2.5" width="2" height="11" rx="1"/>
+  <rect class="b2" x="5.2" y="2.5" width="2" height="11" rx="1"/>
+  <rect class="b3" x="8.8" y="2.5" width="2" height="11" rx="1"/>
+  <rect class="b4" x="12.4" y="2.5" width="2" height="11" rx="1"/>
+</svg>

@@ -1,6 +1,18 @@
 /* --- Bubble Clean --- */
 
-@import "bubble-clean/bubble-chrome.css";
+@import "modules/animation.css";
+@import "modules/base.css";
+@import "modules/config.css";
+@import "modules/context-menu.css";
+@import "modules/extension.css";
+@import "modules/font.css";
+@import "modules/group-tab.css";
+@import "modules/icon.css";
+@import "modules/mini-player.css";
+@import "modules/misc.css";
+@import "modules/patches.css";
+@import "modules/sidebar.css";
+@import "modules/urlbar.css";
 
 /* --- you can add your own userchrome CSS below --- */
 

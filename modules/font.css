@@ -1,0 +1,122 @@
+/* --- Font selection --- */
+/* Every font is bundled in /fonts, so nothing has to be installed manually.
+   All fonts are licensed under the SIL OFL 1.1, see fonts/<font>/OFL.txt */
+:root {
+  --bubble-font-size: unset;
+}
+
+@media (-moz-pref("bubble.clean.font", "Poppins")) {
+  :root {
+    --bubble-clean-font: "Poppins";
+  }
+}
+
+@media (-moz-pref("bubble.clean.font", "Figtree")) {
+  :root {
+    --bubble-clean-font: "Figtree";
+  }
+}
+
+@media (-moz-pref("bubble.clean.font", "JetBrainsMono")) {
+  :root {
+    --bubble-clean-font: "JetBrains Mono";
+  }
+  #titlebar .zen-current-workspace-indicator > label {
+    padding-top: 2px !important;
+  }
+}
+
+@media (-moz-pref("bubble.clean.font", "Bricolage")) {
+  :root {
+    --bubble-clean-font: "Bricolage Grotesque";
+  }
+}
+
+@media (-moz-pref("bubble.clean.font", "SUSE")) {
+  :root {
+    --bubble-clean-font: "SUSE";
+  }
+}
+
+@media (-moz-pref("bubble.clean.font", "SUSEMono")) {
+  :root {
+    --bubble-clean-font: "SUSE Mono";
+  }
+  #titlebar .zen-current-workspace-indicator > label {
+    padding-top: 2px !important;
+  }
+}
+
+/* --- Font files --- */
+@font-face {
+  font-family: "Poppins";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/poppins/Poppins-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/poppins/Poppins-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/poppins/Poppins-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/figtree/Figtree-Variable.ttf");
+  font-weight: 300 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/jetbrains-mono/JetBrainsMono-Variable.ttf");
+  font-weight: 100 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/bricolage-grotesque/BricolageGrotesque-Variable.ttf");
+  font-weight: 200 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SUSE";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/suse/SUSE-Variable.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SUSE Mono";
+  src: url("chrome://sine/content/bubble-clean-zen/fonts/suse-mono/SUSEMono-Variable.ttf");
+  font-weight: 100 800;
+  font-style: normal;
+}
+
+/* --- Apply --- */
+* {
+  font-family: var(--bubble-clean-font), sans-serif;
+}
+
+.tab-text,
+.tab-group-label{
+    font-size: var(--bubble-font-size) !important;
+}

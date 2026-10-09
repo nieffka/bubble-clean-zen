@@ -6,12 +6,19 @@
   "readme": "https://raw.githubusercontent.com/nieffka/bubble-clean-zen/main/README.md",
   "image": "https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/main.png",
   "author": "nieffka",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "createdAt": "2024-12-18",
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-07",
   "style": {
     "chrome": "userChrome.css",
     "content": "userContent.css"
+  },
+    "scripts": {
+    "bubble-script.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
   },
   "tags": [
     "chrome",

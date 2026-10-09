@@ -1,0 +1,247 @@
+:root {
+  --zen-colors-tertiary: transparent !important;
+  --zen-settings-secondary-background: transparent !important;
+  --background-color-canvas: transparent !important;
+  --background-color-box: transparent !important;
+}
+
+@-moz-document url(about:home), url(about:newtab) {
+  :root {
+    --newtab-background-color: transparent !important;
+  }
+  .icon.icon-settings {
+    display: none !important;
+    background-color: transparent !important;
+  }
+
+  .top-site-outer .tile {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .logo {
+    aspect-ratio: 1/1 !important;
+    background-image: url('chrome://sine/content/bubble-clean-zen/icons/zen.svg') !important ;
+    background-position: center;
+    background-size: 70px !important;
+    width: fit-content !important;
+    height: 80px !important;
+    display: none !important;
+  }
+
+  .wordmark {
+    opacity: 80%;
+    background-size: 172px !important;
+    width: 172px !important;
+    height: 81px !important;
+    display: none !important;
+  }
+
+  .search-handoff-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-evenly;
+    background-color: rgba(128, 128, 128, 0.2) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .search-inner-wrapper .fake-editable {
+    opacity: 10% !important;
+    border: 1px solid white !important;
+  }
+
+  .search-inner-wrapper {
+    background-color: transparent !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  .search-wrapper .search-inner-wrapper {
+    border-radius: 10px !important;
+  }
+
+  .logo-and-wordmark {
+    margin-block-end: 14px !important;
+  }
+  /* rounded corners */
+  .top-site-button,
+  .context-menu button,
+  .close-button,
+  .home-section .section .selector {
+    border-radius: var(--rounding) !important;
+  }
+
+  .top-site-outer,
+  .top-site-inner,
+  .context-menu,
+  .icon-settings,
+  .weatherCard {
+    border-radius: var(--big-rounding) !important;
+  }
+
+  /* pinned links */
+  .top-site-button {
+    overflow: clip;
+  }
+
+  .tile,
+  .top-site-icon {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .top-site-button,
+  .customize-menu {
+    background-color: var(--tr-col) !important;
+    backdrop-filter: blur(var(--blur-radius));
+  }
+
+  .title {
+    background-color: color-mix(
+      in srgb,
+      var(--tr-col) 90%,
+      var(--newtab-text-primary-color)
+    );
+    & > span {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  .top-site-outer:is(.active, :focus, :hover) {
+    background: transparent !important;
+  }
+
+  .top-site-outer,
+  .top-site-inner {
+    & > a {
+      padding: 0 !important;
+    }
+    padding: 5px;
+  }
+
+  .top-site-outer:not(:hover) .icon-pin-small {
+    display: none !important;
+  }
+
+  .context-menu-item {
+    padding-inline: 5px !important;
+    padding-block: 1px !important;
+  }
+  .shortcuts-refresh .top-site-outer .context-menu-button {
+    inset-inline-end: 44px !important;
+    top: 50px !important;
+  }
+
+  /* search box */
+  .search-handoff-button {
+    backdrop-filter: blur(var(--blur-radius));
+    background-color: var(--tr-col) !important;
+  }
+
+  /* height overflow */
+  @media (height > 700px) {
+    body:not(.inline-onboarding) .fixed-search .search-wrapper {
+      background-color: var(--tr-col) !important;
+      backdrop-filter: blur(var(--blur-radius));
+    }
+    .logo-and-wordmark {
+      display: flex !important;
+    }
+  }
+
+  @media (height <= 700px) {
+    .search-wrapper {
+      padding: 20px 0 30px !important;
+    }
+    .outer-wrapper > main {
+      margin-top: 0px !important;
+    }
+  }
+
+  /* margin to logo when only search is enabled */
+  .only-search .logo-and-wordmark {
+    margin-top: 20px !important;
+  }
+}
+
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+  body {
+    width: 100%;
+    height: 100vh;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    height: 130vh;
+    width: auto;
+    aspect-ratio: 1/1 !important;
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 100%;
+    background-color: #ffffff; /* Color fill */
+    mask-image: url('chrome://sine/content/bubble-clean-zen/icons/zen.svg') !important;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    opacity: 5% !important;
+  }
+
+  body,
+  .App {
+    background-color: #00000070 !important;
+  }
+
+  .top-sites-list,
+  .personalizeButtonWrapper {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  .App > div:nth-child(2),
+  .wallpaper {
+    display: none !important;
+  }
+}
+
+@-moz-document url(addons.mozilla.org) {
+  /* transparency */
+  html,
+  body,
+  nav,
+  header {
+    background-color: transparent !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  :root {
+    --darkreader-background-ffffff: transparent !important;
+  }
+
+  footer {
+    display: none !important;
+  }
+}
+
+@-moz-document url(about:config), url(about:preferences) {
+  :root {
+    background-color: transparent !important;
+  }
+  tr,
+  table {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  tr {
+    outline: solid 1px #88888822 !important;
+  }
+  groupbox {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+}

@@ -1,51 +1,228 @@
 [
   {
+    "type": "separator",
+    "label": "Toolbar"
+  },
+  {
     "type": "checkbox",
     "property": "bubble.clean.hide-single-toolbar-icon",
-    "label": "Hide Single Toolbar Icon",
-    "description": "Hide icons in the URL bar when using a single toolbar.",
-    "defaultValue": true
+    "label": "Hide icons in the URL bar (Single Toolbar)",
+    "defaultValue": false
   },
-  {
+    {
     "type": "checkbox",
     "property": "bubble.clean.show-titlebar",
-    "label": "Show Titlebar",
-    "description": "Show the titlebar when hovering over the window.",
-    "defaultValue": false
-  },
-  {
-    "type": "checkbox",
-    "property": "bubble.clean.show-workspace-name",
-    "label": "Show Workspace Name",
-    "description": "Show the current workspace name indicator.",
-    "defaultValue": false
-  },
-  {
-    "type": "checkbox",
-    "property": "bubble.clean.folder-style",
-    "label": "Folder Style",
-    "description": "Enable the Bubble Clean folder styling.",
+    "label": "Show the titlebar when hovering over the window  (Single Toolbar)",
     "defaultValue": false
   },
   {
     "type": "checkbox",
     "property": "bubble.clean.multiple-urlbar-compact",
-    "label": "Compact Multiple URL Bars",
+    "label": "Compact URL bar (Multiple Toolbar)",
     "description": "Use a more compact URL bar when multiple toolbars are enabled.",
     "defaultValue": true
   },
   {
     "type": "checkbox",
     "property": "bubble.clean.multiple-urlbar-bg",
-    "label": "Multiple URL Bar Background",
-    "description": "Add a background to the URL bar when using multiple toolbars.",
+    "label": "Add a background to the URL bar  (Multiple Toolbar)",
+    "defaultValue": false
+  },
+  {
+    "type": "separator",
+    "label": "Look and Style"
+  },
+  {
+    "type": "dropdown",
+    "property": "bubble.clean.font",
+    "label": "Font (choose the font used in the browser UI)",
+    "value": "string",
+    "defaultValue": "Poppins",
+    "options": [
+      {
+        "value": "Poppins",
+        "label": "Poppins"
+      },
+      {
+        "value": "Figtree",
+        "label": "Figtree"
+      },
+      {
+        "value": "JetBrainsMono",
+        "label": "JetBrains Mono"
+      },
+      {
+        "value": "Bricolage",
+        "label": "Bricolage Grotesque"
+      },
+      {
+        "value": "SUSE",
+        "label": "SUSE"
+      },
+      {
+        "value": "SUSEMono",
+        "label": "SUSE Mono"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.show-workspace-name",
+    "label": "Show workspace name",
     "defaultValue": false
   },
   {
     "type": "checkbox",
-    "property": "bubble.clean.show-extensions-hover",
-    "label": "Show Extensions on Hover",
-    "description": "Hide extension buttons until the extension area is hovered.",
+    "property": "bubble.clean.always-bottomsep",
+    "label": "Always show bottom separator",
     "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.folder-style",
+    "label": "Bubble Clean folder styling",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.folder-style-bg",
+    "label": "Bubble Clean folder styling background",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.show-extensions-hover",
+    "label": "Show extensions on hover",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "browser.tabs.hoverPreview.enabled",
+    "label": "Show tab preview panel",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.newtab-plus",
+    "label": "Icon only new tab button",
+    "defaultValue": false
+  },
+  {
+    "type": "separator",
+    "label": "Context menu"
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.cm-debloat",
+    "label": "Debloat context menu",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.cm-icons",
+    "label": "Bring back context menu icons",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.cm-bw-extension",
+    "label": "Use a B&W extension icon for a more uniform look",
+    "defaultValue": true
+  },
+  {
+    "type": "separator",
+    "label": "Script-Based Features (Restart Required)"
+  },
+  {
+    "property": "bubble.trim-url-bar.enabled",
+    "label": "Trim URL bar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "zia.split-tabs.enabled",
+    "label": "Zia split tabs",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "type": "separator",
+    "label": "Zia Media Player"
+  },
+  {
+    "property": "zia.media-player.enabled",
+    "label": "Zia media player (off: Natsumi & ZenZero edit)",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "type": "string",
+    "label": "Collapsed opacity (0-100%)",
+    "property": "zia.media-player.opacity.collapsed",
+    "defaultValue": "40",
+    "placeholder": "40"
+  },
+  {
+    "type": "string",
+    "label": "Expanded opacity (0-100%)",
+    "property": "zia.media-player.opacity.expanded",
+    "defaultValue": "90",
+    "placeholder": "90"
+  },
+  {
+    "type": "separator",
+    "label": "Zia Picture-in-Picture"
+  },
+  {
+    "type": "checkbox",
+    "label": "Zia's picture-in-picture controls (off: Natsumi edit)",
+    "property": "zia.pip.dia-style",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "label": "Push picture-in-picture against a screen edge to tuck it away",
+    "property": "zia.pip.tuck",
+    "defaultValue": true
+  },
+  {
+    "type": "dropdown",
+    "label": "Picture-in-picture tucks into",
+    "property": "zia.pip.tuck-spot",
+    "defaultValue": "nearest",
+    "options": [
+      {
+        "label": "The nearest side",
+        "value": "nearest"
+      },
+      {
+        "label": "Left side",
+        "value": "left"
+      },
+      {
+        "label": "Right side",
+        "value": "right"
+      },
+      {
+        "label": "Bottom",
+        "value": "bottom"
+      },
+      {
+        "label": "Bottom-left corner",
+        "value": "bottom-left"
+      },
+      {
+        "label": "Bottom-right corner",
+        "value": "bottom-right"
+      }
+    ],
+    "conditions": [
+      {
+        "if": {
+          "property": "zia.pip.tuck",
+          "value": true
+        }
+      }
+    ]
   }
 ]
