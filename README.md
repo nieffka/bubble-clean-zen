@@ -1,6 +1,6 @@
 # Bubble Clean Zen Browser 🫧
 ## ▶️ Preview
-![bubble-clean-preview](https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/main.png)
+![bubble-clean-preview](https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/single-toolbar.png)
 <details><summary>Multiple Toolbar</summary>
 <pre>
   <img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/multiple-toolbar.png">
