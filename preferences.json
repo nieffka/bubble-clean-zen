@@ -79,15 +79,15 @@
   },
   {
     "type": "checkbox",
-    "property": "bubble.clean.folder-style",
-    "label": "Bubble Clean folder styling",
-    "defaultValue": true
+    "property": "bubble.clean.unload-strikethrough",
+    "label": "Add strikethrough for unactive tab",
+    "defaultValue": false
   },
   {
     "type": "checkbox",
-    "property": "bubble.clean.folder-style-bg",
-    "label": "Bubble Clean folder styling background",
-    "defaultValue": true
+    "property": "bubble.clean.newtab-plus",
+    "label": "Icon only new tab button",
+    "defaultValue": false
   },
   {
     "type": "checkbox",
@@ -97,15 +97,9 @@
   },
   {
     "type": "checkbox",
-    "property": "browser.tabs.hoverPreview.enabled",
-    "label": "Show tab preview panel",
+    "property": "natsumi.pdf-style.enabled",
+    "label": "Natsumi PDF viewer style",
     "defaultValue": true
-  },
-  {
-    "type": "checkbox",
-    "property": "bubble.clean.newtab-plus",
-    "label": "Icon only new tab button",
-    "defaultValue": false
   },
   {
     "type": "separator",
@@ -131,6 +125,28 @@
   },
   {
     "type": "separator",
+    "label": "Folder"
+  },
+  {
+    "type": "checkbox",
+    "property": "zia.tabler-icons.enabled",
+    "label": "Zia Tabler icon picker (5,166 icons for spaces and folders)",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.folder-style",
+    "label": "Bubble Clean folder styling",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "bubble.clean.folder-style-bg",
+    "label": "Bubble Clean folder styling background",
+    "defaultValue": true
+  },
+  {
+    "type": "separator",
     "label": "Script-Based Features (Restart Required)"
   },
   {
@@ -141,9 +157,35 @@
   },
   {
     "property": "zia.split-tabs.enabled",
-    "label": "Zia split tabs",
+    "label": "Zia split view, drop cards to make a split",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "zia.hover-card.enabled",
+    "label": "Zia hover card (tab card with buttons)",
+    "defaultValue": true
+  },
+
+  {
+    "type": "checkbox",
+    "property": "zia.hover-card.show-thumbnails",
+    "label": "Hover card: show a preview of the page",
+    "defaultValue": false
+  },
+
+  {
+    "type": "checkbox",
+    "property": "zia.tab-numbers.enabled",
+    "label": "Zia tab numbers (hold Ctrl to show tab numbers)",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "zia.tab-numbers.always",
+    "label": "Always show tab numbers",
+    "defaultValue": false
   },
   {
     "type": "separator",
@@ -153,6 +195,18 @@
     "property": "zia.media-player.enabled",
     "label": "Zia media player (off: Natsumi & ZenZero edit)",
     "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "type": "checkbox",
+    "property": "zia.media.tint-active-space",
+    "label": "Tint player with the space I'm in (not the space of the playing tab)",
+    "defaultValue": false
+  },
+  {
+    "type": "checkbox",
+    "property": "zia.media.keep-with-pip",
+    "label": "Keep the player while a video is in Picture-in-Picture",
     "defaultValue": true
   },
   {

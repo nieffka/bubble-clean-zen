@@ -35,11 +35,12 @@
     }
 
     .zen-media-card {
+      
       --zia-media-glow-a: rgb(90, 185, 245);
       --zia-media-glow-b: rgb(123, 77, 255);
       --zen-sidebar-notification-bg: rgb(0, 0, 0);
 
-      background: var(--zia-media-bg) !important;
+      background-color: var(--zia-media-bg) !important;
       isolation: isolate;
 
       & .zen-media-info-vbox::before {
@@ -200,6 +201,7 @@
     }
 
     .zen-media-info-vbox {
+      
       grid-column: 2 / 6;
       grid-row: 1;
       min-width: 0;
@@ -506,17 +508,16 @@
     transition: opacity 0.2s var(--zia-media-ease) !important;
   }
 
-  #zen-media-controls-toolbar:not(:hover):has(.zen-media-card[stacked-behind])
-    .zen-media-card[stacked-behind] {
+  #zen-media-controls-toolbar:not(:hover):has(.zen-media-card[stacked-behind]):not(:has(.zen-media-card:not([stacked-behind]):is([zen-hiding],
+  [zen-removing]))) .zen-media-card[stacked-behind] {
     mask: linear-gradient(
-      #000 0
-        calc(
-          var(--zen-media-stack-peek, 8px) * var(--zen-media-card-peek-level, 1) /
-            (1 - 0.04 * var(--zen-media-card-peek-level, 1))
-        ),
+      #000 21px
+      calc(
+        var(--zen-media-stack-peek, 8px) * var(--zen-media-card-peek-level, 1) /
+        (1 - 0.04 * var(--zen-media-card-peek-level, 1))
+      ),
       transparent 0
     );
-    display: none;
 
     & .zen-media-main-vbox {
       opacity: 0 !important;

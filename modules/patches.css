@@ -122,13 +122,6 @@ menuitem *,
   #nav-bar-customization-target {
     padding: 1px !important;
   }
-
-  #zen-sidebar-top-buttons,
-  #zen-sidebar-top-buttons-customization-target {
-    & toolbarbutton:not(.titlebar-button) {
-      margin-left: -3px !important;
-    }
-  }
 }
 
 :root:not([zen-single-toolbar="true"])

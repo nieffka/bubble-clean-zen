@@ -262,6 +262,12 @@ browser {
 
 .tabbrowser-tab[pending="true"] {
   opacity: 80%;
+  
+  @media (-moz-bool-pref: "bubble.clean.unload-strikethrough") {
+    .tab-label {
+      text-decoration: line-through;
+    }
+  }
 }
 
 .tabbrowser-tab[pending="true"] .tab-icon-stack {
@@ -279,7 +285,6 @@ browser {
 .tab-background:is([selected], [multiselected]) {
   box-shadow: none !important;
   border: 1px solid #f2f2f21f !important;
-  border-bottom: 1px solid #4442441f !important;
   background: color-mix(in srgb, rgba(255, 255, 255, 0.2) 10%, var(--zen-primary-color) 24%) !important;
 }
 
@@ -417,9 +422,7 @@ browser {
 }
 
 #zen-essentials-container>.tabbrowser-tab[pinned] .tab-background {
-  border: 1px solid #f2f2f213 !important;
-  border-top: 1px solid #ffffff13 !important;
-  border-bottom: 1px solid #4442441f !important;
+  border: 1px solid #f2f2f21f !important;
 }
 
 .tabbrowser-tab[zen-essential="true"] {
@@ -430,9 +433,7 @@ browser {
 
 .zen-essentials-container .tabbrowser-tab {
   .tab-background {
-    border: 1px solid color-mix(in srgb, var(--tab-group-color-gray-invert) 14%, transparent) !important;
-    border-top: 1px solid #ffffff2d !important;
-    border-bottom: 1px solid #4442441f !important;
+    border: 1px solid #f2f2f21f !important;
     background-color: rgba(255, 255, 255, 0.05);
     box-shadow: 0 0px 3px light-dark(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)) !important;
     

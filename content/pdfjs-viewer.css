@@ -1,0 +1,613 @@
+/*
+  Natsumi PDF viewer: the stylesheet after this block is pdfjs.css from
+  Natsumi Browser by Green (@greeeen-dev), MIT licensed, copied unchanged with
+  its original notice:
+  https://github.com/greeeen-dev/natsumi-browser/blob/main/natsumi/content/pdfjs.css
+
+  Only this :root block is not Natsumi's. It defines variables the stylesheet
+  expects from the rest of the Natsumi theme (they are not set in pdfjs.css
+  itself, so without them the glass panels, buttons and accents would be left
+  unstyled). The values are stand-ins: change them to match your theme.
+*/
+:root {
+  /* accent: light-mode / dark-mode, and the tint used for borders and the dark page background */
+  --natsumi-colors-primary: #7a5af8;
+  --natsumi-primary-color: #b9a4ff;
+  --natsumi-colors-secondary: #8f87b8;
+
+  /* "haze" glass material: toolbar, sidebar and panels */
+  --natsumi-mat-hz-background: light-dark(rgba(255, 255, 255, 0.62), rgba(34, 32, 44, 0.55));
+  --natsumi-mat-hz-backdrop: blur(18px) saturate(1.3);
+  --natsumi-mat-hz-border: 1px solid light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.12));
+  --natsumi-mat-hz-border-thin: 0.5px solid light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.12));
+  --natsumi-mat-hz-shadow: 0 4px 18px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.35));
+  /* used when the pref natsumi.pdfjs.material is "tinted-haze" */
+  --natsumi-mat-th-background: light-dark(rgba(255, 255, 255, 0.75), rgba(40, 36, 56, 0.7));
+
+  /* buttons */
+  --natsumi-button-hover-color: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.12));
+  --natsumi-button-active-color: light-dark(rgba(0, 0, 0, 0.14), rgba(255, 255, 255, 0.2));
+  --natsumi-sdl2-haze-button-hover-color: light-dark(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.14));
+  --natsumi-sdl2-haze-button-active-color: light-dark(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.22));
+  --natsumi-sdl2-haze-button-idle-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1));
+}
+
+/*
+
+Natsumi Browser - Welcome to your personal internet.
+
+Copyright (c) 2024-present Green (@greeeen-dev)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+/* ==== Natsumi PDF Viewer (yes, *THE* PDF Viewer so many Zen custom CSS skins use) ==== */
+
+@keyframes sidebar-appear {
+  0% {
+    inset-inline-start: -20px;
+  }
+
+  70% {
+    inset-inline-start: 15px;
+  }
+
+  100% {
+    inset-inline-start: 10px;
+  }
+}
+
+@media not -moz-pref("natsumi.pdfjs.disabled") {
+  html[mozdisallowselectionprint] {
+    &:has(head link:nth-of-type(1):is([href^="resource://pdf.js"], [href="chrome://global/skin/icons/pdf.svg"])) {
+      #outerContainer {
+        position: fixed !important;
+      }
+
+      /* Set material */
+      * {
+        --natsumi-material-background: var(--natsumi-mat-hz-background);
+        --natsumi-material-backdrop: var(--natsumi-mat-hz-backdrop);
+        --natsumi-material-border: var(--natsumi-mat-hz-border);
+        --natsumi-material-border-thin: var(--natsumi-mat-hz-border-thin);
+        --natsumi-material-shadow: var(--natsumi-mat-hz-shadow);
+
+        @media -moz-pref("natsumi.pdfjs.material", "tinted-haze") {
+          --natsumi-material-background: var(--natsumi-mat-th-background);
+        }
+      }
+
+      --natsumi-colors-border: color-mix(in srgb, var(--natsumi-colors-secondary) 80%, black 20%);
+
+      body {
+        @media (prefers-color-scheme: dark) {
+          background-color: color-mix(in srgb, var(--natsumi-colors-secondary) 20%, #0f0f0f 80%) !important;
+        }
+      }
+
+      /* Toolbar */
+      .toolbar {
+        height: 66px !important;
+      }
+
+      #toolbarContainer {
+        left: 10px !important;
+        top: 10px;
+        width: calc(100% - 20px) !important;
+        height: 36px !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        text-align: right !important;
+        padding: 0 !important;
+        transition: top 0.2s ease, opacity 0.2s ease;
+      }
+
+      .toolbarButtonWithContainer {
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+      #toolbarViewerLeft {
+        position: absolute;
+        left: 46px !important;
+        margin-left: 0 !important;
+
+        #viewsManagerToggleButton, #sidebarToggleButton {
+          appearance: none !important;
+          position: absolute !important;
+          border-radius: 50% !important;
+          left: -46px !important;
+          background: var(--natsumi-material-background) !important;
+          backdrop-filter: var(--natsumi-material-backdrop);
+          box-shadow: var(--natsumi-material-shadow) !important;
+          border: 2px solid light-dark(rgba(20, 20, 20, 0.1), rgba(235, 235, 235, 0.1)) !important;
+
+          &::before {
+            z-index: 1;
+          }
+
+          &::after {
+            content: "";
+            width: 32px !important;
+            height: 32px !important;
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+          }
+
+          @media -moz-pref("natsumi.theme.disable-sdl2") {
+            width: 36px !important;
+            height: 36px !important;
+
+            &:hover {
+              &::after {
+                background-color: var(--natsumi-button-hover-color);
+              }
+            }
+
+            &:active, &[aria-expanded="true"] {
+              &::after {
+                background-color: var(--natsumi-button-active-color) !important;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.5) !important;
+              }
+            }
+          }
+
+          @media not -moz-pref("natsumi.theme.disable-sdl2") {
+            width: 40px !important;
+            height: 40px !important;
+
+            &::after {
+              box-shadow: var(--natsumi-sdl2-haze-button-idle-shadow) !important;
+              background-color: var(--natsumi-sdl2-haze-button-idle-color) !important;
+            }
+
+            &:hover {
+              &::after {
+                background-color: var(--natsumi-sdl2-haze-button-hover-color) !important;
+              }
+            }
+
+            &:active, &[aria-expanded="true"] {
+              &::after {
+                background-color: var(--natsumi-sdl2-haze-button-active-color) !important;
+              }
+            }
+          }
+        }
+      }
+
+      #toolbarViewerLeft, #toolbarViewerMiddle, #toolbarViewerRight {
+        @media -moz-pref("natsumi.theme.disable-sdl2") {
+          border-radius: 18px;
+          border: 2px solid transparent;
+
+          &::before {
+            content: "";
+            width: 100%;
+            height: 32px;
+            background: red;
+            position: absolute;
+            border-radius: 18px;
+            margin-left: -2px;
+            background: var(--natsumi-material-background) !important;
+            box-shadow: var(--natsumi-material-shadow) !important;
+            border: var(--natsumi-material-border) !important;
+            backdrop-filter: var(--natsumi-material-backdrop);
+            z-index: -1;
+          }
+
+          .toolbarButtonWithContainer:first-of-type button, #zoomOutButton, #viewFindButton, &:has(#viewFindButton.hidden) #previous {
+            border-start-start-radius: 50% !important;
+            border-end-start-radius: 50% !important;
+          }
+
+          #scaleSelect {
+            background: transparent !important;
+            border-radius: 4px !important;
+            border-start-end-radius: 16px !important;
+            border-end-end-radius: 16px !important;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: var(--natsumi-button-hover-color) !important;
+            }
+          }
+
+          #secondaryToolbar .toolbarButtonWithContainer:last-of-type button {
+            border-start-end-radius: 4px !important;
+            border-end-end-radius: 4px !important;
+          }
+        }
+
+        @media not -moz-pref("natsumi.theme.disable-sdl2") {
+          padding: 2px !important;
+          box-sizing: border-box !important;
+
+          &::before {
+            content: "";
+            width: 100%;
+            height: 36px;
+            background: red;
+            position: absolute;
+            border-radius: 22px;
+            margin-left: -4px;
+            background: var(--natsumi-material-background) !important;
+            box-shadow: var(--natsumi-material-shadow) !important;
+            border: var(--natsumi-material-border) !important;
+            backdrop-filter: var(--natsumi-material-backdrop);
+            z-index: -1;
+          }
+
+          .toolbarHorizontalGroup {
+            gap: 4px !important;
+          }
+
+          & > button, .toolbarHorizontalGroup > button, .toolbarButtonWithContainer > button {
+            border-radius: 50% !important;
+            box-shadow: var(--natsumi-sdl2-haze-button-idle-shadow);
+          }
+
+          @media (max-width: 800px) {
+            #scaleSelectContainer {
+              display: none !important;
+            }
+          }
+
+          #scaleSelectContainer, #pageNumber {
+            margin-left: 4px !important;
+          }
+
+          #scaleSelect {
+            background: var(--natsumi-sdl2-haze-button-idle-color) !important;
+            border-radius: 16px !important;
+            box-shadow: var(--natsumi-sdl2-haze-button-idle-shadow);
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: var(--natsumi-sdl2-haze-button-hover-color) !important;
+            }
+          }
+
+          #pageNumber {
+            border-color: transparent !important;
+            background-color: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1)) !important;
+            border-radius: 6px !important;
+
+            &:focus {
+              border-color: var(--natsumi-primary-color) !important;
+            }
+          }
+        }
+      }
+
+      #toolbarViewerMiddle, #toolbarViewerRight {
+        position: sticky;
+      }
+
+      #toolbarViewerLeft, #toolbarViewerMiddle {
+        .toolbarButtonWithContainer:last-of-type button {
+          border-start-end-radius: 50% !important;
+          border-end-end-radius: 50% !important;
+        }
+      }
+
+      @media not -moz-pref("natsumi.theme.disable-sdl2") {
+        #toolbarViewerLeft, #toolbarViewerMiddle {
+          & > .toolbarHorizontalGroup {
+            gap: 1px !important;
+
+            .splitToolbarButtonSeparator {
+              margin-inline: 2px !important;
+            }
+          }
+        }
+      }
+
+      #secondaryToolbarToggleButton {
+        border-start-end-radius: 50% !important;
+        border-end-end-radius: 50% !important;
+      }
+
+      #numPages {
+        margin-right: 10px !important;
+      }
+
+      #toolbarViewerMiddle {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+
+        #scaleSelectContainer, #scaleSelect {
+          height: 32px !important;
+        }
+
+        #scaleSelectContainer {
+          background: transparent !important;
+
+          &::after {
+            right: 8px !important;
+          }
+        }
+      }
+
+      #toolbarViewer {
+        width: fit-content !important;
+        gap: 10px !important;
+      }
+
+      .toolbarButtonWithContainer:has(#viewFindButton.hidden) {
+        display: none !important;
+      }
+
+      .toolbarButtonSpacer {
+        display: none !important;
+      }
+
+      #viewerContainer {
+        inset: 0 !important;
+
+        #viewer > .page:first-of-type,
+        #viewer .spread:first-of-type .page {
+          margin-top: 46px !important;
+          transition: margin-top 0.2s ease;
+        }
+      }
+
+      .toolbarButton {
+        border-radius: 6px !important;
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+        @media not -moz-pref("natsumi.theme.disable-sdl2") {
+          background-color: var(--natsumi-sdl2-haze-button-idle-color) !important;
+        }
+
+        &:hover {
+          background-color: var(--natsumi-button-hover-color) !important;
+
+          @media not -moz-pref("natsumi.theme.disable-sdl2") {
+            background-color: var(--natsumi-sdl2-haze-button-hover-color) !important;
+          }
+        }
+
+        &.toggled, &:active {
+          background-color: var(--natsumi-button-active-color) !important;
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+
+          @media not -moz-pref("natsumi.theme.disable-sdl2") {
+            background-color: var(--natsumi-sdl2-haze-button-active-color) !important;
+          }
+        }
+
+        &::before {
+          mask-size: contain !important;
+          mask-repeat: no-repeat;
+          -moz-context-properties: stroke, fill;
+          stroke: black;
+
+          @media (prefers-color-scheme: dark) {
+            stroke: white;
+          }
+        }
+      }
+
+      @media not -moz-pref("natsumi.theme.disable-sdl2") {
+        #secondaryToolbarButtonContainer .toolbarButton {
+          --natsumi-sdl2-haze-button-idle-color: transparent;
+        }
+      }
+
+      .splitToolbarButtonSeparator, .verticalToolbarSeparator, .horizontalToolbarSeparator {
+        border-color: light-dark(rgba(20, 20, 20, 0.1), rgba(235, 235, 235, 0.1)) !important;
+      }
+
+      #loadingBar {
+        display: block !important;
+        left: 0 !important;
+        top: 41px !important;
+        background: var(--natsumi-material-background) !important;
+        backdrop-filter: var(--natsumi-material-backdrop);
+        box-shadow: var(--natsumi-material-shadow) !important;
+        border: var(--natsumi-material-border) !important;
+        border-radius: 4px !important;
+        overflow: hidden;
+        transition-property: inset-inline-start, opacity !important;
+        opacity: 1 !important;
+        pointer-events: none !important;
+
+        &.hidden {
+          opacity: 0 !important;
+        }
+
+        .progress {
+          border-radius: 2px !important;
+          background-color: light-dark(var(--natsumi-colors-primary), var(--natsumi-primary-color)) !important;
+        }
+      }
+
+      /* Sidebar */
+      #viewsManager {
+        left: -66px !important;
+        height: calc(100vh - 86px) !important;
+        transition: left 0.2s ease, opacity 0.2s ease !important;
+      }
+
+      #sidebarContainer {
+        top: 56px !important;
+        bottom: 10px !important;
+      }
+
+      #viewsManager, #sidebarContainer {
+        background: var(--natsumi-material-background) !important;
+        backdrop-filter: var(--natsumi-material-backdrop);
+        box-shadow: var(--natsumi-material-shadow) !important;
+        border: var(--natsumi-material-border) !important;
+        border-radius: 10px !important;
+        opacity: 0;
+
+        #viewsManagerHeader {
+          background-color: transparent !important;
+        }
+
+        #toolbarSidebar, #sidebarContent {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+        }
+
+        #toolbarSidebar {
+          margin: 5px !important;
+          width: calc(100% - 10px) !important;
+        }
+
+        #sidebarContent {
+          top: 46px !important;
+        }
+
+        .thumbnail {
+          margin-bottom: 22px !important;
+          transition: border-color 0.2s ease;
+        }
+      }
+
+      #outerContainer:not(.sidebarOpen) #sidebarContainer {
+        inset-inline-start: -30px !important;
+        transition: opacity 0.2s ease, inset 0.2s ease !important;
+        pointer-events: none !important;
+      }
+
+      #viewsManager[hidden] {
+        display: flex !important;
+        left: -76px !important;
+        pointer-events: none !important;
+      }
+
+      #outerContainer.sidebarOpen #sidebarContainer {
+        opacity: 1 !important;
+        animation: sidebar-appear 0.3s ease;
+        animation-fill-mode: forwards;
+        transition: opacity 0.3s ease !important;
+      }
+
+      #viewsManager:not([hidden]) {
+        opacity: 1 !important;
+        left: -46px !important;
+      }
+
+      /* Popups */
+      .toolbarButtonWithContainer .doorHangerRight, #editorCommentParamsToolbar {
+        background: var(--natsumi-material-background) !important;
+        backdrop-filter: var(--natsumi-material-backdrop);
+        box-shadow: var(--natsumi-material-shadow) !important;
+        border: var(--natsumi-material-border) !important;
+        border-radius: 10px !important;
+        top: 44px !important;
+        right: 0 !important;
+        padding: 4px !important;
+        display: block !important;
+        transition: top 0.2s ease, opacity 0.2s ease;
+        opacity: 1;
+
+        &.hidden {
+          top: 24px !important;
+          opacity: 0;
+          pointer-events: none !important;
+        }
+
+        &::before, &::after {
+          display: none !important;
+        }
+
+        .menuContainer {
+          overflow: visible !important;
+        }
+      }
+
+      #editorCommentsSidebar {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Compact Mode */
+      @media -moz-pref("natsumi.pdfjs.compact") {
+        @media not (-moz-pref("natsumi.pdfjs.compact-dynamic")) {
+        &:not(:has(.toolbar:hover)):not(:has(#toolbarContainer button[aria-expanded="true"])) {
+          #toolbarContainer {
+            top: -20px !important;
+            opacity: 0 !important;
+          }
+        }
+
+        #viewerContainer {
+          #viewer > .page:first-of-type,
+          #viewer .spread:first-of-type .page {
+            margin-top: 10px !important;
+          }
+        }
+      }
+
+        @media -moz-pref("natsumi.pdfjs.compact-dynamic") {
+          &:not(:has(#outerContainer.sidebarOpen)) {
+            &:not(:has(.toolbar:hover)):not(:has(#toolbarContainer button[aria-expanded="true"])) {
+              #toolbarContainer {
+                top: -20px !important;
+                opacity: 0 !important;
+              }
+            }
+
+            #viewerContainer {
+              #viewer > .page:first-of-type,
+              #viewer .spread:first-of-type .page {
+                margin-top: 10px !important;
+              }
+            }
+          }
+        }
+      }
+
+      /* Document properties */
+      #documentPropertiesDialog {
+        border-radius: 10px !important;
+        border: var(--natsumi-material-border-thin) !important;
+        background: var(--natsumi-material-background) !important;
+        backdrop-filter: var(--natsumi-material-backdrop);
+        box-shadow: var(--natsumi-material-shadow) !important;
+
+        @media (prefers-color-scheme: dark) {
+          border-color: rgba(235, 235, 235, 0.3) !important;
+        }
+
+        &:is([open]) {
+          animation: properties-appear 0.3s ease !important;
+        }
+
+        #documentPropertiesClose {
+          border-radius: 5px !important;
+          background-color: #f1f1f1 !important;
+
+          @media (prefers-color-scheme: dark) {
+            background-color: #363636 !important;
+          }
+        }
+      }
+    }
+  }
+}

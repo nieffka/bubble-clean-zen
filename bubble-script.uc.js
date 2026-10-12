@@ -15,6 +15,18 @@
 			pref: "zia.media-player.enabled",
 			file: "zia-media-player.js"
 		},
+		{
+			pref: "zia.hover-card.enabled",
+			file: "zia-hover-card.js"
+		},
+		{
+			pref: "zia-tab-numbers.enabled",
+			file: "zia-tab-numbers.js"
+		},
+		{
+			pref: "zia.tabler-icons.enabled",
+			file: "zia-tabler-icons.js"
+		},
 	];
 
 	const defaults = Services.prefs.getDefaultBranch("");
@@ -35,7 +47,35 @@
 			console.error(`[bubble-clean] Couldn't load ${file}:`, err);
 		}
 	}
+
+	// Natsumi Browser's pdfjs.css by Green, @greeeen-dev, MIT).
+	// Natsumi PDF viewer
+	try {
+		const ACTORS = "chrome://sine/content/bubble-clean-zen/actors/";
+		const version = `?v=${Date.now()}`;
+		ChromeUtils.registerWindowActor("NatsumiPdf", {
+			parent: {
+				esModuleURI: `${ACTORS}NatsumiPdfParent.sys.mjs${version}`
+			},
+			child: {
+				esModuleURI: `${ACTORS}NatsumiPdfChild.sys.mjs${version}`,
+				events: {
+					DOMContentLoaded: {}
+				}
+			},
+			allFrames: false,
+			messageManagerGroups: ["browsers"],
+			// it only styles the page and reports nothing back
+			safeForUntrustedWebProcess: true,
+		});
+	} catch (err) {
+		// already registered by another window
+		if (err?.name !== "NotSupportedError") {
+			console.error("[natsumi-pdf] Couldn't register the PDF actor:", err);
+		}
+	}
 })();
+
 
 // Extracted from Zia by z1n-k; MIT licensed.
 // Zia findbar
