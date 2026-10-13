@@ -8,7 +8,7 @@
 </pre></details>
 
 ## ⭐ Features
-<img src="https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/config.png">
+<img src="https://github.com/user-attachments/assets/9f0f6b14-e89c-4aeb-857b-19bf1dbf9625">
 
 
 ## ⚙️ How to Install

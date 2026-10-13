@@ -365,6 +365,7 @@
   }
 
   .urlbarView-row {
+    min-height: 40px !important;
     transition: transform 0.2s ease;
 
     .urlbarView-row-inner {
