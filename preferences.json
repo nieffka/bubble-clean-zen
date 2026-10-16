@@ -11,8 +11,8 @@
   },
     {
     "type": "checkbox",
-    "property": "bubble.clean.show-titlebar",
-    "label": "Show the titlebar when hovering over the window  (Single Toolbar)",
+    "property": "zen.view.experimental-no-window-controls",
+    "label": "Disable showing the title bar when hovering over the window (Single Toolbar)",
     "defaultValue": false
   },
   {

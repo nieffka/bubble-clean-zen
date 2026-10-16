@@ -6,9 +6,9 @@
   "readme": "https://raw.githubusercontent.com/nieffka/bubble-clean-zen/main/README.md",
   "image": "https://raw.githubusercontent.com/nieffka/bubble-clean-zen/refs/heads/main/images/single-toolbar.png",
   "author": "nieffka",
-  "version": "2.4.2",
+  "version": "2.4.4",
   "createdAt": "2024-12-18",
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-17",
   "style": {
     "chrome": "userChrome.css",
     "content": "userContent.css"

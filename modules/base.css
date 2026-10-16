@@ -35,6 +35,10 @@
         display: flex !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
+        
+        :root[inDOMFullscreen] & {
+          visibility: hidden !important;
+        }
       }
 
       #urlbar-container {

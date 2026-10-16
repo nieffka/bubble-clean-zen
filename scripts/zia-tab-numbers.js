@@ -1,8 +1,4 @@
 // Extracted from Zia by z1n-k; MIT licensed.
-// Zia tab numbers: hold Cmd (Ctrl elsewhere) and a number key shows on every
-// visible tab and essential. The typed number lights up and is chosen on letting
-// go; past nine, type the digits in turn.
-// Optional pref: zia.tab-numbers.always = true shows the numbers all the time.
 (() => {
   if (window.__bubbleTabNumbersLoaded) return;
   window.__bubbleTabNumbersLoaded = true;

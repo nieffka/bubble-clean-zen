@@ -1,10 +1,5 @@
 // Extracted from Zia by z1n-k; MIT licensed (src/js/08-music-and-sound-bars.js, main).
 // Zia media player: artwork glow, progress ring and time left on the media card,
-// per-space tint behind it (--zia-media-space-bg), its opacity prefs
-// (zia.media-player.opacity.collapsed / .expanded), sound bars on playing tabs,
-// and the card's artwork / channel avatar / live marking.
-// Optional prefs: zia.media.keep-with-pip, zia.media.youtube-channel-art,
-// zia.media.tint-active-space.
 (() => {
   if (window.__zia_media_playerLoaded) return;
   window.__zia_media_playerLoaded = true;

@@ -1,34 +1,3 @@
-/* Show top toolbar (single toolbar) */
-@media not (-moz-bool-pref: "bubble.clean.show-titlebar") {
-  /* Hides top toolbar */
-  :root[zen-single-toolbar="true"] #zen-appcontent-navbar-wrapper {
-    max-height: var(--zen-element-separation) !important;
-    margin-top: 0px;
-  }
-
-  :root[inDOMFullscreen="true"] #zen-appcontent-navbar-wrapper {
-    display: none;
-  }
-
-  /* Hide title bar */
-  :root[zen-single-toolbar="true"]:not([privatebrowsingmode="temporary"])
-    .titlebar-button {
-    display: none;
-  }
-
-  /* Private mode */
-  :root[privatebrowsingmode="temporary"][zen-single-toolbar="true"]
-    #zen-appcontent-navbar-wrapper {
-    max-height: initial !important;
-    margin-top: initial !important;
-  }
-
-  :root[privatebrowsingmode="temporary"][inDOMFullscreen="true"]
-    #zen-appcontent-navbar-wrapper {
-    display: initial !important;
-  }
-}
-
 /* Show url icon in single toolbar */
 @media not (-moz-bool-pref: "bubble.clean.hide-single-toolbar-icon") {
   :root[zen-single-toolbar="true"] {

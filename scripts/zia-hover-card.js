@@ -1,6 +1,4 @@
 // Adapted from Zia by z1n-k; MIT licensed (src/js/27-hover-cards.js, src/css/07-hover-cards.css).
-// Tab hover card: title, domain and a row of action buttons.
-// Buttons are defined in ACTIONS below: add, remove or reorder them there.
 (() => {
   if (window.__bubbleHoverCardLoaded) return;
   window.__bubbleHoverCardLoaded = true;

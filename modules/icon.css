@@ -145,42 +145,42 @@ toolbar .toolbaritem-combined-buttons {
 }
 @keyframes zia-download-finish {
   0% {
-    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/downloads.svg");
     transform: scale(1);
     opacity: 1;
   }
   14% {
-    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/downloads.svg");
     transform: scale(0.55);
     opacity: 0;
   }
   15% {
-    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/download-done.svg");
     transform: scale(0.55);
     opacity: 0;
   }
   30% {
-    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/download-done.svg");
     transform: scale(1);
     opacity: 1;
   }
   70% {
-    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/download-done.svg");
     transform: scale(1);
     opacity: 1;
   }
   84% {
-    list-style-image: url("chrome://sine/content/zia/icons/download-done.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/download-done.svg");
     transform: scale(0.55);
     opacity: 0;
   }
   85% {
-    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/downloads.svg");
     transform: scale(0.55);
     opacity: 0;
   }
   100% {
-    list-style-image: url("chrome://sine/content/zia/icons/downloads.svg");
+    list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/downloads.svg");
     transform: scale(1);
     opacity: 1;
   }
@@ -207,6 +207,8 @@ toolbar .toolbaritem-combined-buttons {
 #star-button-box,
 #tracking-protection-icon-container,
 #reader-mode-button,
-#picture-in-picture-button {
+#picture-in-picture-button,
+#notification-popup-box,
+#translations-button {
   display: None;
 }

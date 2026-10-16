@@ -1,9 +1,4 @@
 // Extracted from Zia by z1n-k; MIT licensed (zia.uc.js icon picker, chrome.css, icons/).
-// Tabler icon picker: adds a "Zia" tab to Zen's emoji/icon picker with all 5,166
-// Tabler icons (MIT, see icons/tabler-LICENSE), outline or solid, with search.
-// Icons come from icons/tabler-bundle.js, which is packed once into a zip in the
-// profile (zia-icons/) and read at resource://zia-tabler/, the same as Zia does.
-// Style is remembered in the pref zia.icons.style ("outline" or "filled").
 (() => {
   if (window.__bubbleTablerLoaded) return;
   window.__bubbleTablerLoaded = true;
@@ -18,17 +13,6 @@
     console.error(`[bubble-clean] tabler icons: ${where}:`, err);
   }
 
-  // Zia's icons are Tabler Icons (made by scripts/tabler-icons.py), each in
-  // an outline and, for about a thousand of them, a solid style. The search
-  // index holds every icon's name, tags and category, so "money" finds cash,
-  // coins and wallet.
-  //
-  // They come as one file, icons/tabler-bundle.js: Sine unpacks a mod file
-  // by file, and several thousand icons froze Zen for half a minute on some
-  // computers (and as one file they compress to a fraction of the size).
-  // Zia makes a zip of them in the profile (once per icon pack, so Zia's own
-  // updates don't redo it) and reads icons straight out of it, the way
-  // Firefox reads its own, at resource://zia-tabler/.
   const ICON_ROOT = "chrome://sine/content/bubble-clean-zen/icons";
   const ICON_HOST = "zia-tabler";
   const ICON_DIR = `resource://${ICON_HOST}`;

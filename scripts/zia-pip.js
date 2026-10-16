@@ -1,8 +1,4 @@
 // Extracted from Zia by z1n-k; MIT licensed.
-// Zia: picture-in-picture, loaded into each picture-in-picture window by
-// zia.uc.js. It restyles Firefox's controls like Dia's (zia-pip.css) and lets
-// the window tuck into the side of the screen. Self-contained, so it keeps
-// working whichever browser window opened it.
 (() => {
   if (window.__ziaPipLoaded) {
     return;
