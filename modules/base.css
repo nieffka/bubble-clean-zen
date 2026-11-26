@@ -22,6 +22,13 @@
     border-radius: 0px 0px var(--zen-element-separation) var(--zen-element-separation) !important;
     box-shadow: none !important;
   }
+  
+  #page-action-buttons {
+    position: absolute !important;
+    display: flex !important;
+    left: 2% !important;
+    transform: translateX(2%) !important;
+  }
 
   @media (-moz-bool-pref: "bubble.clean.multiple-urlbar-compact") {
     &:not([chromehidden~="toolbar"]) {
@@ -39,6 +46,11 @@
         :root[inDOMFullscreen] & {
           visibility: hidden !important;
         }
+      }
+      
+      #page-action-buttons {
+        left: 90% !important;
+        transform: translateX(-90%) !important;
       }
 
       #urlbar-container {

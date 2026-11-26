@@ -109,17 +109,12 @@ toolbar .toolbaritem-combined-buttons {
 #downloads-indicator-anchor {
   list-style-image: url("chrome://sine/content/bubble-clean-zen/icons/downloads.svg") !important;
 }
-#downloads-button[hidden],
-#downloads-button[hidden="true"] {
-  display: none !important;
-}
-#downloads-button
-  > :is(
-    .toolbarbutton-badge-stack,
-    #downloads-indicator-anchor,
-    .toolbarbutton-icon
-  ) {
-  translate: 0 1px;
+#downloads-indicator-icon {
+  width: 17px !important;
+  height: 17px !important;
+  max-height: 17px !important;
+  visibility: visible !important;
+  translate: 0 -1px;
 }
 #downloads-indicator-start-box,
 #downloads-indicator-finish-box,
@@ -127,10 +122,10 @@ toolbar .toolbaritem-combined-buttons {
   display: none !important;
 }
 #downloads-button[animate][notification="start"] #downloads-indicator-icon {
-  animation: zia-download-start 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+  animation: zia-download-start 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
 }
 #downloads-button[animate][notification="finish"] #downloads-indicator-icon {
-  animation: zia-download-finish 2.1s ease-in-out;
+  animation: zia-download-finish 2.1s ease-in-out !important;
 }
 @keyframes zia-download-start {
   0% {
@@ -185,6 +180,11 @@ toolbar .toolbaritem-combined-buttons {
     opacity: 1;
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  #downloads-button[animate] #downloads-indicator-icon {
+    animation: none !important;
+  }
+}
 
 /* Zen library */
 #zen-library-button {
@@ -197,6 +197,18 @@ toolbar .toolbaritem-combined-buttons {
 }
 #library-button-badge {
   display: none !important;
+}
+#downloads-button[hidden],
+#downloads-button[hidden="true"] {
+  display: none !important;
+}
+#downloads-button
+  > :is(
+    .toolbarbutton-badge-stack,
+    #downloads-indicator-anchor,
+    .toolbarbutton-icon
+  ) {
+  translate: 0 1px;
 }
 
 /* Hides the icons */
